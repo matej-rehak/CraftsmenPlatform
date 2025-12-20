@@ -1,0 +1,10 @@
+namespace CraftsmenPlatform.Domain.Common.Interface;
+
+/// <summary>
+/// Marker interface pro identifikaci Aggregate Roots.
+/// Aggregate Root je hlavní entita agregátu, která garantuje konzistenci
+/// všech entit v rámci agregátu a je jediným vstupním bodem pro změny.
+/// </summary>
+public interface IAggregateRoot
+{
+}

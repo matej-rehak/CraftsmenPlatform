@@ -1,6 +1,11 @@
+namespace CraftsmenPlatform.Domain.Common.Interface;
+
+/// <summary>
+/// Interface pro entity podporující soft delete
+/// </summary>
 public interface ISoftDeletable
 {
-    public bool IsDeleted { get; set; }
-    public DateTime? DeletedAt { get; set; }
-    public string? DeletedBy { get; set; }
+    bool IsDeleted { get; }
+    DateTime? DeletedAt { get; }
+    string? DeletedBy { get; }
 }

@@ -1,3 +1,5 @@
+namespace CraftsmenPlatform.Domain.Enums;
+
 public enum ProjectStatus
 {
     /// <summary>
@@ -8,7 +10,7 @@ public enum ProjectStatus
     /// <summary>
     /// Publikovaný - řemeslníci mohou dávat nabídky
     /// </summary>
-    Open = 2,
+    Published = 2,
     
     /// <summary>
     /// V realizaci - přijatá nabídka, probíhá práce

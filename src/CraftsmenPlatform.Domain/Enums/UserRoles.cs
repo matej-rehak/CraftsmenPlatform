@@ -1,4 +1,4 @@
-public enum UserRole
+namespace CraftsmenPlatform.Domain.Enums;public enum UserRole
 {
     User,
     Craftsman,

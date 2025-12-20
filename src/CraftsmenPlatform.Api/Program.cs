@@ -1,3 +1,11 @@
+using Serilog;
+using Serilog.Events;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+using FluentValidation;
+using MediatR;
+using CraftsmenPlatform.Infrastructure.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()

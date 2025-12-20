@@ -1,3 +1,5 @@
+namespace CraftsmenPlatform.Domain.Enums;
+
 public enum OfferStatus
 {
     /// <summary>
