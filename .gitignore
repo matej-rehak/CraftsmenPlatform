@@ -1,0 +1,36 @@
+# Ignoruj binární a objektové soubory
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Dd]ebug/
+
+# Ignoruj soubory NuGet balíčků
+*.nupkg
+*.snupkg
+packages/
+
+# Ignoruj dočasné soubory Visual Studia
+.vs/
+*.user
+*.suo
+*.userosscache
+*.cachefile
+
+# Ignoruj soubory IDE (JetBrains Rider, VS Code, atd.)
+.idea/
+.vscode/
+*.swp
+
+# Ignoruj soubory s tajnými údaji
+appsettings.Development.json
+*.secret
+*.pem
+
+# Ignoruj soubory databází
+*.mdf
+*.ldf
+*.db
+*.sqlite
+
+# Ignoruj soubory Dockeru (pokud nepoužíváš)
+*.docker.tar.gz
