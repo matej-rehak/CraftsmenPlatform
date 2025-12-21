@@ -1,11 +1,10 @@
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common;
 
 namespace CraftsmenPlatform.Domain.Events;
 
 public record ProjectPublishedEvent(
     Guid ProjectId,
     Guid CustomerId,
-    string Title) : IDomainEvent
+    string Title) : DomainEventBase
 {
-    public DateTime OccurredOn { get; } = DateTime.UtcNow;
 }

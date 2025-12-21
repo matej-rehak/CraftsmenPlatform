@@ -141,7 +141,7 @@ public class User : BaseEntity, IAggregateRoot
     /// <summary>
     /// Aktualizace profilu
     /// </summary>
-    public void UpdateProfile(
+    public Result UpdateProfile(
         string? firstName = null,
         string? lastName = null,
         string? phoneNumber = null,
@@ -158,10 +158,10 @@ public class User : BaseEntity, IAggregateRoot
             LastName = lastName.Trim();
         }
 
-        if (!string.IsNullOrWhiteSpace(phoneNumber))
-        {
-            Phone = PhoneNumber.Create(phoneNumber);
-        }
+if (!string.IsNullOrWhiteSpace(phoneNumber))
+{
+    Phone = PhoneNumber.Create(phoneNumber); // Přímo přiřaďte
+}
 
         if (address != null)
         {
@@ -174,6 +174,8 @@ public class User : BaseEntity, IAggregateRoot
         }
 
         UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
     }
 
     /// <summary>
@@ -242,12 +244,14 @@ public class User : BaseEntity, IAggregateRoot
     /// <summary>
     /// Změna role
     /// </summary>
-    public void ChangeRole(UserRole newRole)
+    public Result ChangeRole(UserRole newRole)
     {
         if (Role == newRole)
-            return;
+            return Result.Failure("User role cannot be the same");
 
         Role = newRole;
         UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
     }
 }

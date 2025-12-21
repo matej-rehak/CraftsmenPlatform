@@ -13,6 +13,7 @@ public class Message : BaseEntity
     public string Content { get; private set; } = string.Empty;
     public DateTime SentAt { get; private set; }
     public bool IsRead { get; private set; }
+    public DateTime? ReadAt { get; private set; }
 
     // Private constructor pro EF Core
     private Message() { }
@@ -26,6 +27,7 @@ public class Message : BaseEntity
         SentAt = DateTime.UtcNow;
         CreatedAt = DateTime.UtcNow;
         IsRead = false;
+        ReadAt = null;
 
         if (string.IsNullOrWhiteSpace(content))
             throw new BusinessRuleValidationException(nameof(Content), "Message content cannot be empty");
@@ -43,6 +45,7 @@ public class Message : BaseEntity
             return;
 
         IsRead = true;
+        ReadAt = DateTime.UtcNow;
         UpdatedAt = DateTime.UtcNow;
     }
 }

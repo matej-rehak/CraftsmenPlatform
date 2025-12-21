@@ -18,6 +18,8 @@ public class Review : BaseEntity, IAggregateRoot
     public Rating Rating { get; private set; } = null!;
     public string? Comment { get; private set; }
     public bool IsVerified { get; private set; }
+    public DateTime? VerifiedAt { get; private set; }
+    public bool IsPublished { get; private set; }
     public DateTime? PublishedAt { get; private set; }
 
     // Private constructor pro EF Core
@@ -37,6 +39,9 @@ public class Review : BaseEntity, IAggregateRoot
         Rating = rating ?? throw new ArgumentNullException(nameof(rating));
         Comment = comment?.Trim();
         IsVerified = false;
+        VerifiedAt = null;
+        IsPublished = false;
+        PublishedAt = null;
         CreatedAt = DateTime.UtcNow;
     }
 
@@ -64,6 +69,7 @@ public class Review : BaseEntity, IAggregateRoot
 
         PublishedAt = DateTime.UtcNow;
         UpdatedAt = DateTime.UtcNow;
+        IsPublished = true;
 
         AddDomainEvent(new ReviewPublishedEvent(Id, CraftsmanId, ProjectId, Rating.Value));
 
@@ -83,6 +89,7 @@ public class Review : BaseEntity, IAggregateRoot
 
         IsVerified = true;
         UpdatedAt = DateTime.UtcNow;
+        VerifiedAt = DateTime.UtcNow;
 
         return Result.Success();
     }

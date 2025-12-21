@@ -62,6 +62,24 @@ public abstract class BaseEntity
     }
 
     /// <summary>
+    /// Internal method pro nastavení audit fields při vytváření entity (volá Infrastructure)
+    /// </summary>
+    internal void SetCreatedAudit(DateTime createdAt, string createdBy)
+    {
+        CreatedAt = createdAt;
+        CreatedBy = createdBy;
+    }
+
+    /// <summary>
+    /// Internal method pro nastavení audit fields při aktualizaci entity (volá Infrastructure)
+    /// </summary>
+    internal void SetUpdatedAudit(DateTime updatedAt, string updatedBy)
+    {
+        UpdatedAt = updatedAt;
+        UpdatedBy = updatedBy;
+    }
+
+    /// <summary>
     /// Equality comparison na základě Id
     /// </summary>
     public override bool Equals(object? obj)

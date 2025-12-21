@@ -1,4 +1,4 @@
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common;
 
 namespace CraftsmenPlatform.Domain.Events;
 
@@ -6,7 +6,6 @@ public record OfferSubmittedEvent(
     Guid OfferId,
     Guid ProjectId,
     Guid CraftsmanId,
-    decimal Price) : IDomainEvent
+    decimal Price) : DomainEventBase
 {
-    public DateTime OccurredOn { get; } = DateTime.UtcNow;
 }

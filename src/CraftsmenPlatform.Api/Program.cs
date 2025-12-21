@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using FluentValidation;
 using MediatR;
-using CraftsmenPlatform.Infrastructure.Data;
+using CraftsmenPlatform.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDbContext<CraftsmenPlatformDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -62,7 +62,7 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     // česky - vytvori tabulky v DB
-    var db = scope.ServiceProvider.GetRequiredService<CraftsmenPlatformDbContext>();
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     db.Database.Migrate();
 }
 

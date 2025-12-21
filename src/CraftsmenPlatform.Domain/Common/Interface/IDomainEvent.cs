@@ -10,4 +10,5 @@ public interface IDomainEvent
     /// Čas kdy event nastal
     /// </summary>
     DateTime OccurredOn { get; }
+    Guid EventId { get; }
 }

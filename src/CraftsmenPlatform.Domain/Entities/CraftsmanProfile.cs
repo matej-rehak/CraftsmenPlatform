@@ -57,7 +57,7 @@ public class CraftsmanProfile : BaseEntity, IAggregateRoot
     /// <summary>
     /// Aktualizace profilu
     /// </summary>
-    public void UpdateProfile(
+    public Result UpdateProfile(
         string? bio = null,
         string? registrationNumber = null,
         string? taxNumber = null,
@@ -75,14 +75,14 @@ public class CraftsmanProfile : BaseEntity, IAggregateRoot
         if (yearsOfExperience.HasValue)
         {
             if (yearsOfExperience.Value < 0)
-                throw new BusinessRuleValidationException(
-                    nameof(YearsOfExperience),
-                    "Years of experience cannot be negative");
+                return Result.Failure("Years of experience cannot be negative");
 
             YearsOfExperience = yearsOfExperience.Value;
         }
 
         UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
     }
 
     /// <summary>
@@ -118,21 +118,23 @@ public class CraftsmanProfile : BaseEntity, IAggregateRoot
     /// <summary>
     /// Nastavení dostupnosti
     /// </summary>
-    public void SetAvailability(bool isAvailable)
+    public Result SetAvailability(bool isAvailable)
     {
         IsAvailable = isAvailable;
         UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
     }
 
     /// <summary>
     /// Přidání skill
     /// </summary>
-    public Result AddSkill(Guid skillId, int? yearsOfExperience = null, string? certificationLevel = null)
+    public Result AddSkill(Guid skillId, int? yearsOfExperience = null)
     {
         if (_skills.Any(s => s.SkillId == skillId))
             return Result.Failure("Skill already added to profile");
 
-        var craftsmanSkill = new CraftsmanSkill(Id, skillId, yearsOfExperience, certificationLevel);
+        var craftsmanSkill = new CraftsmanSkill(Id, skillId, yearsOfExperience);
         _skills.Add(craftsmanSkill);
         UpdatedAt = DateTime.UtcNow;
 

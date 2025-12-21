@@ -62,12 +62,10 @@ public class ChatRoom : BaseEntity, IAggregateRoot
     /// <summary>
     /// Označení zpráv jako přečtené
     /// </summary>
-    public void MarkMessagesAsRead(Guid userId)
+    public Result MarkMessagesAsRead(Guid userId)
     {
         if (userId != CraftsmanId && userId != CustomerId)
-            throw new BusinessRuleValidationException(
-                nameof(MarkMessagesAsRead),
-                "User must be either craftsman or customer");
+            return Result.Failure("User must be either craftsman or customer");
 
         var unreadMessages = _messages.Where(m => m.SenderId != userId && !m.IsRead).ToList();
         
@@ -78,13 +76,15 @@ public class ChatRoom : BaseEntity, IAggregateRoot
 
         if (unreadMessages.Any())
             UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
     }
 
     /// <summary>
     /// Počet nepřečtených zpráv pro daného uživatele
     /// </summary>
-    public int GetUnreadCount(Guid userId)
+    public Result<int> GetUnreadCount(Guid userId)
     {
-        return _messages.Count(m => m.SenderId != userId && !m.IsRead);
+        return Result<int>.Success(_messages.Count(m => m.SenderId != userId && !m.IsRead));
     }
 }

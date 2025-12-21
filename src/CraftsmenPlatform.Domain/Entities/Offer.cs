@@ -88,12 +88,10 @@ public class Offer : SoftDeletableEntity
     /// <summary>
     /// Aktualizace nabídky (lze jen pokud je pending)
     /// </summary>
-    public void Update(Money? newPrice = null, string? newDescription = null, int? newDuration = null)
+    public Result Update(Money? newPrice = null, string? newDescription = null, int? newDuration = null)
     {
         if (Status != OfferStatus.Pending)
-            throw new BusinessRuleValidationException(
-                nameof(Update),
-                "Cannot update non-pending offer");
+            return Result.Failure("Cannot update non-pending offer");
 
         if (newPrice != null)
             Price = newPrice;
@@ -104,11 +102,13 @@ public class Offer : SoftDeletableEntity
         if (newDuration.HasValue)
         {
             if (newDuration.Value <= 0)
-                throw new BusinessRuleValidationException(nameof(newDuration), "Duration must be positive");
+                return Result.Failure("Duration must be positive");
             
             EstimatedDurationDays = newDuration.Value;
         }
 
         UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
     }
 }

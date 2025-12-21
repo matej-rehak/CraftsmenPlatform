@@ -12,7 +12,6 @@ public class CraftsmanSkill : BaseEntity
     public Guid SkillId { get; private set; }
 
     public int? YearsOfExperience { get; private set; }
-    public string? CertificationLevel { get; private set; }
 
     // Private constructor pro EF Core
     private CraftsmanSkill() { }
@@ -20,40 +19,33 @@ public class CraftsmanSkill : BaseEntity
     internal CraftsmanSkill(
         Guid craftsmanProfileId,
         Guid skillId,
-        int? yearsOfExperience = null,
-        string? certificationLevel = null)
+        int? yearsOfExperience = null)
     {
         Id = Guid.NewGuid();
         CraftsmanProfileId = craftsmanProfileId;
         SkillId = skillId;
         YearsOfExperience = yearsOfExperience;
-        CertificationLevel = certificationLevel?.Trim();
         CreatedAt = DateTime.UtcNow;
 
         if (yearsOfExperience.HasValue && yearsOfExperience.Value < 0)
-            throw new BusinessRuleValidationException(
-                nameof(YearsOfExperience),
-                "Years of experience cannot be negative");
+            throw new BusinessRuleValidationException("Years of experience cannot be negative", "YearsOfExperienceValidation");
     }
 
     /// <summary>
     /// Aktualizace skill
     /// </summary>
-    public void Update(int? yearsOfExperience = null, string? certificationLevel = null)
+    public Result Update(int? yearsOfExperience = null)
     {
         if (yearsOfExperience.HasValue)
         {
             if (yearsOfExperience.Value < 0)
-                throw new BusinessRuleValidationException(
-                    nameof(YearsOfExperience),
-                    "Years of experience cannot be negative");
+                return Result.Failure("Years of experience cannot be negative");
 
             YearsOfExperience = yearsOfExperience.Value;
         }
 
-        if (!string.IsNullOrWhiteSpace(certificationLevel))
-            CertificationLevel = certificationLevel.Trim();
-
         UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
     }
 }
