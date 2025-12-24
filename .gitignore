@@ -30,6 +30,7 @@ appsettings.Development.json
 *.mdf
 *.ldf
 *.db
+*.md
 *.sqlite
 
 # Ignoruj soubory Dockeru (pokud nepoužíváš)
