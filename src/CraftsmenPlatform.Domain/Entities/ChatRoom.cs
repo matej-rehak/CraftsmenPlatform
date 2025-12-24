@@ -7,7 +7,7 @@ namespace CraftsmenPlatform.Domain.Entities;
 /// <summary>
 /// Agregát ChatRoom - reprezentuje chatovací místnost mezi řemeslníkem a zákazníkem
 /// </summary>
-public class ChatRoom : BaseEntity, IAggregateRoot
+public class ChatRoom : SoftDeletableEntity, IAggregateRoot
 {
     public Guid ProjectId { get; private set; }
     public Guid CraftsmanId { get; private set; }

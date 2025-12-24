@@ -9,7 +9,7 @@ namespace CraftsmenPlatform.Domain.Entities;
 /// <summary>
 /// Agregát Review - reprezentuje hodnocení řemeslníka
 /// </summary>
-public class Review : BaseEntity, IAggregateRoot
+public class Review : SoftDeletableEntity, IAggregateRoot
 {
     public Guid UserId { get; private set; }
     public Guid ProjectId { get; private set; }

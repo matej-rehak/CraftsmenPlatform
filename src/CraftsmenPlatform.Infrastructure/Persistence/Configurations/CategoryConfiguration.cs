@@ -28,8 +28,6 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.Property(c => c.IconUrl)
             .HasMaxLength(500);
 
-        builder.Property(c => c.IsActive).IsRequired();
-
         // Child entities - CategorySkills (with backing field)
         builder.HasMany(typeof(CategorySkill))
             .WithOne()
@@ -47,10 +45,6 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         // Ignore Domain Events (not persisted)
         builder.Ignore(c => c.DomainEvents);
-
-        // Indexes
-        builder.HasIndex(c => c.IsActive)
-            .HasDatabaseName("IX_Categories_IsActive");
 
         builder.HasIndex(c => c.CreatedAt)
             .HasDatabaseName("IX_Categories_CreatedAt");

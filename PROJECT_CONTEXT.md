@@ -13,6 +13,17 @@
 - 💬 Chat mezi řemeslníky a zákazníky
 - ⭐ Hodnocení a recenze
 
+### 🛠️ Technology Stack
+
+| Technology | Version | Usage |
+|------------|---------|-------|
+| **.NET SDK** | 8.0 | Core Framework |
+| **Entity Framework Core** | 8.0.6 | ORM & Database Access |
+| **MediatR** | 14.0.0 | Mediator Pattern, CQRS, Domain Events |
+| **FluentValidation** | 12.1.1 | Validation Logic |
+| **Serilog** | 10.0.0 | Logging |
+| **Swashbuckle (Swagger)** | 6.6.2 | API Documentation |
+
 ### Error Handling Strategy
 
 Projekt používá **hybrid approach** pro error handling:
@@ -80,10 +91,31 @@ Projekt je založen na **Clean Architecture** a **Domain-Driven Design (DDD)**.
 ```
 CraftsmenPlatform/
 ├── src/
-│   ├── CraftsmenPlatform.Domain/          # Domain Layer - Business logika
-│   ├── CraftsmenPlatform.Application/     # Application Layer - Use cases
-│   ├── CraftsmenPlatform.Infrastructure/  # Infrastructure - DB, External services
-│   └── CraftsmenPlatform.Api/            # API Layer - Controllers, Endpoints
+│   ├── CraftsmenPlatform.Domain/              # Domain Layer - Core Business Logic
+│   │   ├── Common/                            # Base classes (BaseEntity, IAggregateRoot, Result)
+│   │   ├── Entities/                          # Domain Entities
+│   │   ├── ValueObjects/                      # Domain Value Objects
+│   │   ├── Enums/                             # Enumerations
+│   │   ├── Events/                            # Domain Events (UserRegistered, etc.)
+│   │   ├── Exceptions/                        # Domain Exceptions
+│   │   └── Repositories/                      # Repository Interfaces (IRepository, IUserRepository)
+│   │
+│   ├── CraftsmenPlatform.Application/         # Application Layer - Use Cases
+│   │   ├── Commands/                          # CQRS Write Operations
+│   │   ├── Queries/                           # CQRS Read Operations
+│   │   ├── DTOs/                              # Data Transfer Objects
+│   │   └── Common/                            # Behaviors, Interfaces
+│   │
+│   ├── CraftsmenPlatform.Infrastructure/      # Infrastructure Layer - External concerns
+│   │   ├── Persistence/                       # EF Core DbContext, Configurations, Migrations
+│   │   ├── Repositories/                      # Repository Implementations
+│   │   ├── Events/                            # Domain Event Dispatchers
+│   │   └── Services/                          # External Services Impl (Email, FileStorage)
+│   │
+│   └── CraftsmenPlatform.Api/                 # API Layer - Entry Point
+│       ├── Controllers/                       # REST API Controllers
+│       ├── Middleware/                        # Exception Handling, Logging
+│       └── Extensions/                        # Service Registration Extensions
 ```
 
 ### Vrstvy
@@ -110,6 +142,7 @@ Agregát je skupina souvisejících entit s transakční hranicí. Veškeré zm�
 | `Review` | - | Hodnocení řemeslníků |
 | `ChatRoom` | `Message` | Chatovací místnost, zprávy |
 | `Skill` | - | Reference data - dovednosti |
+| `Category` | `CategorySkill` | Kategorie dovedností |
 
 ### Value Objects
 
@@ -251,6 +284,26 @@ chatRoom.GetUnreadCount(userId)
 **Business Rules:**
 - Zprávu může odeslat pouze craftsman nebo customer
 - Max délka zprávy 5000 znaků
+
+### Category Aggregate
+
+```csharp
+// Factory Method
+Category.Create(name, description, iconUrl)
+
+// Domain Methods
+category.Update(name, description, iconUrl)
+category.Activate()
+category.Deactivate()
+category.AddSkill(skillId)
+category.RemoveSkill(skillId)
+```
+
+**Business Rules:**
+- Name musí být unikátní (v rámci kontextu, pokud je to vyžadováno)
+- Name nesmí přesáhnout 100 znaků
+- Nelze přidat duplicitní skill
+
 
 ## 🔧 Implementační Detaily
 
@@ -502,14 +555,48 @@ modelBuilder.Entity<BaseEntity>()
     .Ignore(e => e.DomainEvents);
 ```
 
+### Repository Pattern Interface
+
+```csharp
+public interface IRepository<T> where T : BaseEntity, IAggregateRoot
+{
+    // Queries
+    Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<T>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<T>> FindAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
+    Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
+    Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
+    Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null, CancellationToken cancellationToken = default);
+    
+    // Commands
+    Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
+    Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
+    void Update(T entity);
+    void Remove(T entity);
+    void RemoveRange(IEnumerable<T> entities);
+}
+```
+
+### Unit of Work Pattern API
+
+```csharp
+public interface IUnitOfWork : IDisposable
+{
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+    Task BeginTransactionAsync(CancellationToken cancellationToken = default);
+    Task CommitTransactionAsync(CancellationToken cancellationToken = default);
+    Task RollbackTransactionAsync(CancellationToken cancellationToken = default);
+}
+```
+
 ## 🚀 Další Kroky
 
 ### TODO - Infrastructure
-- [ ] EF Core DbContext konfigurace pro všechny entity
-- [ ] Value Objects jako Owned Types
-- [ ] Repository pattern
-- [ ] Unit of Work pattern
-- [ ] Domain Events dispatcher
+- [x] EF Core DbContext konfigurace pro všechny entity
+- [x] Value Objects jako Owned Types
+- [x] Repository pattern
+- [x] Unit of Work pattern
+- [x] Domain Events dispatcher
 
 ### TODO - Application
 - [ ] CQRS Commands a Queries
@@ -546,8 +633,8 @@ modelBuilder.Entity<BaseEntity>()
 
 ---
 
-**Poslední aktualizace**: 2025-12-20  
-**DDD Refactoring**: ✅ Kompletní  
-**Result Pattern**: ✅ Implementováno ve všech agregátech  
-**Status projektu**: Domain vrstva hotová s Result pattern, Infrastructure a Application v procesu
+**Poslední aktualizace**: 2025-12-22
+**DDD Refactoring**: ✅ Kompletní
+**Result Pattern**: ✅ Implementováno ve všech agregátech
+**Status projektu**: Domain vrstva hotová, Infrastructure layer (EF Core configs, events, Repositories, UnitOfWork) implementována.
 

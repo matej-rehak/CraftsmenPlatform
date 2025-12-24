@@ -10,7 +10,7 @@ namespace CraftsmenPlatform.Domain.Entities;
 /// <summary>
 /// Agregát User - reprezentuje uživatele v systému
 /// </summary>
-public class User : BaseEntity, IAggregateRoot
+public class User : SoftDeletableEntity, IAggregateRoot
 {
     public EmailAddress Email { get; private set; } = null!;
     public string PasswordHash { get; private set; } = string.Empty;
@@ -160,7 +160,7 @@ public class User : BaseEntity, IAggregateRoot
 
 if (!string.IsNullOrWhiteSpace(phoneNumber))
 {
-    Phone = PhoneNumber.Create(phoneNumber); // Přímo přiřaďte
+    Phone = PhoneNumber.Create(phoneNumber);
 }
 
         if (address != null)

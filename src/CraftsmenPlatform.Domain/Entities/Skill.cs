@@ -12,7 +12,6 @@ public class Skill : BaseEntity, IAggregateRoot
     public string Name { get; private set; } = string.Empty;
     public string? Description { get; private set; }
     public string? IconUrl { get; private set; }
-    public bool IsActive { get; private set; }
 
     // Many-to-many relationship s Categories přes CategorySkill
     private readonly List<CategorySkill> _categorySkills = new();
@@ -27,7 +26,6 @@ public class Skill : BaseEntity, IAggregateRoot
         Name = name?.Trim() ?? throw new ArgumentNullException(nameof(name));
         Description = description?.Trim();
         IconUrl = iconUrl?.Trim();
-        IsActive = true;
         CreatedAt = DateTime.UtcNow;
 
         if (string.IsNullOrWhiteSpace(name))
@@ -64,34 +62,6 @@ public class Skill : BaseEntity, IAggregateRoot
         if (iconUrl != null)
             IconUrl = iconUrl.Trim();
 
-        UpdatedAt = DateTime.UtcNow;
-
-        return Result.Success();
-    }
-
-    /// <summary>
-    /// Deaktivace skill
-    /// </summary>
-    public Result Deactivate()
-    {
-        if (!IsActive)
-            return Result.Failure("Skill is already inactive");
-
-        IsActive = false;
-        UpdatedAt = DateTime.UtcNow;
-
-        return Result.Success();
-    }
-
-    /// <summary>
-    /// Aktivace skill
-    /// </summary>
-    public Result Activate()
-    {
-        if (IsActive)
-            return Result.Failure("Skill is already active");
-
-        IsActive = true;
         UpdatedAt = DateTime.UtcNow;
 
         return Result.Success();
