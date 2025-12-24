@@ -90,8 +90,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.EmailVerifiedAt);
 
-        builder.Property(u => u.LastLoginAt);
-
         // Audit fields from BaseEntity
         builder.Property(u => u.CreatedAt)
             .IsRequired();
@@ -111,6 +109,26 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         // Ignore Domain Events (not persisted)
         builder.Ignore(u => u.DomainEvents);
+
+        // Authentication properties
+        builder.Property(u => u.LastLoginAt);
+        
+        builder.Property(u => u.LastLoginIp)
+            .HasMaxLength(50);
+        
+        builder.Property(u => u.FailedLoginAttempts)
+            .HasDefaultValue(0);
+        
+        builder.Property(u => u.LockedOutUntil);
+
+        // RefreshTokens relationship
+        builder.HasMany(u => u.RefreshTokens)
+            .WithOne(rt => rt.User)
+            .HasForeignKey(rt => rt.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // Ignore computed properties
+        builder.Ignore(u => u.IsLockedOut);
 
         // Indexes
         builder.HasIndex(u => u.Role)

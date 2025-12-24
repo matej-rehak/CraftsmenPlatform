@@ -20,4 +20,43 @@ public interface IUserRepository : ISoftDeletableRepository<User>
     /// Získá uživatele podle role
     /// </summary>
     Task<IReadOnlyList<User>> GetByRoleAsync(UserRole role, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Najít uživatele podle refresh tokenu
+    /// </summary>
+    Task<User?> GetByRefreshTokenAsync(
+        string refreshToken, 
+        CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Najít uživatele podle emailu (pro login)
+    /// </summary>
+    Task<User?> GetByEmailAsync(
+        EmailAddress email, 
+        CancellationToken cancellationToken = default);
+
+    // Infrastructure/Repositories/UserRepository.cs
+    // PŘIDEJ implementaci těchto metod
+
+    public async Task<User?> GetByRefreshTokenAsync(
+        string refreshToken,
+        CancellationToken cancellationToken = default)
+    {
+        return await _context.Users
+            .Include(u => u.RefreshTokens)
+            .FirstOrDefaultAsync(
+                u => u.RefreshTokens.Any(rt => rt.Token == refreshToken),
+                cancellationToken);
+    }
+
+    public async Task<User?> GetByEmailAsync(
+        EmailAddress email,
+        CancellationToken cancellationToken = default)
+    {
+        return await _context.Users
+            .Include(u => u.RefreshTokens)
+            .FirstOrDefaultAsync(
+                u => u.Email.Value == email.Value,
+                cancellationToken);
+    }
 }

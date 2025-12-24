@@ -23,12 +23,43 @@ public class User : SoftDeletableEntity, IAggregateRoot
     public UserRole Role { get; private set; } = UserRole.User;
     public bool IsEmailVerified { get; private set; } = false;
     public DateTime? EmailVerifiedAt { get; private set; }
-    public DateTime? LastLoginAt { get; private set; }
     public bool IsActive { get; private set; } = true;
+    public bool IsDeactivated { get; private set; } = false;
     public DateTime? DeactivatedAt { get; private set; }
     public string? DeactivatedReason { get; private set; }
 
+    /// <summary>
+    /// Refresh tokens pro tohoto uživatele
+    /// </summary>
+    private readonly List<RefreshToken> _refreshTokens = new();
+    public IReadOnlyCollection<RefreshToken> RefreshTokens => _refreshTokens.AsReadOnly();
+
+    /// <summary>
+    /// Datum posledního přihlášení
+    /// </summary>
+    public DateTime? LastLoginAt { get; private set; }
+
+    /// <summary>
+    /// IP adresa posledního přihlášení
+    /// </summary>
+    public string? LastLoginIp { get; private set; }
+
+    /// <summary>
+    /// Počet neúspěšných pokusů o přihlášení
+    /// </summary>
+    public int FailedLoginAttempts { get; private set; }
+
+    /// <summary>
+    /// Datum zamčení účtu (po příliš mnoha neúspěšných pokusech)
+    /// </summary>
+    public DateTime? LockedOutUntil { get; private set; }
+
     public string FullName => $"{FirstName} {LastName}";
+
+    /// <summary>
+    /// Je účet zamčený?
+    /// </summary>
+    public bool IsLockedOut => LockedOutUntil.HasValue && LockedOutUntil > DateTime.UtcNow;
 
     // Private constructor pro EF Core
     private User() { }
@@ -207,6 +238,7 @@ if (!string.IsNullOrWhiteSpace(phoneNumber))
         DeactivatedAt = DateTime.UtcNow;
         DeactivatedReason = reason;
         UpdatedAt = DateTime.UtcNow;
+        IsDeactivated = true;
 
         return Result.Success();
     }
@@ -251,6 +283,97 @@ if (!string.IsNullOrWhiteSpace(phoneNumber))
 
         Role = newRole;
         UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
+    }
+
+    /// <summary>
+    /// Zaznamenat úspěšné přihlášení
+    /// </summary>
+    public Result RecordSuccessfulLogin(string ipAddress)
+    {
+        if (IsDeactivated)
+            return Result.Failure("Cannot login with deactivated account");
+
+        if (IsLockedOut)
+            return Result.Failure($"Account is locked until {LockedOutUntil:yyyy-MM-dd HH:mm:ss} UTC");
+
+        LastLoginAt = DateTime.UtcNow;
+        LastLoginIp = ipAddress;
+        FailedLoginAttempts = 0;
+        LockedOutUntil = null;
+
+        return Result.Success();
+    }
+
+    /// <summary>
+    /// Zaznamenání neúspěšného přihlášení
+    /// </summary>
+    public Result RecordFailedLogin(string ipAddress)
+    {
+        if (IsDeactivated)
+            return Result.Failure("Cannot login with deactivated account");
+
+        FailedLoginAttempts++;
+
+        if (FailedLoginAttempts >= 5)
+        {
+            LockedOutUntil = DateTime.UtcNow.AddMinutes(15);
+            return Result.Failure($"Account is locked until {LockedOutUntil:yyyy-MM-dd HH:mm:ss} UTC");
+        }
+
+        return Result.Success();
+    }
+
+    /// <summary>
+    /// Odemknout účet manuálně (např. admin)
+    /// </summary>
+    public Result Unlock()
+    {
+        if (!IsLockedOut)
+            return Result.Failure("Account is not locked");
+
+        LockedOutUntil = null;
+        FailedLoginAttempts = 0;
+
+        return Result.Success();
+    }
+
+    /// <summary>
+    /// Přidat refresh token
+    /// </summary>
+    internal void AddRefreshToken(RefreshToken token)
+    {
+        _refreshTokens.Add(token);
+
+        // Udržuj pouze posledních 5 aktivních tokenů na zařízení
+        // Starší tokeny automaticky revoke
+        var activeTokens = _refreshTokens
+            .Where(t => t.IsActive)
+            .OrderByDescending(t => t.CreatedAt)
+            .Skip(5)
+            .ToList();
+
+        foreach (var oldToken in activeTokens)
+        {
+            oldToken.Revoke(token.CreatedByIp, "Exceeded maximum active tokens");
+        }
+    }
+
+    /// <summary>
+    /// Zrušit všechny refresh tokeny (logout ze všech zařízení)
+    /// </summary>
+    public Result RevokeAllRefreshTokens(string revokedByIp)
+    {
+        var activeTokens = _refreshTokens.Where(t => t.IsActive).ToList();
+
+        if (!activeTokens.Any())
+            return Result.Failure("No active tokens to revoke");
+
+        foreach (var token in activeTokens)
+        {
+            token.Revoke(revokedByIp, "User requested logout from all devices");
+        }
 
         return Result.Success();
     }
