@@ -945,3 +945,28 @@ WHERE [Id] = @p17 AND [RowVersion] = @p18;
 2025-12-25 22:28:30.541 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
 2025-12-25 22:28:30.542 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 339.2957 ms
 2025-12-25 22:28:30.544 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 343.1877ms
+2025-12-25 22:34:38.805 +01:00 [INF] Application is shutting down...
+2025-12-25 22:34:43.025 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-25 22:34:43.588 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-25 22:34:43.628 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:34:43.630 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:34:43.631 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:34:43.632 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:34:43.930 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:34:43.947 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:34:43.950 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:34:43.952 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:34:43.961 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 22:34:43.971 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-25 22:34:43.983 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 22:34:44.032 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-25 22:34:44.033 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 22:34:44.033 +01:00 [INF] Hosting environment: Development
+2025-12-25 22:34:44.034 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
