@@ -970,3 +970,359 @@ ORDER BY [MigrationId];
 2025-12-25 22:34:44.033 +01:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-12-25 22:34:44.033 +01:00 [INF] Hosting environment: Development
 2025-12-25 22:34:44.034 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-25 22:39:47.220 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-25 22:39:47.306 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 87.0771ms
+2025-12-25 22:39:47.439 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-25 22:39:47.512 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.7778ms
+2025-12-25 22:39:55.717 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 116
+2025-12-25 22:39:55.723 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-25 22:39:55.724 +01:00 [INF] CORS policy execution successful.
+2025-12-25 22:39:55.743 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:39:55.762 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:39:55.801 +01:00 [INF] Registration attempt for email: string
+2025-12-25 22:39:55.830 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 64.9013ms
+2025-12-25 22:39:55.831 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:39:55.834 +01:00 [ERR] HTTP POST /api/Authentication/register responded 500 in 110.7585 ms
+CraftsmenPlatform.Domain.Exceptions.InvalidValueObjectException: EmailAddress.email: Invalid email format
+   at CraftsmenPlatform.Domain.ValueObjects.EmailAddress.Create(String email)
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-12-25 22:39:55.875 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+CraftsmenPlatform.Domain.Exceptions.InvalidValueObjectException: EmailAddress.email: Invalid email format
+   at CraftsmenPlatform.Domain.ValueObjects.EmailAddress.Create(String email)
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-25 22:39:55.885 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 500 null text/plain; charset=utf-8 168.0005ms
+2025-12-25 22:40:34.924 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 129
+2025-12-25 22:40:34.927 +01:00 [INF] CORS policy execution successful.
+2025-12-25 22:40:34.928 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:40:34.930 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:40:34.933 +01:00 [INF] Registration attempt for email: MatejRehak@email.cz
+2025-12-25 22:40:35.214 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-25 22:40:35.324 +01:00 [WRN] Registration failed for MatejRehak@email.cz: User with this email already exists
+2025-12-25 22:40:35.328 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-25 22:40:35.340 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 408.9739ms
+2025-12-25 22:40:35.342 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:40:35.343 +01:00 [INF] HTTP POST /api/Authentication/register responded 400 in 416.2867 ms
+2025-12-25 22:40:35.345 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 400 null application/json; charset=utf-8 421.4036ms
+2025-12-25 22:40:48.877 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 128
+2025-12-25 22:40:48.881 +01:00 [INF] CORS policy execution successful.
+2025-12-25 22:40:48.883 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:40:48.884 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:40:48.886 +01:00 [INF] Registration attempt for email: MatejReha@email.cz
+2025-12-25 22:40:48.895 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-25 22:40:49.312 +01:00 [WRN] Registration failed for MatejReha@email.cz: Invalid role
+2025-12-25 22:40:49.313 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-25 22:40:49.314 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 428.5933ms
+2025-12-25 22:40:49.315 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:40:49.316 +01:00 [INF] HTTP POST /api/Authentication/register responded 400 in 435.9727 ms
+2025-12-25 22:40:49.318 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 400 null application/json; charset=utf-8 440.33ms
+2025-12-25 22:41:05.169 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 127
+2025-12-25 22:41:05.171 +01:00 [INF] CORS policy execution successful.
+2025-12-25 22:41:05.172 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:41:05.173 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:41:05.175 +01:00 [INF] Registration attempt for email: MatejReha@email.cz
+2025-12-25 22:41:05.178 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-25 22:41:05.417 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 242.7407ms
+2025-12-25 22:41:05.418 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:41:05.419 +01:00 [ERR] HTTP POST /api/Authentication/register responded 500 in 248.3117 ms
+System.Runtime.CompilerServices.SwitchExpressionException: Non-exhaustive switch expression failed to match its input.
+Unmatched value was Admin.
+   at <PrivateImplementationDetails>.ThrowSwitchExpressionException(Object unmatchedValue)
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-12-25 22:41:05.424 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Runtime.CompilerServices.SwitchExpressionException: Non-exhaustive switch expression failed to match its input.
+Unmatched value was Admin.
+   at <PrivateImplementationDetails>.ThrowSwitchExpressionException(Object unmatchedValue)
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-25 22:41:05.430 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 500 null text/plain; charset=utf-8 261.2785ms
+2025-12-25 22:41:23.581 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 126
+2025-12-25 22:41:23.582 +01:00 [INF] CORS policy execution successful.
+2025-12-25 22:41:23.583 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:41:23.584 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:41:23.586 +01:00 [INF] Registration attempt for email: MatejReha@email.cz
+2025-12-25 22:41:23.589 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-25 22:41:23.900 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-25 22:41:23.967 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 100), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 50), @p16='?' (Size = 100), @p17='?' (DbType = DateTime2), @p18='?' (Size = 500), @p19='?' (Size = 20), @p20='?' (DbType = DateTime2), @p21='?' (Size = 100), @p22='?' (Size = 255), @p23='?' (DbType = Guid), @p24='?' (DbType = DateTime2), @p25='?' (Size = 4000), @p26='?' (Size = 50), @p27='?' (DbType = DateTime2), @p28='?' (Size = 500), @p29='?' (DbType = DateTime2), @p30='?' (Size = 50), @p31='?' (Size = 8000) (DbType = Binary), @p32='?' (Size = 500), @p33='?' (DbType = DateTime2), @p34='?' (Size = 4000), @p35='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AvatarUrl], [CreatedAt], [CreatedBy], [DeactivatedAt], [DeactivatedReason], [DeletedAt], [DeletedBy], [EmailVerifiedAt], [FirstName], [IsActive], [IsDeactivated], [IsDeleted], [IsEmailVerified], [LastLoginAt], [LastLoginIp], [LastName], [LockedOutUntil], [PasswordHash], [Role], [UpdatedAt], [UpdatedBy], [Email])
+OUTPUT INSERTED.[FailedLoginAttempts], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35);
+2025-12-25 22:41:23.989 +01:00 [INF] User registered successfully: "7333ea1f-11bc-4f65-86de-59560a366c0d"
+2025-12-25 22:41:23.991 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-25 22:41:24.011 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 424.9436ms
+2025-12-25 22:41:24.012 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:41:24.013 +01:00 [INF] HTTP POST /api/Authentication/register responded 201 in 430.6943 ms
+2025-12-25 22:41:24.015 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 201 null application/json; charset=utf-8 434.0264ms
+2025-12-25 22:44:01.167 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Authentication/me - null null
+2025-12-25 22:44:01.172 +01:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-12-25 22:44:01.176 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-25 22:44:01.177 +01:00 [INF] HTTP GET /api/Authentication/me responded 401 in 8.2643 ms
+2025-12-25 22:44:01.179 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Authentication/me - 401 null application/json 12.5482ms
+2025-12-25 22:44:23.594 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Authentication/me - null null
+2025-12-25 22:44:23.625 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api)'
+2025-12-25 22:44:23.627 +01:00 [INF] Route matched with {action = "GetCurrentUser", controller = "Authentication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:44:23.629 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], CraftsmenPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-25 22:44:23.639 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api) in 10.247ms
+2025-12-25 22:44:23.640 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api)'
+2025-12-25 22:44:23.640 +01:00 [INF] HTTP GET /api/Authentication/me responded 200 in 44.0717 ms
+2025-12-25 22:44:23.642 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Authentication/me - 200 null application/json; charset=utf-8 47.5574ms
+2025-12-25 22:46:15.907 +01:00 [INF] Application is shutting down...
+2025-12-25 22:46:21.488 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-25 22:46:22.057 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-25 22:46:22.098 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:46:22.099 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:46:22.100 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:46:22.102 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:46:22.400 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:46:22.418 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:46:22.421 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:46:22.424 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:46:22.433 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 22:46:22.444 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-25 22:46:22.456 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 22:46:22.508 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-25 22:46:22.509 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 22:46:22.510 +01:00 [INF] Hosting environment: Development
+2025-12-25 22:46:22.511 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-25 22:46:25.486 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-25 22:46:25.574 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 88.8484ms
+2025-12-25 22:46:25.754 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-25 22:46:25.830 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 76.1605ms
+2025-12-25 22:46:48.443 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 120
+2025-12-25 22:46:48.449 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-25 22:46:48.451 +01:00 [INF] CORS policy execution successful.
+2025-12-25 22:46:48.471 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:46:48.490 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:46:48.531 +01:00 [INF] Registration attempt for email: kek@sezam.cz
+2025-12-25 22:46:48.796 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-25 22:46:49.571 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-25 22:46:49.641 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 100), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 50), @p16='?' (Size = 100), @p17='?' (DbType = DateTime2), @p18='?' (Size = 500), @p19='?' (Size = 20), @p20='?' (DbType = DateTime2), @p21='?' (Size = 100), @p22='?' (Size = 255), @p23='?' (DbType = Guid), @p24='?' (DbType = DateTime2), @p25='?' (Size = 4000), @p26='?' (Size = 50), @p27='?' (DbType = DateTime2), @p28='?' (Size = 500), @p29='?' (DbType = DateTime2), @p30='?' (Size = 50), @p31='?' (Size = 8000) (DbType = Binary), @p32='?' (Size = 500), @p33='?' (DbType = DateTime2), @p34='?' (Size = 4000), @p35='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AvatarUrl], [CreatedAt], [CreatedBy], [DeactivatedAt], [DeactivatedReason], [DeletedAt], [DeletedBy], [EmailVerifiedAt], [FirstName], [IsActive], [IsDeactivated], [IsDeleted], [IsEmailVerified], [LastLoginAt], [LastLoginIp], [LastName], [LockedOutUntil], [PasswordHash], [Role], [UpdatedAt], [UpdatedBy], [Email])
+OUTPUT INSERTED.[FailedLoginAttempts], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35);
+2025-12-25 22:46:49.665 +01:00 [INF] User registered successfully: "36482118-fb65-45a5-a98b-c35281189ea2"
+2025-12-25 22:46:49.669 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-25 22:46:49.696 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 1202.686ms
+2025-12-25 22:46:49.697 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2025-12-25 22:46:49.700 +01:00 [INF] HTTP POST /api/Authentication/register responded 201 in 1250.2279 ms
+2025-12-25 22:46:49.703 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 201 null application/json; charset=utf-8 1259.4901ms
+2025-12-25 22:47:08.113 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Authentication/me - null null
+2025-12-25 22:47:08.146 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api)'
+2025-12-25 22:47:08.148 +01:00 [INF] Route matched with {action = "GetCurrentUser", controller = "Authentication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:47:08.151 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], CraftsmenPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-25 22:47:08.165 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api) in 14.5355ms
+2025-12-25 22:47:08.166 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api)'
+2025-12-25 22:47:08.167 +01:00 [INF] HTTP GET /api/Authentication/me responded 200 in 50.6992 ms
+2025-12-25 22:47:08.168 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Authentication/me - 200 null application/json; charset=utf-8 55.4235ms
+2025-12-25 22:48:00.912 +01:00 [INF] Application is shutting down...
+2025-12-25 22:48:57.795 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-25 22:48:58.343 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-25 22:48:58.383 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:48:58.384 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:48:58.385 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:48:58.386 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:48:58.683 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:48:58.700 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:48:58.703 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:48:58.705 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:48:58.714 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 22:48:58.725 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-25 22:48:58.737 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 22:48:58.786 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-25 22:48:58.787 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 22:48:58.788 +01:00 [INF] Hosting environment: Development
+2025-12-25 22:48:58.788 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-25 22:49:20.919 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-25 22:49:21.000 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 82.2754ms
+2025-12-25 22:49:21.180 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-25 22:49:21.254 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.4038ms
+2025-12-25 22:49:31.481 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Authentication/me - null null
+2025-12-25 22:49:31.487 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-25 22:49:31.542 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api)'
+2025-12-25 22:49:31.554 +01:00 [INF] Route matched with {action = "GetCurrentUser", controller = "Authentication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrentUser() on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:49:31.561 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], CraftsmenPlatform.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-25 22:49:31.598 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api) in 39.9608ms
+2025-12-25 22:49:31.600 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.GetCurrentUser (CraftsmenPlatform.Api)'
+2025-12-25 22:49:31.602 +01:00 [INF] HTTP GET /api/Authentication/me responded 200 in 114.3712 ms
+2025-12-25 22:49:31.604 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Authentication/me - 200 null application/json; charset=utf-8 122.9273ms
+2025-12-25 22:50:09.438 +01:00 [INF] Application is shutting down...
+2025-12-25 22:50:15.872 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-25 22:50:16.425 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-25 22:50:16.464 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:50:16.466 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:50:16.467 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:50:16.468 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-25 22:50:16.768 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:50:16.786 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:50:16.789 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 22:50:16.791 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 22:50:16.800 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 22:50:16.811 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-25 22:50:16.823 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 22:50:16.871 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-25 22:50:16.872 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 22:50:16.873 +01:00 [INF] Hosting environment: Development
+2025-12-25 22:50:16.874 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-25 22:50:23.702 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-25 22:50:23.786 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 84.8391ms
+2025-12-25 22:50:24.024 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-25 22:50:24.094 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 69.1654ms
+2025-12-25 22:50:52.871 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 53
+2025-12-25 22:50:52.878 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-25 22:50:52.879 +01:00 [INF] CORS policy execution successful.
+2025-12-25 22:50:52.898 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-25 22:50:52.916 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-25 22:50:52.955 +01:00 [INF] Login attempt for email: kek@sezam.cz
+2025-12-25 22:50:53.220 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-25 22:50:54.067 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p12='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 50), @p3='?' (DbType = DateTime2), @p4='?' (Size = 500), @p5='?' (DbType = DateTime2), @p6='?' (Size = 50), @p7='?' (Size = 8000) (DbType = Binary), @p8='?' (Size = 500), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (DbType = Guid), @p17='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p14='?' (Size = 50), @p18='?' (Size = 8) (DbType = Binary), @p15='?' (DbType = DateTime2), @p16='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [RefreshTokens] SET [CreatedAt] = @p0, [CreatedBy] = @p1, [CreatedByIp] = @p2, [ExpiresAt] = @p3, [ReplacedByToken] = @p4, [RevokedAt] = @p5, [RevokedByIp] = @p6, [RowVersion] = @p7, [Token] = @p8, [UpdatedAt] = @p9, [UpdatedBy] = @p10, [UserId] = @p11
+OUTPUT 1
+WHERE [Id] = @p12;
+UPDATE [Users] SET [LastLoginAt] = @p13, [LastLoginIp] = @p14, [UpdatedAt] = @p15, [UpdatedBy] = @p16
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p17 AND [RowVersion] = @p18;
+2025-12-25 22:50:54.080 +01:00 [WRN] Login failed for kek@sezam.cz: Failed to save changes: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+2025-12-25 22:50:54.085 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-25 22:50:54.100 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 1179.4608ms
+2025-12-25 22:50:54.101 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-25 22:50:54.104 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 1225.7400 ms
+2025-12-25 22:50:54.108 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 1236.1658ms
