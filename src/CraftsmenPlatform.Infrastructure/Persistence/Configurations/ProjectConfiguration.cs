@@ -71,16 +71,16 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
         // Accepted Offer
         builder.Property(p => p.AcceptedOfferId);
 
-        // Child entities - Offers (with backing field)
-        builder.HasMany(typeof(Offer))
+        // Child entities - Offers
+        builder.HasMany(p => p.Offers)
             .WithOne()
-            .HasForeignKey("ProjectId")
+            .HasForeignKey("ProjectId") // Offer has ProjectId property but no Project navigation
             .OnDelete(DeleteBehavior.Cascade);
 
-        // Child entities - Images (with backing field)
-        builder.HasMany(typeof(ProjectImage))
+        // Child entities - Images
+        builder.HasMany(p => p.Images)
             .WithOne()
-            .HasForeignKey("ProjectId")
+            .HasForeignKey("ProjectId") // ProjectImage has ProjectId property but no Project navigation
             .OnDelete(DeleteBehavior.Cascade);
 
         // Soft Delete fields (from SoftDeletableEntity)

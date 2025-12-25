@@ -100,6 +100,11 @@ builder.Services
     {
         options.SaveToken = true;
         options.RequireHttpsMetadata = false; // Set to true in production
+        var key = builder.Configuration["JwtSettings:Secret"];
+        if (string.IsNullOrEmpty(key))
+        {
+            throw new InvalidOperationException("JWT Key není nastaven v konfiguraci.");
+        }
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
@@ -109,7 +114,7 @@ builder.Services
             ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
             ValidAudience = builder.Configuration["JwtSettings:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"])),
+                Encoding.UTF8.GetBytes(key)),
             ClockSkew = TimeSpan.Zero // Remove delay of token expiration
         };
 
