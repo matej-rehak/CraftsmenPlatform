@@ -1,4 +1,4 @@
-using CraftsmenPlatform.Domain.Common;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;

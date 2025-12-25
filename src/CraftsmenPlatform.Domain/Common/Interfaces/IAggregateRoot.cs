@@ -1,4 +1,4 @@
-namespace CraftsmenPlatform.Domain.Common.Interface;
+namespace CraftsmenPlatform.Domain.Common.Interfaces;
 
 /// <summary>
 /// Marker interface pro identifikaci Aggregate Roots.

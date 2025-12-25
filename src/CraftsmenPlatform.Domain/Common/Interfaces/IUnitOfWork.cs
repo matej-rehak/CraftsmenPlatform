@@ -1,4 +1,4 @@
-namespace CraftsmenPlatform.Domain.Common;
+namespace CraftsmenPlatform.Domain.Common.Interfaces;
 
 /// <summary>
 /// Unit of Work pattern interface

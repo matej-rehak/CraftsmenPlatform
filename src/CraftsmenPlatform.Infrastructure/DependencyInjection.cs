@@ -1,4 +1,4 @@
-using CraftsmenPlatform.Domain.Common;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Domain.Repositories;
 using CraftsmenPlatform.Infrastructure.Persistence;
 using CraftsmenPlatform.Infrastructure.Repositories;

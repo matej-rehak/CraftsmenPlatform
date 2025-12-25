@@ -1,6 +1,6 @@
 using MediatR;
 using CraftsmenPlatform.Domain.Common;
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 
 namespace CraftsmenPlatform.Infrastructure.Events;
 

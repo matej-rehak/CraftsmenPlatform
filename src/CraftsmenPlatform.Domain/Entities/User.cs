@@ -1,5 +1,5 @@
 using CraftsmenPlatform.Domain.Common;
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Domain.Enums;
 using CraftsmenPlatform.Domain.Events;
 using CraftsmenPlatform.Domain.Exceptions;

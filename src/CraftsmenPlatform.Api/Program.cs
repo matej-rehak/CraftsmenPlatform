@@ -12,7 +12,7 @@ using System.IdentityModel.Tokens.Jwt;
 using CraftsmenPlatform.Application.Common.Interfaces;
 using CraftsmenPlatform.Infrastructure.Services;
 using CraftsmenPlatform.Domain.Common;
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Application.Commands.Authentication.Login;
 using CraftsmenPlatform.Infrastructure.Events;
 using CraftsmenPlatform.Domain.Repositories;

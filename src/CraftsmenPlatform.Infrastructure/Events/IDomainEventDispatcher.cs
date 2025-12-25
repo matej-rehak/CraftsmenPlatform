@@ -1,6 +1,6 @@
-using CraftsmenPlatform.Domain.Common;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 
-namespace CraftsmenPlatform.Domain.Common.Interface;
+namespace CraftsmenPlatform.Infrastructure.Events;
 
 public interface IDomainEventDispatcher
 {

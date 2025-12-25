@@ -1,5 +1,5 @@
 using CraftsmenPlatform.Domain.Common;
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using CraftsmenPlatform.Infrastructure.Events;

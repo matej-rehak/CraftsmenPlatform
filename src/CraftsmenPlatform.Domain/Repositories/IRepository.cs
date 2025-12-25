@@ -1,4 +1,4 @@
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Domain.Common;
 using System.Linq.Expressions;
 

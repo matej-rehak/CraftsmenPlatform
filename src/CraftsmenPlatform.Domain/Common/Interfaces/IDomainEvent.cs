@@ -1,4 +1,4 @@
-namespace CraftsmenPlatform.Domain.Common.Interface;
+namespace CraftsmenPlatform.Domain.Common.Interfaces;
 
 /// <summary>
 /// Base interface pro všechny domain events.

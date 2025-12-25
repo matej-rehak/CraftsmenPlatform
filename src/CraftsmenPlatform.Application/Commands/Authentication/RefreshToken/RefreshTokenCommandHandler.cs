@@ -3,6 +3,7 @@ using CraftsmenPlatform.Application.DTOs.Authentication;
 using CraftsmenPlatform.Domain.Common;
 using CraftsmenPlatform.Domain.Entities;
 using CraftsmenPlatform.Domain.Repositories;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using MediatR;
 
 namespace CraftsmenPlatform.Application.Commands.Authentication.RefreshToken;

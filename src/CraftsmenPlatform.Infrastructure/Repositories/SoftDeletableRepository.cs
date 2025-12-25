@@ -1,6 +1,6 @@
 using CraftsmenPlatform.Domain.Common;
 using CraftsmenPlatform.Domain.Repositories;
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;

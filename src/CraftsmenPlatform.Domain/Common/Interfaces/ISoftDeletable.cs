@@ -1,4 +1,4 @@
-namespace CraftsmenPlatform.Domain.Common.Interface;
+namespace CraftsmenPlatform.Domain.Common.Interfaces;
 
 /// <summary>
 /// Interface pro entity podporující soft delete

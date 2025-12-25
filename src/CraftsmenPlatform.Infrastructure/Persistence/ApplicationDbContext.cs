@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using CraftsmenPlatform.Domain.Entities;
 using CraftsmenPlatform.Domain.Common;
-using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Infrastructure.Events;
 using System.Linq.Expressions;
 
