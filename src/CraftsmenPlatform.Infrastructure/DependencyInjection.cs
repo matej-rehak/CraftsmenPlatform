@@ -4,6 +4,9 @@ using CraftsmenPlatform.Infrastructure.Persistence;
 using CraftsmenPlatform.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
+using CraftsmenPlatform.Application.Common.Interfaces;
+using CraftsmenPlatform.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CraftsmenPlatform.Infrastructure;
@@ -14,7 +17,7 @@ namespace CraftsmenPlatform.Infrastructure;
 public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(
-        this IServiceCollection services, 
+        this IServiceCollection services,
         IConfiguration configuration)
     {
         // DbContext
@@ -35,6 +38,10 @@ public static class DependencyInjection
         services.AddScoped<IChatRoomRepository, ChatRoomRepository>();
         services.AddScoped<ISkillRepository, SkillRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+        // Services
+        services.AddHttpContextAccessor();
+        services.AddScoped<IRequestContext, HttpRequestContext>();
 
         return services;
     }

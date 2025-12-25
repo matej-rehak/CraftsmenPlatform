@@ -5,6 +5,19 @@ using System.Reflection;
 using FluentValidation;
 using MediatR;
 using CraftsmenPlatform.Infrastructure.Persistence;
+using System.Text; // Pro Encoding
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using CraftsmenPlatform.Application.Common.Interfaces;
+using CraftsmenPlatform.Infrastructure.Services;
+using CraftsmenPlatform.Domain.Common;
+using CraftsmenPlatform.Domain.Common.Interface;
+using CraftsmenPlatform.Application.Commands.Authentication.Login;
+using CraftsmenPlatform.Infrastructure.Events;
+using CraftsmenPlatform.Domain.Repositories;
+using CraftsmenPlatform.Infrastructure.Repositories;
+using CraftsmenPlatform.Application.Common.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,9 +62,31 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddHttpContextAccessor();
 
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+// Add repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+// Add UnitOfWork
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Add RequestContext
+builder.Services.AddScoped<IRequestContext, HttpRequestContext>();
+
+// Registrace MediatR a FluentValidation
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(LoginCommand).Assembly));
+
+builder.Services.AddValidatorsFromAssembly(typeof(LoginCommand).Assembly);
+
 // Authentication services
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
 
 // JWT Authentication
 builder.Services
@@ -71,10 +106,10 @@ builder.Services
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtSettings.Issuer,
-            ValidAudience = jwtSettings.Audience,
+            ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
+            ValidAudience = builder.Configuration["JwtSettings:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(jwtSettings.Secret)),
+                Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"])),
             ClockSkew = TimeSpan.Zero // Remove delay of token expiration
         };
 
@@ -118,15 +153,6 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("RequireVerifiedEmail", policy =>
         policy.RequireClaim("email_verified", "True"));
 });
-
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
 // česky - umožňuje všechny požadavky
 

@@ -12,6 +12,7 @@
 - 💰 Systém nabídek a akceptování nabídek
 - 💬 Chat mezi řemeslníky a zákazníky
 - ⭐ Hodnocení a recenze
+- 🔐 Bezpečná autentizace a autorizace uživatelů
 
 ### 🛠️ Technology Stack
 
@@ -178,6 +179,58 @@ Events reprezentují důležité business události v doméně.
 | `BusinessRuleValidationException` | Porušení business pravidel |
 | `InvalidValueObjectException` | Nevalidní value object |
 
+## 🔐 Authentication & Security
+
+Systém používá **JWT (JSON Web Token)** based autentizaci s podporou refresh tokenů.
+
+### Auth Flow
+1. **Register**: Vytvoří uživatele, vytvoří hash hesla, vygeneruje tokens.
+2. **Login**: Ověří email/heslo, vygeneruje Access + Refresh tokeny.
+3. **RefreshToken**: Použije validní refresh token k získání nového access tokenu.
+4. **Logout**: Revokuje refresh token (client-side remove, server-side flag).
+
+### Komponenty
+
+| Interface | Implementace (Infrastructure) | Účel |
+|-----------|-------------------------------|------|
+| `IJwtTokenGenerator` | `JwtTokenGenerator` | Generování Access a Refresh tokenů |
+| `IPasswordHasher` | `PasswordHasher` | Hashing (BCrypt/PBKDF2) a verifikace hesel |
+| `IRequestContext` | `HttpRequestContext` | Získání IP adresy, User ID z HttpContext |
+
+### Token Strategy
+- **Access Token**: Krátká platnost (např. 15 minut). Obsahuje Claims (Id, Email, Role).
+- **Refresh Token**: Dlouhá platnost (např. 7 dní). Uložen v databázi (User Aggregate) s vazbou na zařízení/IP.
+
+### Role-Based Authorization
+V `Program.cs` jsou definovány policies:
+- `RequireAdminRole`: Pouze Admin
+- `RequireCraftsmanRole`: Craftsman nebo Admin
+- `RequireCustomerRole`: Customer nebo Admin
+- `RequireVerifiedEmail`: Uživatel musí mít ověřený email
+
+### Příklad Implementace - Login Handler
+
+```csharp
+public async Task<Result<AuthenticationResponse>> Handle(LoginCommand request, CancellationToken ct)
+{
+    // 1. Validate credentials
+    var user = await _userRepository.GetByEmailAsync(request.Email);
+    if (user == null || !_passwordHasher.VerifyPassword(request.Password, user.PasswordHash))
+        return Result.Failure("Invalid credentials");
+
+    // 2. Generate tokens
+    var accessToken = _jwtTokenGenerator.GenerateAccessToken(user);
+    var refreshToken = _jwtTokenGenerator.GenerateRefreshToken();
+
+    // 3. Store refresh token (Domain Logic)
+    user.AddRefreshToken(refreshToken, DateTime.UtcNow.AddDays(7), ipAddress);
+    
+    // 4. Save & Return
+    await _unitOfWork.SaveChangesAsync(ct);
+    return Result.Success(new AuthenticationResponse(accessToken, refreshToken));
+}
+```
+
 ## 📦 Klíčové Entity a jejich API
 
 ### User Aggregate
@@ -196,6 +249,7 @@ user.Deactivate(reason)
 user.Activate()
 user.RecordLogin()
 user.ChangeRole(newRole)
+user.AddRefreshToken(token, expiry, ipAddress) // Auth logic
 ```
 
 **Business Rules:**
@@ -599,14 +653,14 @@ public interface IUnitOfWork : IDisposable
 - [x] Domain Events dispatcher
 
 ### TODO - Application
-- [ ] CQRS Commands a Queries
-- [ ] MediatR Handlers
+- [/] CQRS Commands a Queries
+- [/] MediatR Handlers
 - [ ] FluentValidation validators
-- [ ] DTOs a Mapping
+- [/] DTOs a Mapping
 
 ### TODO - API
-- [ ] Controllers
-- [ ] Authentication & Authorization
+- [/] Controllers
+- [/] Authentication & Authorization
 - [ ] API Documentation (Swagger)
 
 ## 📝 Poznámky pro AI Agenty
@@ -633,8 +687,7 @@ public interface IUnitOfWork : IDisposable
 
 ---
 
-**Poslední aktualizace**: 2025-12-22
+**Poslední aktualizace**: 2025-12-25
 **DDD Refactoring**: ✅ Kompletní
 **Result Pattern**: ✅ Implementováno ve všech agregátech
-**Status projektu**: Domain vrstva hotová, Infrastructure layer (EF Core configs, events, Repositories, UnitOfWork) implementována.
-
+**Status projektu**: Domain a Infrastructure vrstvy hotové. Application a API vrstvy rozpracovány (Authentication).

@@ -16,20 +16,20 @@ public class RegisterCommandHandler
     private readonly IUnitOfWork _unitOfWork;
     private readonly IPasswordHasher _passwordHasher;
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
-    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IRequestContext _requestContext;
 
     public RegisterCommandHandler(
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
         IPasswordHasher passwordHasher,
         IJwtTokenGenerator jwtTokenGenerator,
-        IHttpContextAccessor httpContextAccessor)
+        IRequestContext requestContext)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _passwordHasher = passwordHasher;
         _jwtTokenGenerator = jwtTokenGenerator;
-        _httpContextAccessor = httpContextAccessor;
+        _requestContext = requestContext;
     }
 
     public async Task<Result<AuthenticationResponse>> Handle(
@@ -37,63 +37,56 @@ public class RegisterCommandHandler
         CancellationToken cancellationToken)
     {
         // 1. Check if user already exists
-        var emailAddress = EmailAddress.Create(request.Email);
-        var existingUser = await _userRepository.GetByEmailAsync(
-            emailAddress,
-            cancellationToken);
+        var email = EmailAddress.Create(request.Email);
+        var existingUser = await _userRepository.GetByEmailAsync(email, cancellationToken);
 
         if (existingUser is not null)
-            return Result.Failure<AuthenticationResponse>(
+            return Result<AuthenticationResponse>.Failure(
                 "User with this email already exists");
 
         // 2. Hash password
         var passwordHash = _passwordHasher.HashPassword(request.Password);
 
         // 3. Parse role
-        if (!Enum.TryParse<UserRole>(request.Role, out var userRole))
-            return Result.Failure<AuthenticationResponse>("Invalid role");
+        if (!Enum.TryParse<UserRole>(request.Role, out var role))
+            return Result<AuthenticationResponse>.Failure("Invalid role");
 
         // 4. Create user
-        var user = userRole switch
+        var user = role switch
         {
             UserRole.Craftsman => User.CreateCraftsman(
-                emailAddress,
+                request.Email,
                 passwordHash,
                 request.FirstName,
                 request.LastName),
-            UserRole.Customer => User.CreateCustomer(
-                emailAddress,
+
+            UserRole.User => User.CreateUser(
+                request.Email,
                 passwordHash,
                 request.FirstName,
                 request.LastName),
-            _ => User.CreateUser(
-                emailAddress,
-                passwordHash,
-                request.FirstName,
-                request.LastName)
         };
 
         // 5. Generate tokens
         var accessToken = _jwtTokenGenerator.GenerateAccessToken(user);
         var refreshTokenValue = _jwtTokenGenerator.GenerateRefreshToken();
-        
-        var ipAddress = _httpContextAccessor.HttpContext?.Connection.RemoteIpAddress?.ToString() 
-            ?? "unknown";
-        
-        var refreshToken = RefreshToken.Create(
-            user.Id,
+        var ipAddress = _requestContext.GetIpAddress();
+
+        // 🔥 JEDINÉ SPRÁVNÉ MÍSTO
+        var refreshResult = user.AddRefreshToken(
             refreshTokenValue,
             DateTime.UtcNow.AddDays(7),
             ipAddress);
 
-        user.AddRefreshToken(refreshToken);
+        if (refreshResult.IsFailure)
+            return Result<AuthenticationResponse>.Failure(refreshResult.Error!);
 
-        // 6. Save to database
+        // 6. Save
         await _userRepository.AddAsync(user, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // 7. Return response
-        return Result.Success(new AuthenticationResponse
+        // 7. Return
+        return Result<AuthenticationResponse>.Success(new AuthenticationResponse
         {
             UserId = user.Id,
             Email = user.Email.Value,
@@ -104,7 +97,7 @@ public class RegisterCommandHandler
             AccessToken = accessToken,
             RefreshToken = refreshTokenValue,
             AccessTokenExpiresAt = DateTime.UtcNow.AddMinutes(15),
-            RefreshTokenExpiresAt = refreshToken.ExpiresAt
+            RefreshTokenExpiresAt = DateTime.UtcNow.AddDays(7)
         });
     }
 }

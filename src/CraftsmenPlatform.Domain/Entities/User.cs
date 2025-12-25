@@ -360,6 +360,34 @@ if (!string.IsNullOrWhiteSpace(phoneNumber))
         }
     }
 
+    public Result AddRefreshToken(
+    string token,
+    DateTime expiresAt,
+    string createdByIp)
+    {
+        var refreshToken = RefreshToken.Create(
+            Id,
+            token,
+            expiresAt,
+            createdByIp);
+
+        _refreshTokens.Add(refreshToken);
+
+        // invariant: max 5 aktivních tokenů
+        var activeTokens = _refreshTokens
+            .Where(t => t.IsActive)
+            .OrderByDescending(t => t.CreatedAt)
+            .Skip(5)
+            .ToList();
+
+        foreach (var oldToken in activeTokens)
+        {
+            oldToken.Revoke(createdByIp, "Exceeded maximum active tokens");
+        }
+
+        return Result.Success();
+    }
+
     /// <summary>
     /// Zrušit všechny refresh tokeny (logout ze všech zařízení)
     /// </summary>
@@ -374,6 +402,27 @@ if (!string.IsNullOrWhiteSpace(phoneNumber))
         {
             token.Revoke(revokedByIp, "User requested logout from all devices");
         }
+
+        return Result.Success();
+    }
+
+    public Result RotateRefreshToken(
+    string oldToken,
+    string newToken,
+    DateTime newExpiresAt,
+    string ipAddress)
+    {
+        var current = _refreshTokens.FirstOrDefault(t => t.Token == oldToken);
+
+        if (current is null)
+            return Result.Failure("Invalid refresh token");
+
+        if (!current.IsActive)
+            return Result.Failure("Refresh token is not active");
+
+        current.Revoke(ipAddress, newToken);
+
+        AddRefreshToken(newToken, newExpiresAt, ipAddress);
 
         return Result.Success();
     }

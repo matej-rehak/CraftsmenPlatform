@@ -1,10 +1,7 @@
-using MediatR;
 using CraftsmenPlatform.Domain.Common;
-using CraftsmenPlatform.Domain.Common.Interface;
 
-namespace CraftsmenPlatform.Infrastructure.Events;
+namespace CraftsmenPlatform.Domain.Common.Interface;
 
-// ==================== IDomainEventDispatcher ====================
 public interface IDomainEventDispatcher
 {
     Task DispatchAsync(IDomainEvent domainEvent, CancellationToken cancellationToken = default);

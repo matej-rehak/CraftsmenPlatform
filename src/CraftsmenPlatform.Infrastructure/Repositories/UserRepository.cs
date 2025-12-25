@@ -13,12 +13,6 @@ public class UserRepository : SoftDeletableRepository<User>, IUserRepository
     {
     }
 
-    public async Task<User?> GetByEmailAsync(EmailAddress email, CancellationToken cancellationToken = default)
-    {
-        return await _dbSet
-            .FirstOrDefaultAsync(u => u.Email.Value == email.Value, cancellationToken);
-    }
-
     public async Task<bool> EmailExistsAsync(EmailAddress email, CancellationToken cancellationToken = default)
     {
         return await _dbSet
@@ -30,5 +24,23 @@ public class UserRepository : SoftDeletableRepository<User>, IUserRepository
         return await _dbSet
             .Where(u => u.Role == role)
             .ToListAsync(cancellationToken);
+    }
+
+    public async Task<User?> GetByRefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
+    {
+        return await _context.Users
+            .Include(u => u.RefreshTokens)
+            .FirstOrDefaultAsync(
+                u => u.RefreshTokens.Any(rt => rt.Token == refreshToken),
+                cancellationToken);
+    }
+
+    public async Task<User?> GetByEmailAsync(EmailAddress email, CancellationToken cancellationToken = default)
+    {
+        return await _context.Users
+            .Include(u => u.RefreshTokens)
+            .FirstOrDefaultAsync(
+                u => u.Email.Value == email.Value,
+                cancellationToken);
     }
 }

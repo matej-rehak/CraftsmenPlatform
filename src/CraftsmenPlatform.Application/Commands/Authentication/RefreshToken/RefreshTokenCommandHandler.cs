@@ -4,7 +4,6 @@ using CraftsmenPlatform.Domain.Common;
 using CraftsmenPlatform.Domain.Entities;
 using CraftsmenPlatform.Domain.Repositories;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace CraftsmenPlatform.Application.Commands.Authentication.RefreshToken;
 
@@ -14,18 +13,18 @@ public class RefreshTokenCommandHandler
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
-    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IRequestContext _requestContext;
 
     public RefreshTokenCommandHandler(
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
         IJwtTokenGenerator jwtTokenGenerator,
-        IHttpContextAccessor httpContextAccessor)
+        IRequestContext requestContext)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _jwtTokenGenerator = jwtTokenGenerator;
-        _httpContextAccessor = httpContextAccessor;
+        _requestContext = requestContext;
     }
 
     public async Task<Result<AuthenticationResponse>> Handle(
@@ -38,52 +37,50 @@ public class RefreshTokenCommandHandler
             cancellationToken);
 
         if (user is null)
-            return Result.Failure<AuthenticationResponse>("Invalid refresh token");
+            return Result<AuthenticationResponse>.Failure("Invalid refresh token");
 
-        // 2. Find the specific refresh token
+        // 2. Find specific refresh token
         var refreshToken = user.RefreshTokens
             .FirstOrDefault(rt => rt.Token == request.RefreshToken);
 
         if (refreshToken is null)
-            return Result.Failure<AuthenticationResponse>("Invalid refresh token");
+            return Result<AuthenticationResponse>.Failure("Invalid refresh token");
 
         // 3. Validate refresh token
         if (!refreshToken.IsActive)
-            return Result.Failure<AuthenticationResponse>(
-                refreshToken.IsExpired 
-                    ? "Refresh token has expired" 
+            return Result<AuthenticationResponse>.Failure(
+                refreshToken.IsExpired
+                    ? "Refresh token has expired"
                     : "Refresh token has been revoked");
 
-        // 4. Check if user account is valid
+        // 4. Validate user
         if (user.IsDeactivated)
-            return Result.Failure<AuthenticationResponse>("Account is deactivated");
+            return Result<AuthenticationResponse>.Failure("Account is deactivated");
 
         if (user.IsLockedOut)
-            return Result.Failure<AuthenticationResponse>(
+            return Result<AuthenticationResponse>.Failure(
                 $"Account is locked until {user.LockedOutUntil:yyyy-MM-dd HH:mm:ss} UTC");
 
         // 5. Generate new tokens
-        var ipAddress = _httpContextAccessor.HttpContext?.Connection.RemoteIpAddress?.ToString() 
-            ?? "unknown";
+        var ipAddress = _requestContext.GetIpAddress();
 
         var newAccessToken = _jwtTokenGenerator.GenerateAccessToken(user);
         var newRefreshTokenValue = _jwtTokenGenerator.GenerateRefreshToken();
+        var newRefreshTokenExpiresAt = DateTime.UtcNow.AddDays(7);
 
-        var newRefreshToken = RefreshToken.Create(
-            user.Id,
-            newRefreshTokenValue,
-            DateTime.UtcNow.AddDays(7),
-            ipAddress);
-
-        // 6. Revoke old refresh token and add new one
+        // 6. Rotate refresh token (DOMAIN LOGIC)
         refreshToken.Revoke(ipAddress, newRefreshTokenValue);
-        user.AddRefreshToken(newRefreshToken);
+
+        user.AddRefreshToken(
+            newRefreshTokenValue,
+            newRefreshTokenExpiresAt,
+            ipAddress);
 
         // 7. Save changes
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // 8. Return response
-        return Result.Success(new AuthenticationResponse
+        // 8. Response
+        return Result<AuthenticationResponse>.Success(new AuthenticationResponse
         {
             UserId = user.Id,
             Email = user.Email.Value,
@@ -94,7 +91,7 @@ public class RefreshTokenCommandHandler
             AccessToken = newAccessToken,
             RefreshToken = newRefreshTokenValue,
             AccessTokenExpiresAt = DateTime.UtcNow.AddMinutes(15),
-            RefreshTokenExpiresAt = newRefreshToken.ExpiresAt
+            RefreshTokenExpiresAt = newRefreshTokenExpiresAt
         });
     }
 }
