@@ -9,7 +9,6 @@ using System.Text; // Pro Encoding
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using CraftsmenPlatform.Application.Common.Interfaces;
 using CraftsmenPlatform.Infrastructure.Services;
 using CraftsmenPlatform.Domain.Common;
 using CraftsmenPlatform.Domain.Common.Interfaces;
@@ -18,6 +17,7 @@ using CraftsmenPlatform.Infrastructure.Events;
 using CraftsmenPlatform.Domain.Repositories;
 using CraftsmenPlatform.Infrastructure.Repositories;
 using CraftsmenPlatform.Application.Common.Interfaces;
+using CraftsmenPlatform.Application.Common.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -82,6 +82,7 @@ builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(LoginCommand).Assembly));
 
 builder.Services.AddValidatorsFromAssembly(typeof(LoginCommand).Assembly);
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 
 // Authentication services
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
@@ -185,6 +186,7 @@ if (app.Environment.IsDevelopment())
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseAuthentication(); 
 app.UseAuthorization();
 app.MapControllers();
 
