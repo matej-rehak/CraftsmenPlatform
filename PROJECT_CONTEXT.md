@@ -12,7 +12,6 @@
 - 💰 Systém nabídek a akceptování nabídek
 - 💬 Chat mezi řemeslníky a zákazníky
 - ⭐ Hodnocení a recenze
-- 🔐 Bezpečná autentizace a autorizace uživatelů
 
 ### 🛠️ Technology Stack
 
@@ -27,12 +26,14 @@
 
 ### Error Handling Strategy
 
-Projekt používá **hybrid approach** pro error handling:
+Projekt používá **Pure Result Pattern** pro veškerou business a domain logiku:
 
-#### Result Pattern (Business Validace)
-Pro **business rule validace** v domain metodách používáme **Result pattern** místo exceptions:
+#### Result Pattern (Pro Vše v Domain Layer)
+
+**Všechny** domain operace, včetně vytváření entit a value objects, používají **Result pattern**:
 
 ```csharp
+// Business operace - Result
 public Result AcceptOffer(Guid offerId)
 {
     if (Status != ProjectStatus.Published)
@@ -42,46 +43,110 @@ public Result AcceptOffer(Guid offerId)
     return Result.Success();
 }
 
-// S return value
-public Result<Offer> AddOffer(...)
-{
-    if (Status != ProjectStatus.Published)
-        return Result<Offer>.Failure("Cannot add offer to non-published project");
-    
-    var offer = new Offer(...);
-    return Result<Offer>.Success(offer);
-}
-```
-
-**Použití:**
-```csharp
-var result = project.AcceptOffer(offerId);
-if (result.IsFailure)
-{
-    // Handle error - např. vrátit BadRequest s result.Error
-    return BadRequest(result.Error);
-}
-// Success path
-```
-
-#### Exceptions (Technical Validace)
-Pro **technical validace** (nevalidní data, porušení invariantů) používáme **exceptions**:
-
-```csharp
-// Value Objects - vždy throwují při invalid input
-var email = EmailAddress.Create("invalid");  // throws InvalidValueObjectException
-
-// Constructory - validace invariantů
-private Project(args)
+// Factory metody - Result
+public static Result<Project> Create(string title, string description, ...)
 {
     if (string.IsNullOrWhiteSpace(title))
-        throw new BusinessRuleValidationException(nameof(Title), "Title cannot be empty");
+        return Result<Project>.Failure("Title cannot be empty");
+    
+    if (string.IsNullOrWhiteSpace(description))
+        return Result<Project>.Failure("Description cannot be empty");
+    
+    var project = new Project(title, description, ...);
+    return Result<Project>.Success(project);
+}
+
+// Private constructor - bez validace (validace je v Create)
+private Project(string title, string description, ...)
+{
+    Title = title;
+    Description = description;
+    // ... další inicializace
+}
+
+// Value Objects - Result
+public static Result<EmailAddress> Create(string value)
+{
+    if (string.IsNullOrWhiteSpace(value))
+        return Result<EmailAddress>.Failure("Email cannot be empty");
+    
+    if (!IsValidEmail(value))
+        return Result<EmailAddress>.Failure("Invalid email format");
+    
+    return Result<EmailAddress>.Success(new EmailAddress(value));
 }
 ```
 
-**Kdy co použít:**
-- ✅ **Result** - Business operace (Publish, AcceptOffer, Complete, Cancel...)
-- ✅ **Exception** - Value Object validace, Constructor validace, Technical errors
+**Použití v Application Layer:**
+```csharp
+// Command Handler
+public async Task<Result> Handle(CreateProjectCommand request, CancellationToken ct)
+{
+    // Vytvoření value objects
+    var addressResult = Address.Create(request.Street, request.City, ...);
+    if (addressResult.IsFailure)
+        return Result.Failure(addressResult.Error);
+    
+    // Vytvoření aggregate
+    var projectResult = Project.Create(
+        request.Title, 
+        request.Description, 
+        addressResult.Value,
+        ...
+    );
+    
+    if (projectResult.IsFailure)
+        return Result.Failure(projectResult.Error);
+    
+    await _repository.AddAsync(projectResult.Value);
+    await _unitOfWork.SaveChangesAsync(ct);
+    
+    return Result.Success();
+}
+```
+**Použití v API Layer:**
+```csharp
+[HttpPost]
+public async Task<IActionResult> CreateProject([FromBody] CreateProjectRequest request)
+{
+    var command = new CreateProjectCommand(...);
+    var result = await _mediator.Send(command);
+    
+    if (result.IsFailure)
+        return BadRequest(new { error = result.Error });
+    
+    return Ok();
+}
+```
+
+
+#### Exceptions (Pouze Technical Errors)
+
+**Exceptions používáme POUZE pro technical/infrastructure problémy:**
+
+| Exception Type | Použití |
+|----------------|---------|
+| `DbUpdateException` | Database errors |
+| `TimeoutException` | Network timeouts |
+| `NullReferenceException` | Programming errors (bugs) |
+| `InvalidOperationException` | Framework violations |
+
+#### Result Pattern Guidelines
+
+**✅ Kdy použít Result:**
+- Vytváření entit (factory metody)
+- Vytváření value objects
+- Všechny business operace (Publish, Accept, Complete, Cancel...)
+- Validace business pravidel
+- Validace invariantů
+- Jakákoliv operace, která může selhat z business důvodů
+
+**❌ Kdy použít Exception:**
+- Database connection errors
+- Network failures
+- File I/O errors
+- Programming bugs (null refs, invalid cast)
+- Framework violations
 
 ## 🏗️ Architektura
 
@@ -98,7 +163,6 @@ CraftsmenPlatform/
 │   │   ├── ValueObjects/                      # Domain Value Objects
 │   │   ├── Enums/                             # Enumerations
 │   │   ├── Events/                            # Domain Events (UserRegistered, etc.)
-│   │   ├── Exceptions/                        # Domain Exceptions
 │   │   └── Repositories/                      # Repository Interfaces (IRepository, IUserRepository)
 │   │
 │   ├── CraftsmenPlatform.Application/         # Application Layer - Use Cases
@@ -147,16 +211,48 @@ Agregát je skupina souvisejících entit s transakční hranicí. Veškeré zm�
 
 ### Value Objects
 
-Value objects jsou **immutable** a porovnávají se podle hodnoty, ne identity.
+Value objects jsou **immutable** a porovnávají se podle hodnoty, ne identity. Všechny mají **static factory metodu `Create`** vracející `Result<T>`.
 
-| Value Object | Properties | Validace |
-|--------------|-----------|----------|
-| `EmailAddress` | `Value` | Email formát, max 255 chars |
-| `Address` | `Street`, `City`, `State`, `ZipCode`, `Country` | Povinné pole |
-| `PhoneNumber` | `Value` | Mezinárodní formát |
-| `Money` | `Amount`, `Currency` | Amount >= 0, Currency valid |
-| `Rating` | `Value` (1-10) | Range 1-10 |
-| `DateRange` | `StartDate`, `EndDate` | StartDate <= EndDate |
+| Value Object | Properties | Validace | Factory Metoda |
+|--------------|-----------|----------|----------------|
+| `EmailAddress` | `Value` | Email formát, max 255 chars | `Result<EmailAddress> Create(string)` |
+| `Address` | `Street`, `City`, `State`, `ZipCode`, `Country` | Povinné pole | `Result<Address> Create(...)` |
+| `PhoneNumber` | `Value` | Mezinárodní formát | `Result<PhoneNumber> Create(string)` |
+| `Money` | `Amount`, `Currency` | Amount >= 0, Currency valid | `Result<Money> Create(decimal, string)` |
+| `Rating` | `Value` (1-10) | Range 1-10 | `Result<Rating> Create(int)` |
+| `DateRange` | `StartDate`, `EndDate` | StartDate <= EndDate | `Result<DateRange> Create(DateTime, DateTime)` |
+
+**Příklad Value Object implementace:**
+```csharp
+public class EmailAddress : ValueObject
+{
+    public string Value { get; private set; }
+    
+    private EmailAddress(string value)
+    {
+        Value = value;
+    }
+    
+    public static Result<EmailAddress> Create(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return Result<EmailAddress>.Failure("Email cannot be empty");
+        
+        if (value.Length > 255)
+            return Result<EmailAddress>.Failure("Email cannot exceed 255 characters");
+        
+        if (!IsValidEmail(value))
+            return Result<EmailAddress>.Failure("Invalid email format");
+        
+        return Result<EmailAddress>.Success(new EmailAddress(value));
+    }
+    
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Value;
+    }
+}
+```
 
 ### Domain Events
 
@@ -171,13 +267,39 @@ Events reprezentují důležité business události v doméně.
 | `ProjectCompletedEvent` | Projekt je dokončen | Aktualizace statistik |
 | `ReviewPublishedEvent` | Hodnocení je publikováno | Aktualizace ratingu řemeslníka |
 
-### Domain Exceptions
+### Result Class Implementation
 
-| Exception | Použití |
-|-----------|---------|
-| `DomainException` | Base exception pro všechny domain exceptions |
-| `BusinessRuleValidationException` | Porušení business pravidel |
-| `InvalidValueObjectException` | Nevalidní value object |
+```csharp
+public class Result
+{
+    public bool IsSuccess { get; }
+    public bool IsFailure => !IsSuccess;
+    public string Error { get; }
+    
+    protected Result(bool isSuccess, string error)
+    {
+        IsSuccess = isSuccess;
+        Error = error;
+    }
+    
+    public static Result Success() => new Result(true, string.Empty);
+    public static Result Failure(string error) => new Result(false, error);
+}
+
+public class Result<T> : Result
+{
+    public T Value { get; }
+    
+    private Result(bool isSuccess, T value, string error) 
+        : base(isSuccess, error)
+    {
+        Value = value;
+    }
+    
+    public static Result<T> Success(T value) => new Result<T>(true, value, string.Empty);
+    public static Result<T> Failure(string error) => new Result<T>(false, default, error);
+}
+```
 
 ## 🔐 Authentication & Security
 
@@ -222,12 +344,22 @@ public async Task<Result<AuthenticationResponse>> Handle(LoginCommand request, C
     var accessToken = _jwtTokenGenerator.GenerateAccessToken(user);
     var refreshToken = _jwtTokenGenerator.GenerateRefreshToken();
 
-    // 3. Store refresh token (Domain Logic)
-    user.AddRefreshToken(refreshToken, DateTime.UtcNow.AddDays(7), ipAddress);
+    // 3. Store refresh token (Domain Logic) - může selhat
+    var addTokenResult = user.AddRefreshToken(refreshToken, DateTime.UtcNow.AddDays(7), ipAddress);
+    if (addTokenResult.IsFailure)
+        return Result<AuthenticationResponse>.Failure(addTokenResult.Error);
     
     // 4. Save & Return
-    await _unitOfWork.SaveChangesAsync(ct);
-    return Result.Success(new AuthenticationResponse(accessToken, refreshToken));
+    try
+    {
+        await _unitOfWork.SaveChangesAsync(ct);
+    }
+    catch (DbUpdateException ex)
+    {
+        return Result<AuthenticationResponse>.Failure($"Database error: {ex.Message}");
+    }
+    
+    return Result<AuthenticationResponse>.Success(new AuthenticationResponse(accessToken, refreshToken));
 }
 ```
 
@@ -236,127 +368,127 @@ public async Task<Result<AuthenticationResponse>> Handle(LoginCommand request, C
 ### User Aggregate
 
 ```csharp
-// Factory Methods
-User.CreateUser(email, passwordHash, firstName, lastName)
-User.CreateCraftsman(email, passwordHash, firstName, lastName)
-User.CreateCustomer(email, passwordHash, firstName, lastName)
+// Factory Methods - vrací Result<User>
+Result<User> User.CreateUser(email, passwordHash, firstName, lastName)
+Result<User> User.CreateCraftsman(email, passwordHash, firstName, lastName)
+Result<User> User.CreateCustomer(email, passwordHash, firstName, lastName)
 
-// Domain Methods
-user.VerifyEmail()
-user.UpdateProfile(firstName, lastName, phoneNumber, address, avatarUrl)
-user.ChangePassword(newPasswordHash)
-user.Deactivate(reason)
-user.Activate()
-user.RecordLogin()
-user.ChangeRole(newRole)
-user.AddRefreshToken(token, expiry, ipAddress) // Auth logic
+// Domain Methods - všechny vrací Result
+Result user.VerifyEmail()
+Result user.UpdateProfile(firstName, lastName, phoneNumber, address, avatarUrl)
+Result user.ChangePassword(newPasswordHash)
+Result user.Deactivate(reason)
+Result user.Activate()
+Result user.RecordLogin()
+Result user.ChangeRole(newRole)
+Result user.AddRefreshToken(token, expiry, ipAddress) // Auth logic
 ```
 
 **Business Rules:**
-- Email musí být validní a unikátní
-- Nemůžeš se přihlásit s deaktivovaným účtem
-- Verifikovaný email nelze znovu verifikovat
+- Email musí být validní a unikátní (Result.Failure pokud ne)
+- Nemůžeš se přihlásit s deaktivovaným účtem (Result.Failure)
+- Verifikovaný email nelze znovu verifikovat (Result.Failure)
 
 ### Project Aggregate
 
 ```csharp
-// Factory Method
-Project.Create(customerId, title, description, budgetMin, budgetMax, ...)
+// Factory Method - vrací Result<Project>
+Result<Project> Project.Create(customerId, title, description, budgetMin, budgetMax, ...)
 
-// Domain Methods
-project.Publish()
-project.AddOffer(craftsmanId, price, description, ...)
-project.AcceptOffer(offerId)
-project.Complete()
-project.Cancel(reason)
-project.AddImage(imageUrl)
-project.RemoveImage(imageId)
-project.Update(title, description, ...)
+// Domain Methods - všechny vrací Result nebo Result<T>
+Result project.Publish()
+Result<Offer> project.AddOffer(craftsmanId, price, description, ...)
+Result project.AcceptOffer(offerId)
+Result project.Complete()
+Result project.Cancel(reason)
+Result project.AddImage(imageUrl)
+Result project.RemoveImage(imageId)
+Result project.Update(title, description, ...)
 ```
 
 **Business Rules:**
-- Nabídky lze přidávat pouze k publikovaným projektům
-- Projekt může mít max 1 akceptovanou nabídku
+- Nabídky lze přidávat pouze k publikovaným projektům (Result.Failure)
+- Projekt může mít max 1 akceptovanou nabídku (Result.Failure)
 - Akceptování nabídky zamítne všechny ostatní pending nabídky
-- Dokončit lze pouze projekt v InProgress stavu
-- Update lze pouze v Draft stavu
+- Dokončit lze pouze projekt v InProgress stavu (Result.Failure)
+- Update lze pouze v Draft stavu (Result.Failure)
 
 ### CraftsmanProfile Aggregate
 
 ```csharp
-// Factory Method
-CraftsmanProfile.Create(userId)
+// Factory Method - vrací Result<CraftsmanProfile>
+Result<CraftsmanProfile> CraftsmanProfile.Create(userId)
 
-// Domain Methods
-profile.UpdateProfile(bio, registrationNumber, taxNumber, yearsOfExperience)
-profile.Verify()
-profile.Unverify()
-profile.SetAvailability(isAvailable)
-profile.AddSkill(skillId, yearsOfExperience, certificationLevel)
-profile.RemoveSkill(skillId)
+// Domain Methods - všechny vrací Result
+Result profile.UpdateProfile(bio, registrationNumber, taxNumber, yearsOfExperience)
+Result profile.Verify()
+Result profile.Unverify()
+Result profile.SetAvailability(isAvailable)
+Result profile.AddSkill(skillId, yearsOfExperience, certificationLevel)
+Result profile.RemoveSkill(skillId)
 
-// Internal Methods (volané z jiných agregátů)
-profile.UpdateRating(newRating)        // volá se při ReviewPublishedEvent
-profile.IncrementCompletedProjects()   // volá se při ProjectCompletedEvent
+// Internal Methods (volané z event handlerů) - také vrací Result
+Result profile.UpdateRating(Rating newRating)        // volá se při ReviewPublishedEvent
+Result profile.IncrementCompletedProjects()          // volá se při ProjectCompletedEvent
 ```
 
 **Business Rules:**
-- Skill lze přidat pouze jednou
+- Skill lze přidat pouze jednou (Result.Failure)
 - Rating se aktualizuje automaticky při nové review
 - Verifikovaný profil lze unverify
 
 ### Review Aggregate
 
 ```csharp
-// Factory Method
-Review.Create(userId, projectId, craftsmanId, ratingValue, comment)
+// Factory Method - vrací Result<Review>
+Result<Review> Review.Create(userId, projectId, craftsmanId, ratingValue, comment)
 
-// Domain Methods
-review.Publish()
-review.Verify()
-review.Update(newRating, newComment)
+// Domain Methods - všechny vrací Result
+Result review.Publish()
+Result review.Verify()
+Result review.Update(newRating, newComment)
 ```
 
 **Business Rules:**
-- Rating musí být 1-10
-- Update lze pouze před publikací
-- Publikované review nelze editovat
-- Verifikovat lze pouze publikované review
+- Rating musí být 1-10 (Result.Failure)
+- Update lze pouze před publikací (Result.Failure)
+- Publikované review nelze editovat (Result.Failure)
+- Verifikovat lze pouze publikované review (Result.Failure)
 
 ### ChatRoom Aggregate
 
 ```csharp
-// Factory Method
-ChatRoom.Create(projectId, craftsmanId, customerId)
+// Factory Method - vrací Result<ChatRoom>
+Result<ChatRoom> ChatRoom.Create(projectId, craftsmanId, customerId)
 
-// Domain Methods
-chatRoom.SendMessage(senderId, content)
-chatRoom.MarkMessagesAsRead(userId)
-chatRoom.GetUnreadCount(userId)
+// Domain Methods - všechny vrací Result nebo Result<T>
+Result<Message> chatRoom.SendMessage(senderId, content)
+Result chatRoom.MarkMessagesAsRead(userId)
+int chatRoom.GetUnreadCount(userId)  // Query metoda - nevrací Result
 ```
 
 **Business Rules:**
-- Zprávu může odeslat pouze craftsman nebo customer
-- Max délka zprávy 5000 znaků
+- Craftsman může odesílat zprávy pouze customerovi a customer pouze craftsmanovi (Result.Failure)
+- Max délka zprávy 5000 znaků (Result.Failure)
 
 ### Category Aggregate
 
 ```csharp
-// Factory Method
-Category.Create(name, description, iconUrl)
+// Factory Method - vrací Result<Category>
+Result<Category> Category.Create(name, description, iconUrl)
 
-// Domain Methods
-category.Update(name, description, iconUrl)
-category.Activate()
-category.Deactivate()
-category.AddSkill(skillId)
-category.RemoveSkill(skillId)
+// Domain Methods - všechny vrací Result
+Result category.Update(name, description, iconUrl)
+Result category.Activate()
+Result category.Deactivate()
+Result category.AddSkill(skillId)
+Result category.RemoveSkill(skillId)
 ```
 
 **Business Rules:**
-- Name musí být unikátní (v rámci kontextu, pokud je to vyžadováno)
-- Name nesmí přesáhnout 100 znaků
-- Nelze přidat duplicitní skill
+- Name musí být unikátní (Result.Failure v rámci kontextu, pokud je to vyžadováno)
+- Name nesmí přesáhnout 100 znaků (Result.Failure)
+- Nelze přidat duplicitní skill (Result.Failure)
 
 
 ## 🔧 Implementační Detaily
@@ -505,25 +637,53 @@ offer.Accept(); // ❌ Porušuje aggregate boundary!
 ### ✅ SPRÁVNĚ - Přes Aggregate Root
 ```csharp
 var project = context.Projects.Include(p => p.Offers).First();
-project.AcceptOffer(offerId); // ✅ Vše přes aggregate root
+var result = project.AcceptOffer(offerId); // ✅ Vše přes aggregate root
+if (result.IsFailure)
+{
+    // Handle error
+}
 ```
 
 ### Domain Events Pattern
 ```csharp
 // 1. Aggregate vyhodí event
-review.Publish(); // Vytvoří ReviewPublishedEvent
+var result = review.Publish(); 
+if (result.IsSuccess)
+{
+    // Vytvoří ReviewPublishedEvent
+}
 
-// 2. Event handler reaguje
+// 2. Event handler reaguje (NEVRACÍ Result, jen loguje chyby)
 public class ReviewPublishedEventHandler : INotificationHandler<ReviewPublishedEvent>
 {
-    public async Task Handle(ReviewPublishedEvent @event)
+    public async Task Handle(ReviewPublishedEvent @event, CancellationToken ct)
     {
         // Najdi CraftsmanProfile a aktualizuj rating
         var profile = await _context.CraftsmanProfiles
             .FirstAsync(p => p.Id == @event.CraftsmanId);
-            
-        var rating = Rating.Create(@event.Rating);
-        profile.UpdateRating(rating);
+        
+        var ratingResult = Rating.Create(@event.RatingValue);
+        if (ratingResult.IsFailure)
+        {
+            _logger.LogError("Invalid rating value: {Error}", ratingResult.Error);
+            return;
+        }
+        
+        var updateResult = profile.UpdateRating(ratingResult.Value);
+        if (updateResult.IsFailure)
+        {
+            _logger.LogError("Failed to update rating: {Error}", updateResult.Error);
+            return;
+        }
+        
+        try
+        {
+            await _unitOfWork.SaveChangesAsync(ct);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to save rating update");
+        }
     }
 }
 ```
@@ -534,13 +694,19 @@ public class ReviewPublishedEventHandler : INotificationHandler<ReviewPublishedE
 - **Entities**: Pascal case, singular (User, Project, Offer)
 - **Value Objects**: Pascal case, descriptive (EmailAddress, Money, Rating)
 - **Events**: Pascal case, past tense + "Event" (UserRegisteredEvent)
-- **Exceptions**: Pascal case + "Exception" (BusinessRuleValidationException)
+- **Factory Methods**: "Create" - vždy vrací Result<T>
+- **Domain Methods**: Slovesa (Publish, Accept, Update) - vrací Result nebo Result<T>
 
 ### Constructor Patterns
 ```csharp
-// ✅ Doporučeno - private + factory
+// ✅ Doporučeno - private + factory s Result
 private MyEntity(args) { ... }
-public static MyEntity Create(args) { ... }
+public static Result<MyEntity> Create(args) 
+{ 
+    // Validace
+    if (/* fail */) return Result<MyEntity>.Failure("Error");
+    return Result<MyEntity>.Success(new MyEntity(args));
+}
 
 // ❌ Nedoporučeno - public constructor
 public MyEntity(args) { ... }
@@ -560,15 +726,38 @@ public string Value { get; }
 
 ### Validace
 ```csharp
-// V konstruktoru nebo factory metodě
-if (string.IsNullOrWhiteSpace(title))
-    throw new BusinessRuleValidationException(nameof(Title), "Title cannot be empty");
+// ✅ SPRÁVNĚ - Pure Result Pattern
+public static Result<Project> Create(string title, ...)
+{
+    if (string.IsNullOrWhiteSpace(title))
+        return Result<Project>.Failure("Title cannot be empty");
+    
+    if (title.Length > 200)
+        return Result<Project>.Failure("Title cannot exceed 200 characters");
+    
+    return Result<Project>.Success(new Project(title, ...));
+}
 
-// V domain methodách
-if (Status != ProjectStatus.Published)
-    throw new BusinessRuleValidationException(
-        nameof(AcceptOffer), 
-        "Cannot accept offer for non-published project");
+// ✅ SPRÁVNĚ - Domain metoda s Result
+public Result AcceptOffer(Guid offerId)
+{
+    if (Status != ProjectStatus.Published)
+        return Result.Failure("Cannot accept offer for non-published project");
+    
+    var offer = _offers.FirstOrDefault(o => o.Id == offerId);
+    if (offer == null)
+        return Result.Failure("Offer not found");
+    
+    // Business logic
+    return Result.Success();
+}
+
+// ❌ ŠPATNĚ - Nikdy nethroway exceptions v domain logice
+public void AcceptOffer(Guid offerId)
+{
+    if (Status != ProjectStatus.Published)
+        throw new BusinessRuleValidationException(...); // ❌ NO!
+}
 ```
 
 ## 🗄️ Entity Framework Considerations

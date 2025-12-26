@@ -26,26 +26,26 @@ public sealed class Address : ValueObject
     /// <summary>
     /// Vytvoří novou adresu
     /// </summary>
-    public static Address Create(string street, string city, string zipCode, string country, string? state = null)
+    public static Result<Address> Create(string street, string city, string zipCode, string country, string? state = null)
     {
         if (string.IsNullOrWhiteSpace(street))
-            throw new InvalidValueObjectException(nameof(Address), nameof(street), "Street cannot be empty");
+            return Result<Address>.Failure("Street cannot be empty");
 
         if (string.IsNullOrWhiteSpace(city))
-            throw new InvalidValueObjectException(nameof(Address), nameof(city), "City cannot be empty");
+            return Result<Address>.Failure("City cannot be empty");
 
         if (string.IsNullOrWhiteSpace(zipCode))
-            throw new InvalidValueObjectException(nameof(Address), nameof(zipCode), "ZipCode cannot be empty");
+            return Result<Address>.Failure("ZipCode cannot be empty");
 
         if (string.IsNullOrWhiteSpace(country))
-            throw new InvalidValueObjectException(nameof(Address), nameof(country), "Country cannot be empty");
+            return Result<Address>.Failure("Country cannot be empty");
 
-        return new Address(
+        return Result<Address>.Success(new Address(
             street.Trim(), 
             city.Trim(), 
             zipCode.Trim(), 
             country.Trim(), 
-            state?.Trim());
+            state?.Trim()));
     }
 
     protected override IEnumerable<object?> GetEqualityComponents()

@@ -27,4 +27,14 @@ public interface IUserRepository : ISoftDeletableRepository<User>
     Task<User?> GetByRefreshTokenAsync(
         string refreshToken, 
         CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Přidá refresh token
+    /// </summary>
+    Task AddRefreshTokenAsync(RefreshToken token, CancellationToken cancellationToken = default);
+    
+    /// <summary>
+    /// Aktualizuje poslední přihlášení
+    /// </summary>
+    Task UpdateLastLoginAsync(Guid userId, CancellationToken cancellationToken = default);
 }

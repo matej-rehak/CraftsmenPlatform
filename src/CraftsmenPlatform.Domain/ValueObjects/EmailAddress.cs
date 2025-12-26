@@ -23,29 +23,23 @@ public sealed class EmailAddress : ValueObject
     /// <summary>
     /// Vytvoří novou emailovou adresu
     /// </summary>
-    public static EmailAddress Create(string email)
+    public static Result<EmailAddress> Create(string email)
     {
         if (string.IsNullOrWhiteSpace(email))
-            throw new InvalidValueObjectException(
-                nameof(EmailAddress), 
-                nameof(email), 
+            return Result<EmailAddress>.Failure(
                 "Email cannot be empty");
 
         email = email.Trim().ToLowerInvariant();
 
         if (email.Length > 255)
-            throw new InvalidValueObjectException(
-                nameof(EmailAddress), 
-                nameof(email), 
+            return Result<EmailAddress>.Failure(
                 "Email cannot be longer than 255 characters");
 
         if (!EmailRegex.IsMatch(email))
-            throw new InvalidValueObjectException(
-                nameof(EmailAddress), 
-                nameof(email), 
+            return Result<EmailAddress>.Failure(
                 "Invalid email format");
 
-        return new EmailAddress(email);
+        return Result<EmailAddress>.Success(new EmailAddress(email));
     }
 
     protected override IEnumerable<object?> GetEqualityComponents()

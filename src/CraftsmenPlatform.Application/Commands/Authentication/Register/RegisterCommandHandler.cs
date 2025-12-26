@@ -39,7 +39,10 @@ public class RegisterCommandHandler
     {
         // 1. Check if user already exists
         var email = EmailAddress.Create(request.Email);
-        var existingUser = await _userRepository.GetByEmailAsync(email, cancellationToken);
+        if (email.IsFailure)
+            return Result<AuthenticationResponse>.Failure(email.Error);
+        
+        var existingUser = await _userRepository.GetByEmailAsync(email.Value, cancellationToken);
 
         if (existingUser is not null)
             return Result<AuthenticationResponse>.Failure(
@@ -56,25 +59,25 @@ public class RegisterCommandHandler
         var user = role switch
         {
             UserRole.Craftsman => User.CreateCraftsman(
-                request.Email,
+                email.Value,
                 passwordHash,
                 request.FirstName,
                 request.LastName),
 
             UserRole.User => User.CreateUser(
-                request.Email,
+                email.Value,
                 passwordHash,
                 request.FirstName,
                 request.LastName),
         };
 
         // 5. Generate tokens
-        var accessToken = _jwtTokenGenerator.GenerateAccessToken(user);
+        var accessToken = _jwtTokenGenerator.GenerateAccessToken(user.Value);
         var refreshTokenValue = _jwtTokenGenerator.GenerateRefreshToken();
         var ipAddress = _requestContext.GetIpAddress();
 
         // 🔥 JEDINÉ SPRÁVNÉ MÍSTO
-        var refreshResult = user.AddRefreshToken(
+        var refreshResult = user.Value.AddRefreshToken(
             refreshTokenValue,
             DateTime.UtcNow.AddDays(7),
             ipAddress);
@@ -83,18 +86,18 @@ public class RegisterCommandHandler
             return Result<AuthenticationResponse>.Failure(refreshResult.Error!);
 
         // 6. Save
-        await _userRepository.AddAsync(user, cancellationToken);
+        await _userRepository.AddAsync(user.Value, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         // 7. Return
         return Result<AuthenticationResponse>.Success(new AuthenticationResponse
         {
-            UserId = user.Id,
-            Email = user.Email.Value,
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            Role = user.Role.ToString(),
-            IsEmailVerified = user.IsEmailVerified,
+            UserId = user.Value.Id,
+            Email = user.Value.Email.Value,
+            FirstName = user.Value.FirstName,
+            LastName = user.Value.LastName,
+            Role = user.Value.Role.ToString(),
+            IsEmailVerified = user.Value.IsEmailVerified,
             AccessToken = accessToken,
             RefreshToken = refreshTokenValue,
             AccessTokenExpiresAt = DateTime.UtcNow.AddMinutes(15),

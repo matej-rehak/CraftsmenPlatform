@@ -94,64 +94,73 @@ public class User : SoftDeletableEntity, IAggregateRoot
     /// <summary>
     /// Factory metoda pro vytvoření běžného uživatele
     /// </summary>
-    public static User CreateUser(
+    public static Result<User> CreateUser(
         string email,
         string passwordHash,
         string firstName,
         string lastName)
     {
         var emailAddress = EmailAddress.Create(email);
-        var user = new User(Guid.NewGuid(), emailAddress, passwordHash, firstName, lastName, UserRole.User);
+        if (emailAddress.IsFailure)
+           return Result<User>.Failure(emailAddress.Error);
+        
+        var user = new User(Guid.NewGuid(), emailAddress.Value, passwordHash, firstName, lastName, UserRole.User);
         
         user.AddDomainEvent(new UserRegisteredEvent(
             user.Id,
-            emailAddress,
+            emailAddress.Value,
             firstName,
             lastName));
 
-        return user;
+        return Result<User>.Success(user);
     }
 
     /// <summary>
     /// Factory metoda pro vytvoření řemeslníka
     /// </summary>
-    public static User CreateCraftsman(
+    public static Result<User> CreateCraftsman(
         string email,
         string passwordHash,
         string firstName,
         string lastName)
     {
         var emailAddress = EmailAddress.Create(email);
-        var user = new User(Guid.NewGuid(), emailAddress, passwordHash, firstName, lastName, UserRole.Craftsman);
+        if (emailAddress.IsFailure)
+           return Result<User>.Failure(emailAddress.Error);
+        
+        var user = new User(Guid.NewGuid(), emailAddress.Value, passwordHash, firstName, lastName, UserRole.Craftsman);
         
         user.AddDomainEvent(new UserRegisteredEvent(
             user.Id,
-            emailAddress,
+            emailAddress.Value,
             firstName,
             lastName));
 
-        return user;
+        return Result<User>.Success(user);
     }
 
     /// <summary>
     /// Factory metoda pro vytvoření zákazníka
     /// </summary>
-    public static User CreateCustomer(
+    public static Result<User> CreateCustomer(
         string email,
         string passwordHash,
         string firstName,
         string lastName)
     {
         var emailAddress = EmailAddress.Create(email);
-        var user = new User(Guid.NewGuid(), emailAddress, passwordHash, firstName, lastName, UserRole.User);
+        if (emailAddress.IsFailure)
+           return Result<User>.Failure(emailAddress.Error);
+        
+        var user = new User(Guid.NewGuid(), emailAddress.Value, passwordHash, firstName, lastName, UserRole.User);
         
         user.AddDomainEvent(new UserRegisteredEvent(
             user.Id,
-            emailAddress,
+            emailAddress.Value,
             firstName,
             lastName));
 
-        return user;
+        return Result<User>.Success(user);
     }
 
     /// <summary>
@@ -365,13 +374,16 @@ if (!string.IsNullOrWhiteSpace(phoneNumber))
     DateTime expiresAt,
     string createdByIp)
     {
-        var refreshToken = RefreshToken.Create(
+        var refreshTokenResult = RefreshToken.Create(
             Id,
             token,
             expiresAt,
             createdByIp);
 
-        _refreshTokens.Add(refreshToken);
+        if (refreshTokenResult.IsFailure)
+            return refreshTokenResult;
+
+        _refreshTokens.Add(refreshTokenResult.Value);
 
         // invariant: max 5 aktivních tokenů
         var activeTokens = _refreshTokens

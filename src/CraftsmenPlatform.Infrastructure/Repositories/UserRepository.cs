@@ -43,4 +43,20 @@ public class UserRepository : SoftDeletableRepository<User>, IUserRepository
                 u => u.Email.Value == email.Value,
                 cancellationToken);
     }
+
+    public async Task AddRefreshTokenAsync(RefreshToken token, CancellationToken cancellationToken = default)
+    {
+        await _context.Set<RefreshToken>().AddAsync(token, cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task UpdateLastLoginAsync(Guid userId, CancellationToken cancellationToken = default)
+    {
+        var now = DateTime.UtcNow;
+        
+        await _context.Database.ExecuteSqlInterpolatedAsync(
+            $"UPDATE Users SET LastLoginAt = {now} WHERE Id = {userId}",
+            cancellationToken
+        );
+    }
 }

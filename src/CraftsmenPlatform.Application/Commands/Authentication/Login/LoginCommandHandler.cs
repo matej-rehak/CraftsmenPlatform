@@ -39,7 +39,11 @@ public class LoginCommandHandler
         try
         {
             // 1.1 Validate email
-            EmailAddress emailAddress = EmailAddress.Create(request.Email);
+            var emailResult = EmailAddress.Create(request.Email);
+            if (emailResult.IsFailure)
+                return Result<AuthenticationResponse>.Failure("Invalid email format");
+
+            var emailAddress = emailResult.Value;
 
             // 2. Find user by email
             var user = await _userRepository.GetByEmailAsync(
@@ -59,16 +63,16 @@ public class LoginCommandHandler
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
 
                 return Result<AuthenticationResponse>.Failure(
-                "Invalid email or password");
+                    "Invalid email or password");
             }
 
-            // 4. Record successful login
+            // 4. Record successful login (aktualizuje LastLoginAt na User entitě)
             var loginResult = user.RecordSuccessfulLogin(ipAddress);
             if (loginResult.IsFailure)
                 return Result<AuthenticationResponse>.Failure(
-                loginResult.Error ?? "Login failed");
+                    loginResult.Error ?? "Login failed");
 
-            // 6. Generate tokens
+            // 5. Generate tokens
             string accessToken;
             string refreshTokenValue;
             DateTime refreshTokenExpiresAt;
@@ -83,21 +87,25 @@ public class LoginCommandHandler
                 return Result<AuthenticationResponse>.Failure($"Failed to generate tokens: {ex.Message}");
             }
 
-            // 6. Add refresh token to user (DOMAIN)
-            user.AddRefreshToken(
+            // 6. Vytvoř RefreshToken entitu přes DDD factory
+            var refreshTokenResult = CraftsmenPlatform.Domain.Entities.RefreshToken.Create(
+                user.Id,
                 refreshTokenValue,
                 refreshTokenExpiresAt,
-                ipAddress);
+                ipAddress
+            );
 
-            // 8. Save changes
-            try
-            {
-                await _unitOfWork.SaveChangesAsync(cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                return Result<AuthenticationResponse>.Failure($"Failed to save changes: {ex.Message}");
-            }
+            if (refreshTokenResult.IsFailure)
+                return Result<AuthenticationResponse>.Failure(
+                    refreshTokenResult.Error ?? "Failed to create refresh token");
+
+            var refreshToken = refreshTokenResult.Value;
+
+            // 7. Přidej refresh token přímo do contextu (bez User tracking)
+            await _userRepository.AddRefreshTokenAsync(refreshToken, cancellationToken);
+
+            // 8. Ulož LastLoginAt bez concurrency check
+            await _userRepository.UpdateLastLoginAsync(user.Id, cancellationToken);
 
             // 9. Return response
             return Result<AuthenticationResponse>.Success(new AuthenticationResponse

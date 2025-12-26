@@ -51,7 +51,10 @@ public class Offer : SoftDeletableEntity
 
         if (startDate.HasValue && endDate.HasValue)
         {
-            Timeline = DateRange.Create(startDate.Value, endDate.Value);
+            var result = DateRange.Create(startDate.Value, endDate.Value);
+            if (result.IsFailure)
+                throw new BusinessRuleValidationException(nameof(Timeline), result.Error);
+            Timeline = result.Value;
         }
     }
 

@@ -35,26 +35,7 @@ public class RefreshToken : BaseEntity
         DateTime expiresAt,
         string createdByIp)
     {
-        if (userId == Guid.Empty)
-            throw new BusinessRuleValidationException(
-                nameof(UserId),
-                "UserId cannot be empty");
-
-        if (string.IsNullOrWhiteSpace(token))
-            throw new BusinessRuleValidationException(
-                nameof(Token),
-                "Token cannot be empty");
-
-        if (expiresAt <= DateTime.UtcNow)
-            throw new BusinessRuleValidationException(
-                nameof(ExpiresAt),
-                "ExpiresAt must be in the future");
-
-        if (string.IsNullOrWhiteSpace(createdByIp))
-            throw new BusinessRuleValidationException(
-                nameof(CreatedByIp),
-                "CreatedByIp cannot be empty");
-
+        // Bez validací - Create() už je ověřil
         Id = Guid.NewGuid();
         UserId = userId;
         Token = token;
@@ -62,17 +43,29 @@ public class RefreshToken : BaseEntity
         CreatedByIp = createdByIp;
         CreatedAt = DateTime.UtcNow;
     }
-
     /// <summary>
     /// Factory method pro vytvoření nového refresh tokenu
     /// </summary>
-    public static RefreshToken Create(
+    public static Result<RefreshToken> Create(
         Guid userId,
         string token,
         DateTime expiresAt,
         string createdByIp)
     {
-        return new RefreshToken(userId, token, expiresAt, createdByIp);
+        if (userId == Guid.Empty)
+            return Result<RefreshToken>.Failure("UserId cannot be empty");
+
+        if (string.IsNullOrWhiteSpace(token))
+            return Result<RefreshToken>.Failure("Token cannot be empty");
+
+        if (expiresAt <= DateTime.UtcNow)
+            return Result<RefreshToken>.Failure("ExpiresAt must be in the future");
+
+        if (string.IsNullOrWhiteSpace(createdByIp))
+            return Result<RefreshToken>.Failure("CreatedByIp cannot be empty");
+
+        var refreshToken = new RefreshToken(userId, token, expiresAt, createdByIp);
+        return Result<RefreshToken>.Success(refreshToken);
     }
 
     /// <summary>

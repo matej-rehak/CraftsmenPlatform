@@ -20,15 +20,12 @@ public sealed class DateRange : ValueObject
     /// <summary>
     /// Vytvoří nové časové rozpětí
     /// </summary>
-    public static DateRange Create(DateTime startDate, DateTime endDate)
+    public static Result<DateRange> Create(DateTime startDate, DateTime endDate)
     {
         if (startDate > endDate)
-            throw new InvalidValueObjectException(
-                nameof(DateRange), 
-                nameof(startDate), 
-                "Start date cannot be after end date");
+            return Result<DateRange>.Failure("Start date cannot be after end date");
 
-        return new DateRange(startDate, endDate);
+        return Result<DateRange>.Success(new DateRange(startDate, endDate));
     }
 
     /// <summary>
