@@ -1,0 +1,1233 @@
+2025-12-28 18:04:50.937 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-28 18:04:52.035 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-28 18:04:52.104 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:04:52.106 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:04:52.110 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:04:52.111 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:04:53.975 +01:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-28 18:04:54.002 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-28 18:04:54.008 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-28 18:04:54.011 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-28 18:04:54.028 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-28 18:04:54.048 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-28 18:04:54.070 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-28 18:04:54.301 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-28 18:04:54.302 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-28 18:04:54.304 +01:00 [INF] Hosting environment: Development
+2025-12-28 18:04:54.305 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-28 18:05:15.187 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-28 18:05:15.232 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-28 18:05:15.294 +01:00 [INF] HTTP GET / responded 404 in 61.8341 ms
+2025-12-28 18:05:15.307 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 122.641ms
+2025-12-28 18:05:15.316 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-28 18:05:19.516 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-28 18:05:19.520 +01:00 [INF] HTTP GET / responded 404 in 0.9616 ms
+2025-12-28 18:05:19.523 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 6.7107ms
+2025-12-28 18:05:19.526 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-28 18:05:25.609 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-28 18:05:25.614 +01:00 [INF] HTTP GET / responded 404 in 1.5997 ms
+2025-12-28 18:05:25.616 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 6.587ms
+2025-12-28 18:05:25.621 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-28 18:05:29.813 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/ - null null
+2025-12-28 18:05:29.816 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/ - 301 0 null 3.6511ms
+2025-12-28 18:05:29.821 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-28 18:05:29.922 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 101.5428ms
+2025-12-28 18:05:29.958 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui.css - null null
+2025-12-28 18:05:29.960 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui-standalone-preset.js - null null
+2025-12-28 18:05:29.984 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-12-28 18:05:29.984 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-12-28 18:05:29.987 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui.css - 200 152034 text/css 28.9942ms
+2025-12-28 18:05:29.988 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 28.1103ms
+2025-12-28 18:05:30.442 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/favicon-16x16.png - null null
+2025-12-28 18:05:30.446 +01:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2025-12-28 18:05:30.448 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/favicon-16x16.png - 200 665 image/png 5.3525ms
+2025-12-28 18:05:30.481 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-28 18:05:30.585 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 104.6873ms
+2025-12-28 18:07:12.376 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:07:12.380 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:07:12.388 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:12.417 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:07:12.470 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:07:12.860 +01:00 [INF] Executed DbCommand (27ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:07:13.878 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:07:13.898 +01:00 [WRN] Login failed for MatejRehak@email.cz: Invalid email or password
+2025-12-28 18:07:13.905 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:07:13.923 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 1501.3744ms
+2025-12-28 18:07:13.925 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:13.927 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 1548.2315 ms
+2025-12-28 18:07:13.930 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 1554.4479ms
+2025-12-28 18:07:25.184 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:07:25.187 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:07:25.188 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:25.189 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:07:25.192 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:07:25.253 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:07:25.524 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:07:25.527 +01:00 [WRN] Login failed for MatejRehak@email.cz: Invalid email or password
+2025-12-28 18:07:25.529 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:07:25.530 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 339.215ms
+2025-12-28 18:07:25.533 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:25.534 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 347.0680 ms
+2025-12-28 18:07:25.536 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 352.0044ms
+2025-12-28 18:07:26.234 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:07:26.237 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:07:26.239 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:26.240 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:07:26.242 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:07:26.251 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:07:26.535 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:07:26.537 +01:00 [WRN] Login failed for MatejRehak@email.cz: Invalid email or password
+2025-12-28 18:07:26.539 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:07:26.541 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 299.2386ms
+2025-12-28 18:07:26.543 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:26.544 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 307.3210 ms
+2025-12-28 18:07:26.547 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 312.5166ms
+2025-12-28 18:07:27.813 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:07:27.818 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:07:27.819 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:27.820 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:07:27.822 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:07:27.825 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:07:28.097 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:07:28.100 +01:00 [WRN] Login failed for MatejRehak@email.cz: Invalid email or password
+2025-12-28 18:07:28.101 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:07:28.103 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 281.6818ms
+2025-12-28 18:07:28.104 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:28.106 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 288.4396 ms
+2025-12-28 18:07:28.109 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 295.1559ms
+2025-12-28 18:07:28.826 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:07:28.829 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:07:28.830 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:28.831 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:07:28.833 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:07:28.836 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:07:29.113 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:07:29.116 +01:00 [WRN] Login failed for MatejRehak@email.cz: Invalid email or password
+2025-12-28 18:07:29.118 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:07:29.119 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 285.9161ms
+2025-12-28 18:07:29.120 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:07:29.121 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 292.3480 ms
+2025-12-28 18:07:29.123 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 297.1192ms
+2025-12-28 18:07:29.662 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:07:29.665 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:07:47.795 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:07:47.798 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:08:12.561 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:08:12.561 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:08:12.562 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:08:12.563 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:08:12.564 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:08:12.566 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:08:12.568 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:08:12.577 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:08:12.863 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:08:12.866 +01:00 [WRN] Login failed for MatejRehak@email.cz: Invalid email or password
+2025-12-28 18:08:12.868 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:08:12.870 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 306.1842ms
+2025-12-28 18:08:12.872 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:08:12.874 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 25075.4619 ms
+2025-12-28 18:08:12.876 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 25080.0066ms
+2025-12-28 18:08:12.874 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:08:12.890 +01:00 [WRN] Login failed for MatejRehak@email.cz: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+2025-12-28 18:08:12.892 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:08:12.893 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 327.084ms
+2025-12-28 18:08:12.895 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:08:12.897 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 43232.1391 ms
+2025-12-28 18:08:12.899 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 43236.86ms
+2025-12-28 18:08:18.583 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 64
+2025-12-28 18:08:18.585 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:08:18.586 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:08:18.588 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:08:18.590 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:08:18.594 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:08:18.882 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:08:18.885 +01:00 [WRN] Login failed for MatejRehak@email.cz: Invalid email or password
+2025-12-28 18:08:18.886 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:08:18.888 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 298.6916ms
+2025-12-28 18:08:18.891 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:08:18.891 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 306.2003 ms
+2025-12-28 18:08:18.893 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 310.1827ms
+2025-12-28 18:09:31.163 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 60
+2025-12-28 18:09:31.166 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:09:31.167 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:09:31.169 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:09:31.171 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:09:31.174 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:09:31.446 +01:00 [WRN] Login failed for MatejRehak@email.cz: Account is locked until 2025-12-28 17:23:18 UTC
+2025-12-28 18:09:31.448 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:09:31.450 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 279.2729ms
+2025-12-28 18:09:31.452 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:09:31.453 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 287.6365 ms
+2025-12-28 18:09:31.455 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 292.2807ms
+2025-12-28 18:09:46.139 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 60
+2025-12-28 18:09:46.144 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:09:46.144 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:09:46.145 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:09:46.148 +01:00 [INF] Login attempt for email: MatejRehak@email.cz
+2025-12-28 18:09:46.150 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:09:46.419 +01:00 [WRN] Login failed for MatejRehak@email.cz: Account is locked until 2025-12-28 17:23:18 UTC
+2025-12-28 18:09:46.420 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:09:46.421 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 273.5964ms
+2025-12-28 18:09:46.422 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:09:46.423 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 279.8679 ms
+2025-12-28 18:09:46.425 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 285.9583ms
+2025-12-28 18:10:41.426 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:10:41.429 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:10:41.430 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:10:41.431 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:10:41.435 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:10:41.438 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:10:41.727 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:10:41.730 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:10:41.731 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:10:41.733 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 298.1311ms
+2025-12-28 18:10:41.735 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:10:41.737 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 308.0654 ms
+2025-12-28 18:10:41.739 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 313.0184ms
+2025-12-28 18:10:54.274 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:10:54.277 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:10:54.278 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:10:54.280 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:10:54.282 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:10:54.284 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:10:54.555 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:10:54.557 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:10:54.558 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:10:54.560 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 278.58ms
+2025-12-28 18:10:54.562 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:10:54.563 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 285.7642 ms
+2025-12-28 18:10:54.565 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 291.3351ms
+2025-12-28 18:10:55.656 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:10:55.658 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:10:55.659 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:10:55.661 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:10:55.663 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:10:55.666 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:10:55.947 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:10:55.951 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:10:55.952 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:10:55.954 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 290.661ms
+2025-12-28 18:10:55.956 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:10:55.958 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 299.5026 ms
+2025-12-28 18:10:55.959 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 303.6887ms
+2025-12-28 18:11:02.541 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:11:02.543 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:11:02.544 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:02.546 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:11:02.548 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:11:02.550 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:11:02.833 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:11:02.835 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:11:02.837 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:11:02.839 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 291.5476ms
+2025-12-28 18:11:02.842 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:02.843 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 299.6924 ms
+2025-12-28 18:11:02.845 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 304.0521ms
+2025-12-28 18:11:20.858 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:11:20.861 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:11:20.862 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:20.863 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:11:20.865 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:11:20.867 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:11:21.141 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:11:21.143 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:11:21.146 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:11:21.147 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 282.3051ms
+2025-12-28 18:11:21.149 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:21.149 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 288.0330 ms
+2025-12-28 18:11:21.151 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 292.9757ms
+2025-12-28 18:11:33.546 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:11:33.550 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:11:41.455 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:41.456 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:11:41.458 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:11:41.462 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:11:41.736 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:11:41.739 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:11:41.740 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:11:41.741 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 283.6027ms
+2025-12-28 18:11:41.743 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:41.744 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 8194.2369 ms
+2025-12-28 18:11:41.745 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 8199.3649ms
+2025-12-28 18:11:45.641 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:11:45.644 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:11:45.644 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:45.645 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:11:45.649 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:11:45.651 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:11:45.931 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:11:45.934 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:11:45.935 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:11:45.937 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 288.2926ms
+2025-12-28 18:11:45.939 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:45.940 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 296.4902 ms
+2025-12-28 18:11:45.942 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 300.9126ms
+2025-12-28 18:11:54.010 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:11:54.012 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:11:54.013 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:54.015 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:11:54.017 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:11:54.020 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:11:54.299 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:11:54.303 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:11:54.305 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:11:54.307 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 289.4331ms
+2025-12-28 18:11:54.308 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:54.310 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 298.1921 ms
+2025-12-28 18:11:54.312 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 302.6681ms
+2025-12-28 18:11:56.178 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:11:56.180 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:11:56.181 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:56.182 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:11:56.186 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:11:56.188 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:11:56.467 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:11:56.469 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:11:56.471 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:11:56.472 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 287.0177ms
+2025-12-28 18:11:56.474 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:11:56.475 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 295.1982 ms
+2025-12-28 18:11:56.477 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 299.3379ms
+2025-12-28 18:11:57.085 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:11:57.089 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:12:11.407 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:12:11.411 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:12:11.461 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:12:11.463 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:12:11.465 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:12:11.468 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:12:11.783 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:12:11.786 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:12:11.788 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:12:11.790 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 325.1763ms
+2025-12-28 18:12:11.791 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:12:11.793 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 14704.6608 ms
+2025-12-28 18:12:11.796 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 14711.3559ms
+2025-12-28 18:12:15.173 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 61
+2025-12-28 18:12:15.177 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:12:41.563 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:12:41.563 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:12:41.564 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:12:41.565 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:12:41.567 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:12:41.569 +01:00 [INF] Login attempt for email: MatejRehak@email.cz1
+2025-12-28 18:12:41.572 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:12:41.572 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:12:41.865 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:12:41.866 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:12:41.868 +01:00 [WRN] Login failed for MatejRehak@email.cz1: Invalid email or password
+2025-12-28 18:12:41.870 +01:00 [WRN] Login failed for MatejRehak@email.cz1: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+2025-12-28 18:12:41.870 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:12:41.872 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:12:41.874 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 307.3769ms
+2025-12-28 18:12:41.875 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 306.8232ms
+2025-12-28 18:12:41.876 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:12:41.877 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:12:41.878 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 26701.5963 ms
+2025-12-28 18:12:41.879 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 30468.8650 ms
+2025-12-28 18:12:41.883 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 30475.7867ms
+2025-12-28 18:12:41.881 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 26708.2939ms
+2025-12-28 18:13:14.523 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:13:14.525 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:13:14.526 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:14.527 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:13:14.530 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:13:14.533 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:13:14.895 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p16='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p14='?' (Size = 50), @p17='?' (Size = 8) (DbType = Binary), @p15='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [LastLoginIp] = @p14, [UpdatedAt] = @p15
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p16 AND [RowVersion] = @p17;
+2025-12-28 18:13:14.922 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:13:14.926 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:13:14.927 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:13:14.942 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 413.1011ms
+2025-12-28 18:13:14.944 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:14.946 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 421.0710 ms
+2025-12-28 18:13:14.948 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 425.2339ms
+2025-12-28 18:13:20.574 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:13:20.577 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:13:20.578 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:20.579 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:13:20.581 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:13:20.583 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:13:20.865 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-28 18:13:20.876 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:13:20.878 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:13:20.879 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:13:20.881 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 300.6226ms
+2025-12-28 18:13:20.883 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:20.884 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 306.6678 ms
+2025-12-28 18:13:20.886 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 312.003ms
+2025-12-28 18:13:21.783 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:13:21.786 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:13:21.787 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:21.788 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:13:21.791 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:13:21.794 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:13:22.065 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-28 18:13:22.073 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:13:22.075 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:13:22.076 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:13:22.078 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 287.9125ms
+2025-12-28 18:13:22.080 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:22.081 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 294.3374 ms
+2025-12-28 18:13:22.083 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 299.226ms
+2025-12-28 18:13:22.620 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:13:22.623 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:13:41.760 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:41.761 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:13:41.763 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:13:41.766 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:13:42.057 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-28 18:13:42.060 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:13:42.063 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:13:42.064 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:13:42.065 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 302.0824ms
+2025-12-28 18:13:42.066 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:42.068 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 19445.1913 ms
+2025-12-28 18:13:42.070 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 19450.2663ms
+2025-12-28 18:13:45.769 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:13:45.773 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:13:45.774 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:45.776 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:13:45.778 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:13:45.782 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:13:46.060 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-28 18:13:46.064 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:13:46.066 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:13:46.068 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:13:46.069 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 291.9468ms
+2025-12-28 18:13:46.071 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:13:46.072 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 298.6864 ms
+2025-12-28 18:13:46.075 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 305.6587ms
+2025-12-28 18:13:46.606 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:13:46.609 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:14:11.765 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:14:11.767 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:14:11.769 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:14:11.771 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:14:12.053 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-28 18:14:12.056 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:14:12.058 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:14:12.060 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:14:12.061 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 292.8231ms
+2025-12-28 18:14:12.063 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:14:12.064 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 25454.8566 ms
+2025-12-28 18:14:12.065 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 25458.9429ms
+2025-12-28 18:24:14.545 +01:00 [INF] Application is shutting down...
+2025-12-28 18:24:24.603 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-28 18:24:25.489 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-28 18:24:25.549 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:24:25.551 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:24:25.553 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:24:25.554 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:24:25.992 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-28 18:24:26.015 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-28 18:24:26.020 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-28 18:24:26.023 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-28 18:24:26.036 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-28 18:24:26.051 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-28 18:24:26.067 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-28 18:24:26.144 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-28 18:24:26.146 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-28 18:24:26.147 +01:00 [INF] Hosting environment: Development
+2025-12-28 18:24:26.148 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-28 18:24:34.981 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-28 18:24:35.012 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-28 18:24:35.049 +01:00 [INF] HTTP GET / responded 404 in 34.9980 ms
+2025-12-28 18:24:35.057 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 77.1913ms
+2025-12-28 18:24:35.065 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-28 18:24:40.650 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/ - null null
+2025-12-28 18:24:40.655 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/ - 301 0 null 4.1415ms
+2025-12-28 18:24:40.664 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-28 18:24:40.758 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 94.6667ms
+2025-12-28 18:24:41.024 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-28 18:24:41.113 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 88.3757ms
+2025-12-28 18:25:23.085 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 47
+2025-12-28 18:25:23.090 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:25:23.098 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:23.123 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:25:23.176 +01:00 [INF] Login attempt for email: string
+2025-12-28 18:25:23.211 +01:00 [WRN] Login failed for string: Invalid email format
+2025-12-28 18:25:23.217 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:25:23.242 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 113.1068ms
+2025-12-28 18:25:23.243 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:23.245 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 156.2156 ms
+2025-12-28 18:25:23.251 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 166.084ms
+2025-12-28 18:25:25.556 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 47
+2025-12-28 18:25:25.561 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:25:25.566 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:25.569 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:25:25.572 +01:00 [INF] Login attempt for email: string
+2025-12-28 18:25:25.626 +01:00 [WRN] Login failed for string: Invalid email format
+2025-12-28 18:25:25.627 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:25:25.628 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 57.6844ms
+2025-12-28 18:25:25.631 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:25.632 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 71.0508 ms
+2025-12-28 18:25:25.634 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 77.6396ms
+2025-12-28 18:25:26.526 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 47
+2025-12-28 18:25:26.530 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:25:26.531 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:26.533 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:25:26.537 +01:00 [INF] Login attempt for email: string
+2025-12-28 18:25:26.544 +01:00 [WRN] Login failed for string: Invalid email format
+2025-12-28 18:25:26.545 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:25:26.547 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 11.2571ms
+2025-12-28 18:25:26.550 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:26.552 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 21.5952 ms
+2025-12-28 18:25:26.554 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 27.6284ms
+2025-12-28 18:25:27.289 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 47
+2025-12-28 18:25:27.291 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:25:27.292 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:27.293 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:25:27.295 +01:00 [INF] Login attempt for email: string
+2025-12-28 18:25:27.298 +01:00 [WRN] Login failed for string: Invalid email format
+2025-12-28 18:25:27.300 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:25:27.301 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 6.0253ms
+2025-12-28 18:25:27.302 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:27.304 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 12.7929 ms
+2025-12-28 18:25:27.306 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 17.2543ms
+2025-12-28 18:25:28.100 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 47
+2025-12-28 18:25:28.102 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:25:28.103 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:28.105 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:25:28.108 +01:00 [INF] Login attempt for email: string
+2025-12-28 18:25:28.109 +01:00 [WRN] Login failed for string: Invalid email format
+2025-12-28 18:25:28.110 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:25:28.112 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 4.7862ms
+2025-12-28 18:25:28.114 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:25:28.115 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 13.1254 ms
+2025-12-28 18:25:28.118 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 18.1662ms
+2025-12-28 18:25:28.666 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 47
+2025-12-28 18:25:28.669 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:25:43.002 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 47
+2025-12-28 18:25:43.004 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:26:07.738 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 39069.8098 ms
+2025-12-28 18:26:07.738 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 24734.1362 ms
+2025-12-28 18:26:07.743 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 499 null null 39077.3183ms
+2025-12-28 18:26:07.744 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 499 null null 24742.0261ms
+2025-12-28 18:26:32.175 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:26:32.178 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:26:32.179 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:26:32.180 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:26:32.183 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:26:32.531 +01:00 [INF] Executed DbCommand (25ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:26:33.426 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-28 18:26:33.471 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:26:33.475 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:26:33.478 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:26:33.491 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 1308.6787ms
+2025-12-28 18:26:33.493 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:26:33.494 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 1316.8011 ms
+2025-12-28 18:26:33.498 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 1322.6544ms
+2025-12-28 18:26:34.789 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:26:34.793 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:26:34.793 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:26:34.794 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:26:34.797 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:26:34.804 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:26:35.090 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-28 18:26:35.099 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-28 18:26:35.101 +01:00 [INF] User logged in successfully: "f90368a7-be19-41df-a14e-100c910dd419"
+2025-12-28 18:26:35.102 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-28 18:26:35.106 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 309.206ms
+2025-12-28 18:26:35.107 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:26:35.108 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 315.7314 ms
+2025-12-28 18:26:35.111 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 322.1105ms
+2025-12-28 18:27:06.310 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:27:06.313 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:27:06.314 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:06.315 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:27:06.318 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:27:06.322 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:27:06.617 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:27:06.620 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:27:06.622 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:27:06.624 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 306.159ms
+2025-12-28 18:27:06.625 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:06.627 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 313.8222 ms
+2025-12-28 18:27:06.631 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 320.923ms
+2025-12-28 18:27:11.310 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:27:11.312 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:27:11.313 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:11.314 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:27:11.317 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:27:11.321 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:27:11.610 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:27:11.613 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:27:11.614 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:27:11.616 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 299.8379ms
+2025-12-28 18:27:11.619 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:11.620 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 307.9926 ms
+2025-12-28 18:27:11.622 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 312.2659ms
+2025-12-28 18:27:12.164 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:27:12.167 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:27:12.168 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:12.169 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:27:12.173 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:27:12.176 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:27:12.468 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:27:12.471 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:27:12.473 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:27:12.474 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 301.7236ms
+2025-12-28 18:27:12.476 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:12.478 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 310.9954 ms
+2025-12-28 18:27:12.480 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 315.7542ms
+2025-12-28 18:27:13.902 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:27:13.904 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:27:23.226 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:23.228 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:27:23.230 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:27:23.232 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:27:23.507 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p3='?' (Size = 8) (DbType = Binary), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [UpdatedAt] = @p1
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p2 AND [RowVersion] = @p3;
+2025-12-28 18:27:23.509 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:27:23.511 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:27:23.513 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 283.4377ms
+2025-12-28 18:27:23.514 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:23.515 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 9611.2276 ms
+2025-12-28 18:27:23.517 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 9614.9099ms
+2025-12-28 18:27:25.882 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:27:25.885 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:27:25.886 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:25.887 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:27:25.889 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:27:25.894 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:27:26.187 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:27:26.190 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:27:26.191 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:27:26.193 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 303.632ms
+2025-12-28 18:27:26.194 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:26.196 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 311.0726 ms
+2025-12-28 18:27:26.199 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 317.2661ms
+2025-12-28 18:27:27.013 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:27:27.015 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:27:53.323 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:53.324 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:27:53.326 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:27:53.329 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:27:53.605 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:27:53.607 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:27:53.608 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:27:53.609 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 283.634ms
+2025-12-28 18:27:53.611 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:27:53.613 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 26597.8041 ms
+2025-12-28 18:27:53.615 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 26601.577ms
+2025-12-28 18:28:10.911 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:28:10.914 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:28:10.915 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:28:10.916 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:28:10.920 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:28:10.922 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:28:11.210 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:28:11.212 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:28:11.213 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:28:11.215 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 295.4789ms
+2025-12-28 18:28:11.216 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:28:11.218 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 304.4016 ms
+2025-12-28 18:28:11.220 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 308.753ms
+2025-12-28 18:28:12.077 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:28:12.081 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:28:12.082 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:28:12.083 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:28:12.085 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:28:12.088 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:28:12.371 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:28:12.373 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:28:12.374 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:28:12.375 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 290.798ms
+2025-12-28 18:28:12.377 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:28:12.379 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 297.8924 ms
+2025-12-28 18:28:12.381 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 304.0944ms
+2025-12-28 18:28:12.986 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 58
+2025-12-28 18:28:12.989 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:28:23.423 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:28:23.424 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:28:23.427 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:28:23.429 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:28:23.720 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p4='?' (Size = 8) (DbType = Binary), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [FailedLoginAttempts] = @p0, [LockedOutUntil] = @p1, [UpdatedAt] = @p2
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p3 AND [RowVersion] = @p4;
+2025-12-28 18:28:23.723 +01:00 [WRN] Login failed for string@seznam.cz: Invalid email or password
+2025-12-28 18:28:23.724 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:28:23.725 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 298.718ms
+2025-12-28 18:28:23.728 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:28:23.729 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 10739.9531 ms
+2025-12-28 18:28:23.730 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 10744.0674ms
+2025-12-28 18:30:55.813 +01:00 [INF] Application is shutting down...
+2025-12-28 18:31:00.773 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-28 18:31:01.728 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-28 18:31:01.795 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:31:01.798 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:31:01.799 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:31:01.801 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-28 18:31:02.267 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-28 18:31:02.291 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-28 18:31:02.296 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-28 18:31:02.299 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-28 18:31:02.313 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-28 18:31:02.328 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-28 18:31:02.345 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-28 18:31:02.422 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-28 18:31:02.425 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-28 18:31:02.427 +01:00 [INF] Hosting environment: Development
+2025-12-28 18:31:02.428 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-28 18:31:07.833 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-28 18:31:07.867 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-28 18:31:07.898 +01:00 [INF] HTTP GET / responded 404 in 29.7776 ms
+2025-12-28 18:31:07.926 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 93.4892ms
+2025-12-28 18:31:07.933 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-28 18:31:12.162 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/ - null null
+2025-12-28 18:31:12.168 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/ - 301 0 null 6.0854ms
+2025-12-28 18:31:12.177 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-28 18:31:12.270 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 92.8034ms
+2025-12-28 18:31:12.542 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-28 18:31:12.643 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 101.3567ms
+2025-12-28 18:31:24.815 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 57
+2025-12-28 18:31:24.821 +01:00 [INF] CORS policy execution successful.
+2025-12-28 18:31:24.831 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:31:24.857 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-28 18:31:24.919 +01:00 [INF] Login attempt for email: string@seznam.cz
+2025-12-28 18:31:25.358 +01:00 [INF] Executed DbCommand (24ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-28 18:31:26.233 +01:00 [WRN] Login failed for string@seznam.cz: Account is locked until 2025-12-28 18:43:23 UTC
+2025-12-28 18:31:26.239 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-28 18:31:26.266 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 1403.3842ms
+2025-12-28 18:31:26.268 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-28 18:31:26.272 +01:00 [INF] HTTP POST /api/Authentication/login responded 401 in 1452.4206 ms
+2025-12-28 18:31:26.276 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 401 null application/json; charset=utf-8 1461.222ms

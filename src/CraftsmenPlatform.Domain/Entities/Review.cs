@@ -1,7 +1,6 @@
 using CraftsmenPlatform.Domain.Common;
 using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Domain.Events;
-using CraftsmenPlatform.Domain.Exceptions;
 using CraftsmenPlatform.Domain.ValueObjects;
 
 namespace CraftsmenPlatform.Domain.Entities;
@@ -25,6 +24,7 @@ public class Review : SoftDeletableEntity, IAggregateRoot
     // Private constructor pro EF Core
     private Review() { }
 
+    // Private constructor - jen assignment, žádná validace
     private Review(
         Guid userId,
         Guid projectId,
@@ -36,7 +36,7 @@ public class Review : SoftDeletableEntity, IAggregateRoot
         UserId = userId;
         ProjectId = projectId;
         CraftsmanId = craftsmanId;
-        Rating = rating ?? throw new ArgumentNullException(nameof(rating));
+        Rating = rating;
         Comment = comment?.Trim();
         IsVerified = false;
         VerifiedAt = null;
@@ -48,15 +48,40 @@ public class Review : SoftDeletableEntity, IAggregateRoot
     /// <summary>
     /// Factory metoda pro vytvoření nového review
     /// </summary>
-    public static Review Create(
+    public static Result<Review> Create(
         Guid userId,
         Guid projectId,
         Guid craftsmanId,
         int ratingValue,
         string? comment = null)
     {
-        var rating = Rating.Create(ratingValue);
-        return new Review(userId, projectId, craftsmanId, rating, comment);
+        // Validace Guid parametrů
+        if (userId == Guid.Empty)
+            return Result<Review>.Failure("User ID cannot be empty");
+
+        if (projectId == Guid.Empty)
+            return Result<Review>.Failure("Project ID cannot be empty");
+
+        if (craftsmanId == Guid.Empty)
+            return Result<Review>.Failure("Craftsman ID cannot be empty");
+
+        // Vytvoření Rating value objectu
+        var ratingResult = Rating.Create(ratingValue);
+        if (ratingResult.IsFailure)
+            return Result<Review>.Failure(ratingResult.Error);
+
+        // Validace komentáře (volitelné)
+        if (!string.IsNullOrWhiteSpace(comment) && comment.Length > 2000)
+            return Result<Review>.Failure("Comment cannot exceed 2000 characters");
+
+        var review = new Review(
+            userId,
+            projectId,
+            craftsmanId,
+            ratingResult.Value,
+            comment);
+
+        return Result<Review>.Success(review);
     }
 
     /// <summary>
@@ -64,12 +89,12 @@ public class Review : SoftDeletableEntity, IAggregateRoot
     /// </summary>
     public Result Publish()
     {
-        if (PublishedAt.HasValue)
+        if (IsPublished)
             return Result.Failure("Review is already published");
 
+        IsPublished = true;
         PublishedAt = DateTime.UtcNow;
         UpdatedAt = DateTime.UtcNow;
-        IsPublished = true;
 
         AddDomainEvent(new ReviewPublishedEvent(Id, CraftsmanId, ProjectId, Rating.Value));
 
@@ -81,15 +106,15 @@ public class Review : SoftDeletableEntity, IAggregateRoot
     /// </summary>
     public Result Verify()
     {
-        if (!PublishedAt.HasValue)
+        if (!IsPublished)
             return Result.Failure("Cannot verify unpublished review");
 
         if (IsVerified)
             return Result.Failure("Review is already verified");
 
         IsVerified = true;
-        UpdatedAt = DateTime.UtcNow;
         VerifiedAt = DateTime.UtcNow;
+        UpdatedAt = DateTime.UtcNow;
 
         return Result.Success();
     }
@@ -99,15 +124,48 @@ public class Review : SoftDeletableEntity, IAggregateRoot
     /// </summary>
     public Result Update(int? newRating = null, string? newComment = null)
     {
-        if (PublishedAt.HasValue)
+        if (IsPublished)
             return Result.Failure("Cannot update published review");
 
+        // Aktualizace ratingu
         if (newRating.HasValue)
-            Rating = Rating.Create(newRating.Value);
+        {
+            var ratingResult = Rating.Create(newRating.Value);
+            if (ratingResult.IsFailure)
+                return Result.Failure(ratingResult.Error);
 
+            Rating = ratingResult.Value;
+        }
+
+        // Aktualizace komentáře
         if (newComment != null)
-            Comment = newComment.Trim();
+        {
+            var trimmedComment = newComment.Trim();
+            
+            if (trimmedComment.Length > 2000)
+                return Result.Failure("Comment cannot exceed 2000 characters");
 
+            Comment = string.IsNullOrWhiteSpace(trimmedComment) ? null : trimmedComment;
+        }
+
+        UpdatedAt = DateTime.UtcNow;
+
+        return Result.Success();
+    }
+
+    /// <summary>
+    /// Zrušení publikace (pokud je potřeba)
+    /// </summary>
+    public Result Unpublish()
+    {
+        if (!IsPublished)
+            return Result.Failure("Review is not published");
+
+        if (IsVerified)
+            return Result.Failure("Cannot unpublish verified review");
+
+        IsPublished = false;
+        PublishedAt = null;
         UpdatedAt = DateTime.UtcNow;
 
         return Result.Success();

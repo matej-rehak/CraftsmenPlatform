@@ -57,33 +57,20 @@ public class Project : SoftDeletableEntity, IAggregateRoot
     {
         Id = Guid.NewGuid();
         CustomerId = customerId;
-        Title = title?.Trim() ?? throw new ArgumentNullException(nameof(title));
-        Description = description?.Trim() ?? throw new ArgumentNullException(nameof(description));
+        Title = title.Trim();
+        Description = description.Trim();
         BudgetMin = budgetMin;
         BudgetMax = budgetMax;
         PreferredStartDate = preferredStartDate;
         Deadline = deadline;
         Status = ProjectStatus.Draft;
         CreatedAt = DateTime.UtcNow;
-
-        // Constructor validace - používají exceptions (technical validation)
-        if (string.IsNullOrWhiteSpace(title))
-            throw new BusinessRuleValidationException(nameof(Title), "Project title cannot be empty");
-
-        if (string.IsNullOrWhiteSpace(description))
-            throw new BusinessRuleValidationException(nameof(Description), "Project description cannot be empty");
-
-        if (budgetMin != null && budgetMax != null && budgetMin.IsGreaterThan(budgetMax))
-            throw new BusinessRuleValidationException(nameof(BudgetMin), "Minimum budget cannot be greater than maximum budget");
-
-        if (preferredStartDate.HasValue && deadline.HasValue && preferredStartDate.Value > deadline.Value)
-            throw new BusinessRuleValidationException(nameof(PreferredStartDate), "Preferred start date cannot be after deadline");
     }
 
     /// <summary>
     /// Factory metoda pro vytvoření nového projektu
     /// </summary>
-    public static Project Create(
+    public static Result<Project> Create(
         Guid customerId,
         string title,
         string description,
@@ -93,10 +80,41 @@ public class Project : SoftDeletableEntity, IAggregateRoot
         DateTime? preferredStartDate = null,
         DateTime? deadline = null)
     {
-        Money? budgetMin = budgetMinAmount.HasValue ? Money.Create(budgetMinAmount.Value, currency) : null;
-        Money? budgetMax = budgetMaxAmount.HasValue ? Money.Create(budgetMaxAmount.Value, currency) : null;
+        // Validace inputů
+        if (string.IsNullOrWhiteSpace(title))
+            return Result<Project>.Failure("Project title cannot be empty");
 
-        return new Project(
+        if (string.IsNullOrWhiteSpace(description))
+            return Result<Project>.Failure("Project description cannot be empty");
+
+        // Vytvoření Money value objects
+        Money? budgetMin = null;
+        Money? budgetMax = null;
+
+        if (budgetMinAmount.HasValue && budgetMinAmount.Value > 0)
+        {
+            var minResult = Money.Create(budgetMinAmount.Value, currency);
+            if (minResult.IsFailure)
+                return Result<Project>.Failure($"Invalid minimum budget: {minResult.Error}");
+            budgetMin = minResult.Value;
+        }
+
+        if (budgetMaxAmount.HasValue && budgetMaxAmount.Value > 0)
+        {
+            var maxResult = Money.Create(budgetMaxAmount.Value, currency);
+            if (maxResult.IsFailure)
+                return Result<Project>.Failure($"Invalid maximum budget: {maxResult.Error}");
+            budgetMax = maxResult.Value;
+        }
+
+        // Business rules validace
+        if (budgetMin != null && budgetMax != null && budgetMin.IsGreaterThan(budgetMax))
+            return Result<Project>.Failure("Minimum budget cannot be greater than maximum budget");
+
+        if (preferredStartDate.HasValue && deadline.HasValue && preferredStartDate.Value > deadline.Value)
+            return Result<Project>.Failure("Preferred start date cannot be after deadline");
+
+        var project = new Project(
             customerId,
             title,
             description,
@@ -104,6 +122,8 @@ public class Project : SoftDeletableEntity, IAggregateRoot
             budgetMax,
             preferredStartDate,
             deadline);
+
+        return Result<Project>.Success(project);
     }
 
     /// <summary>
@@ -139,7 +159,10 @@ public class Project : SoftDeletableEntity, IAggregateRoot
             return Result<Offer>.Failure("Cannot add offer to non-published project");
 
         var price = Money.Create(priceAmount, currency);
-        var offer = new Offer(Id, craftsmanId, price, description, estimatedDurationDays, startDate, endDate);
+        if (price.IsFailure)
+            return Result<Offer>.Failure(price.Error);
+
+        var offer = new Offer(Id, craftsmanId, price.Value, description, estimatedDurationDays, startDate, endDate);
 
         _offers.Add(offer);
         UpdatedAt = DateTime.UtcNow;
@@ -287,7 +310,7 @@ public class Project : SoftDeletableEntity, IAggregateRoot
         if (deadline.HasValue)
             Deadline = deadline;
 
-        if (BudgetMin != null && BudgetMax != null && BudgetMin.IsGreaterThan(BudgetMax))
+        if (BudgetMin.IsGreaterThan(BudgetMax))
             return Result.Failure("Minimum budget cannot be greater than maximum budget");
 
         UpdatedAt = DateTime.UtcNow;

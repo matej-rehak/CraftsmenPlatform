@@ -18,6 +18,8 @@ using CraftsmenPlatform.Domain.Repositories;
 using CraftsmenPlatform.Infrastructure.Repositories;
 using CraftsmenPlatform.Application.Common.Interfaces;
 using CraftsmenPlatform.Application.Common.Settings;
+using Microsoft.AspNetCore.RateLimiting;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -88,6 +90,76 @@ builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSet
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
+
+// Rate Limiting
+builder.Services.AddRateLimiter(options =>
+{
+    // Rejection response
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    
+    // 1. Global IP-based Protection (Fixed Window)
+    options.AddFixedWindowLimiter("global", opt =>
+    {
+        opt.PermitLimit = 100;
+        opt.Window = TimeSpan.FromMinutes(1);
+        opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        opt.QueueLimit = 10;
+    });
+    
+    // 2. Authentication Endpoints (Sliding Window) - brute-force protection
+    options.AddSlidingWindowLimiter("auth", opt =>
+    {
+        opt.PermitLimit = 5;
+        opt.Window = TimeSpan.FromMinutes(1);
+        opt.SegmentsPerWindow = 2;
+        opt.QueueLimit = 2;
+    });
+    
+    // 3. Per-User Rate Limiting (Token Bucket)
+    options.AddPolicy("per-user", context =>
+    {
+        var userId = context.User?.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value 
+                     ?? "anonymous";
+        
+        return RateLimitPartition.GetTokenBucketLimiter(userId, _ =>
+            new TokenBucketRateLimiterOptions
+            {
+                TokenLimit = 30,
+                ReplenishmentPeriod = TimeSpan.FromMinutes(1),
+                TokensPerPeriod = 30,
+                AutoReplenishment = true
+            });
+    });
+    
+    // 4. Resource-Intensive Operations (Concurrency Limiter)
+    options.AddConcurrencyLimiter("concurrent", opt =>
+    {
+        opt.PermitLimit = 3;
+        opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        opt.QueueLimit = 5;
+    });
+    
+    // Custom rejection handler
+    options.OnRejected = async (context, cancellationToken) =>
+    {
+        context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+        context.HttpContext.Response.ContentType = "application/json";
+        
+        var retryAfter = 60; // default
+        if (context.Lease.TryGetMetadata(MetadataName.RetryAfter, out var retryAfterMetadata))
+        {
+            retryAfter = (int)retryAfterMetadata.TotalSeconds;
+            context.HttpContext.Response.Headers.RetryAfter = retryAfter.ToString();
+        }
+        
+        await context.HttpContext.Response.WriteAsJsonAsync(new
+        {
+            error = "Too many requests",
+            message = "Rate limit exceeded. Please try again later.",
+            retryAfter = retryAfter
+        }, cancellationToken);
+    };
+});
 
 // JWT Authentication
 builder.Services
@@ -186,6 +258,7 @@ if (app.Environment.IsDevelopment())
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseRateLimiter();
 app.UseAuthentication(); 
 app.UseAuthorization();
 app.MapControllers();

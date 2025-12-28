@@ -23,24 +23,18 @@ public sealed class PhoneNumber : ValueObject
     /// <summary>
     /// Vytvoří nové telefonní číslo
     /// </summary>
-    public static PhoneNumber Create(string phone)
+    public static Result<PhoneNumber> Create(string phone)
     {
         if (string.IsNullOrWhiteSpace(phone))
-            throw new InvalidValueObjectException(
-                nameof(PhoneNumber), 
-                nameof(phone), 
-                "Phone number cannot be empty");
+            return Result<PhoneNumber>.Failure("Phone number cannot be empty");
 
         // Odstranění mezer a pomlček
         var cleanedPhone = phone.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "");
 
         if (!PhoneRegex.IsMatch(cleanedPhone))
-            throw new InvalidValueObjectException(
-                nameof(PhoneNumber), 
-                nameof(phone), 
-                "Invalid phone number format. Use international format (e.g., +420123456789)");
+            return Result<PhoneNumber>.Failure("Invalid phone number format. Use international format (e.g., +420123456789)");
 
-        return new PhoneNumber(cleanedPhone);
+        return Result<PhoneNumber>.Success(new PhoneNumber(cleanedPhone));
     }
 
     protected override IEnumerable<object?> GetEqualityComponents()

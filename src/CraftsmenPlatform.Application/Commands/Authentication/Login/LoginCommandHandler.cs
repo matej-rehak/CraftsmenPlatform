@@ -59,7 +59,11 @@ public class LoginCommandHandler
             // 3. Verify password
             if (!_passwordHasher.VerifyPassword(request.Password, user.PasswordHash))
             {
-                user.RecordFailedLogin(ipAddress);
+                var recordFailedLoginResult = user.RecordFailedLogin(ipAddress);
+                if (recordFailedLoginResult.IsFailure)
+                    return Result<AuthenticationResponse>.Failure(
+                        recordFailedLoginResult.Error);
+
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
 
                 return Result<AuthenticationResponse>.Failure(

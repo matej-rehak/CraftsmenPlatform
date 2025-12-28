@@ -61,7 +61,7 @@ private Project(string title, string description, ...)
 {
     Title = title;
     Description = description;
-    // ... další inicializace
+    // ŽÁDNÉ throw, ŽÁDNÉ if statements s validací!
 }
 
 // Value Objects - Result
@@ -876,7 +876,7 @@ public interface IUnitOfWork : IDisposable
 
 ---
 
-**Poslední aktualizace**: 2025-12-25
+**Poslední aktualizace**: 2025-12-26
 **DDD Refactoring**: ✅ Kompletní
 **Result Pattern**: ✅ Implementováno ve všech agregátech
 **Status projektu**: Domain a Infrastructure vrstvy hotové. Application a API vrstvy rozpracovány (Authentication).

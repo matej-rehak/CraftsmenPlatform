@@ -198,10 +198,14 @@ public class User : SoftDeletableEntity, IAggregateRoot
             LastName = lastName.Trim();
         }
 
-if (!string.IsNullOrWhiteSpace(phoneNumber))
-{
-    Phone = PhoneNumber.Create(phoneNumber);
-}
+        if (!string.IsNullOrWhiteSpace(phoneNumber))
+        {
+            var phone = PhoneNumber.Create(phoneNumber);
+            if (phone.IsFailure)
+                return Result.Failure(phone.Error);
+            
+            Phone = phone.Value;
+        }
 
         if (address != null)
         {
@@ -327,7 +331,7 @@ if (!string.IsNullOrWhiteSpace(phoneNumber))
 
         if (FailedLoginAttempts >= 5)
         {
-            LockedOutUntil = DateTime.UtcNow.AddMinutes(15);
+            LockedOutUntil = DateTime.Now.AddMinutes(15);
             return Result.Failure($"Account is locked until {LockedOutUntil:yyyy-MM-dd HH:mm:ss} UTC");
         }
 

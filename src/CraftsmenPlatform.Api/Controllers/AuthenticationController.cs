@@ -5,11 +5,13 @@ using CraftsmenPlatform.Application.DTOs.Authentication;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace CraftsmenPlatform.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[EnableRateLimiting("auth")]
 public class AuthenticationController : ControllerBase
 {
     private readonly IMediator _mediator;

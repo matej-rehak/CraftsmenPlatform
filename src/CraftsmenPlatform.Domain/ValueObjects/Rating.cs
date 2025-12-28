@@ -1,5 +1,4 @@
 using CraftsmenPlatform.Domain.Common;
-using CraftsmenPlatform.Domain.Exceptions;
 
 namespace CraftsmenPlatform.Domain.ValueObjects;
 
@@ -21,27 +20,25 @@ public sealed class Rating : ValueObject
     /// <summary>
     /// Vytvoří nové hodnocení
     /// </summary>
-    public static Rating Create(int value)
+    public static Result<Rating> Create(int value)
     {
         if (value < MinValue || value > MaxValue)
-            throw new InvalidValueObjectException(
-                nameof(Rating), 
-                nameof(value), 
-                $"Rating must be between {MinValue} and {MaxValue}");
+            return Result<Rating>.Failure(
+                "Rating must be between " + MinValue + " and " + MaxValue);
 
-        return new Rating(value);
+        return Result<Rating>.Success(new Rating(value));
     }
 
     /// <summary>
     /// Výpočet průměrného ratingu z kolekce
     /// </summary>
-    public static decimal CalculateAverage(IEnumerable<Rating> ratings)
+    public static Result<decimal> CalculateAverage(IEnumerable<Rating> ratings)
     {
         var ratingList = ratings.ToList();
         if (!ratingList.Any())
-            return 0;
+            return Result<decimal>.Failure("No ratings provided");
 
-        return (decimal)ratingList.Average(r => r.Value);
+        return Result<decimal>.Success((decimal)ratingList.Average(r => r.Value));
     }
 
     protected override IEnumerable<object?> GetEqualityComponents()
