@@ -6,6 +6,7 @@ using CraftsmenPlatform.Domain.Enums;
 using CraftsmenPlatform.Domain.Repositories;
 using CraftsmenPlatform.Domain.ValueObjects;
 using CraftsmenPlatform.Domain.Common.Interfaces;
+using CraftsmenPlatform.Domain.Events;
 using MediatR;
 
 namespace CraftsmenPlatform.Application.Commands.Authentication.Register;

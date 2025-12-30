@@ -19,11 +19,19 @@ public class ProjectImage : BaseEntity
     {
         Id = Guid.NewGuid();
         ProjectId = projectId;
-        ImageUrl = imageUrl?.Trim() ?? throw new ArgumentNullException(nameof(imageUrl));
+        ImageUrl = imageUrl;
         DisplayOrder = displayOrder;
         CreatedAt = DateTime.UtcNow;
+    }
 
+    public Result<ProjectImage> UpdateImageUrl(string imageUrl)
+    {
         if (string.IsNullOrWhiteSpace(imageUrl))
-            throw new BusinessRuleValidationException(nameof(ImageUrl), "Image URL cannot be empty");
+            return Result<ProjectImage>.Failure("Image URL cannot be empty");
+
+        ImageUrl = imageUrl;
+        UpdatedAt = DateTime.UtcNow;
+
+        return Result<ProjectImage>.Success(this);
     }
 }

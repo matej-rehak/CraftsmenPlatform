@@ -1,4 +1,5 @@
 using CraftsmenPlatform.Domain.Common.Interfaces;
+using CraftsmenPlatform.Domain.Entities;
 
 namespace CraftsmenPlatform.Domain.Common;
 

@@ -76,4 +76,75 @@ public class Repository<T> : IRepository<T> where T : BaseEntity, IAggregateRoot
     {
         _dbSet.RemoveRange(entities);
     }
+
+    public async Task<PagedResult<T>> GetPagedAsync(Specification<T> specification, CancellationToken cancellationToken = default)
+    {
+        // Get total count (without pagination)
+        var countSpec = CreateCountSpecification(specification);
+        var totalCount = await CountAsync(countSpec, cancellationToken);
+
+        if (totalCount == 0)
+        {
+            return PagedResult<T>.Empty(
+                specification.Skip / specification.Take + 1,
+                specification.Take);
+        }
+
+        // Apply specification with pagination
+        var query = SpecificationEvaluator.GetQuery(_dbSet.AsQueryable(), specification);
+        var items = await query.ToListAsync(cancellationToken);
+
+        var pageNumber = specification.Skip / specification.Take + 1;
+        return new PagedResult<T>(items, pageNumber, specification.Take, totalCount);
+    }
+
+    public async Task<PagedResult<T>> GetPagedAsync(PaginationParams pagination, CancellationToken cancellationToken = default)
+    {
+        var totalCount = await _dbSet.CountAsync(cancellationToken);
+
+        if (totalCount == 0)
+        {
+            return PagedResult<T>.Empty(pagination.PageNumber, pagination.PageSize);
+        }
+
+        var items = await _dbSet
+            .Skip(pagination.Skip)
+            .Take(pagination.PageSize)
+            .ToListAsync(cancellationToken);
+
+        return new PagedResult<T>(
+            items,
+            pagination.PageNumber,
+            pagination.PageSize,
+            totalCount);
+    }
+
+    public async Task<int> CountAsync(Specification<T> specification, CancellationToken cancellationToken = default)
+    {
+        var query = _dbSet.AsQueryable();
+        
+        if (specification.Criteria != null)
+        {
+            query = query.Where(specification.Criteria);
+        }
+
+        return await query.CountAsync(cancellationToken);
+    }
+
+    private static Specification<T> CreateCountSpecification(Specification<T> spec)
+    {
+        // Create a new specification with same criteria but no includes/paging
+        return new CountSpecification<T>(spec.Criteria);
+    }
+}
+
+/// <summary>
+/// Simple specification for counting only
+/// </summary>
+internal class CountSpecification<T> : Specification<T>
+{
+    public CountSpecification(Expression<Func<T, bool>>? criteria)
+    {
+        Criteria = criteria;
+    }
 }

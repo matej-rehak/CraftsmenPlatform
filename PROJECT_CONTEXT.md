@@ -363,6 +363,106 @@ public async Task<Result<AuthenticationResponse>> Handle(LoginCommand request, C
 }
 ```
 
+## 🚦 Rate Limiting
+
+Projekt používá **ASP.NET Core Rate Limiting** (built-in od .NET 7+) pro ochranu API před zneužitím.
+
+### Rate Limiting Policies
+
+| Policy | Algorithm | Limit | Use Case |
+|--------|-----------|-------|----------|
+| **global** | Fixed Window | 100 req/min per IP | Base protection pro všechny endpointy |
+| **auth** | Sliding Window | 5 req/min per IP | Login/Register - brute-force protection |
+| **per-user** | Token Bucket | 30 req/min per user | Authenticated CRUD operations |
+| **concurrent** | Concurrency | 3 concurrent per user | Uploads, heavy operations |
+
+### Konfigurace v Program.cs
+
+```csharp
+builder.Services.AddRateLimiter(options =>
+{
+    // 1. Global IP Protection
+    options.AddFixedWindowLimiter("global", opt => { ... });
+    
+    // 2. Auth Endpoints (Brute-force protection)
+    options.AddSlidingWindowLimiter("auth", opt => { ... });
+    
+    // 3. Per-User Limits
+    options.AddPolicy("per-user", context => { ... });
+    
+    // 4. Concurrent Requests (Heavy ops)
+    options.AddConcurrencyLimiter("concurrent", opt => { ... });
+    
+    // Custom 429 Response
+    options.OnRejected = async (context, ct) => { ... };
+});
+
+// Middleware - MUSÍ být před UseAuthentication()
+app.UseRateLimiter();
+app.UseAuthentication();
+```
+
+### Controller Usage Patterns
+
+```csharp
+// Pattern 1: Auth Endpoints - Strict limit (5 req/min)
+[EnableRateLimiting("auth")]
+public class AuthenticationController : ControllerBase
+{
+    // Login, Register, RefreshToken - všechny mají 5 req/min limit
+}
+
+// Pattern 2: Authenticated CRUD - Per-user limit (30 req/min)
+[Authorize]
+[EnableRateLimiting("per-user")]
+public class ProjectsController : ControllerBase
+{
+    [HttpGet]
+    [DisableRateLimiting] // Public read - pouze global limit
+    public async Task<IActionResult> GetProjects() { }
+    
+    [HttpPost] // Inherits "per-user" from controller
+    public async Task<IActionResult> CreateProject() { }
+}
+
+// Pattern 3: Heavy Operations - Concurrency limit (3 concurrent)
+[Authorize]
+[EnableRateLimiting("concurrent")]
+public class ImagesController : ControllerBase
+{
+    [HttpPost("upload")]
+    public async Task<IActionResult> UploadImage() { }
+}
+```
+
+### Response při Rate Limit (HTTP 429)
+
+```json
+{
+  "error": "Too many requests",
+  "message": "Rate limit exceeded. Please try again later.",
+  "retryAfter": 60
+}
+```
+
+**Headers:**
+- `Retry-After`: Počet sekund do resetu
+- `Content-Type`: application/json
+
+### Kdy použít kterou policy?
+
+- **Auth endpoints** (`/login`, `/register`) → `[EnableRateLimiting("auth")]` - velmi restriktivní (5 req/min)
+- **Authenticated CRUD** (Projects, Offers, Reviews) → `[EnableRateLimiting("per-user")]` - per-user limit (30 req/min)
+- **Public read-only** → `[DisableRateLimiting]` nebo žádný atribut (pouze global 100 req/min)
+- **Heavy operations** (upload, export, AI calls) → `[EnableRateLimiting("concurrent")]` - max 3 současně
+
+> [!IMPORTANT]
+> **Production Note**: Current implementation používá **in-memory storage** - funguje pouze pro single-instance deployment. Pro multi-instance deployment je potřeba Redis distributed cache.
+
+**Detailní dokumentace**: Viz `rate_limiting_docs.md` pro kompletní implementační detaily, testing guide a production considerations.
+
+---
+
 ## 📦 Klíčové Entity a jejich API
 
 ### User Aggregate
@@ -850,6 +950,7 @@ public interface IUnitOfWork : IDisposable
 ### TODO - API
 - [/] Controllers
 - [/] Authentication & Authorization
+- [x] Rate Limiting
 - [ ] API Documentation (Swagger)
 
 ## 📝 Poznámky pro AI Agenty
@@ -876,7 +977,8 @@ public interface IUnitOfWork : IDisposable
 
 ---
 
-**Poslední aktualizace**: 2025-12-26
+**Poslední aktualizace**: 2025-12-28
 **DDD Refactoring**: ✅ Kompletní
 **Result Pattern**: ✅ Implementováno ve všech agregátech
-**Status projektu**: Domain a Infrastructure vrstvy hotové. Application a API vrstvy rozpracovány (Authentication).
+**Rate Limiting**: ✅ Implementováno (4 policies)
+**Status projektu**: Domain a Infrastructure vrstvy hotové. Application a API vrstvy rozpracovány (Authentication + Rate Limiting).

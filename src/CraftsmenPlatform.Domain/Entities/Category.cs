@@ -23,24 +23,24 @@ public class Category : BaseEntity, IAggregateRoot
     private Category(string name, string? description = null, string? iconUrl = null)
     {
         Id = Guid.NewGuid();
-        Name = name?.Trim() ?? throw new ArgumentNullException(nameof(name));
+        Name = name?.Trim();
         Description = description?.Trim();
         IconUrl = iconUrl?.Trim();
         CreatedAt = DateTime.UtcNow;
-
-        if (string.IsNullOrWhiteSpace(name))
-            throw new BusinessRuleValidationException(nameof(Name), "Category name cannot be empty");
-
-        if (name.Length > 100)
-            throw new BusinessRuleValidationException(nameof(Name), "Category name cannot exceed 100 characters");
     }
 
     /// <summary>
     /// Factory metoda pro vytvoření nové kategorie
     /// </summary>
-    public static Category Create(string name, string? description = null, string? iconUrl = null)
+    public static Result<Category> Create(string name, string? description = null, string? iconUrl = null)
     {
-        return new Category(name, description, iconUrl);
+        if (string.IsNullOrWhiteSpace(name))
+            return Result<Category>.Failure("Category name cannot be empty");
+
+        if (name.Length > 100)
+            return Result<Category>.Failure("Category name cannot exceed 100 characters");
+
+        return Result<Category>.Success(new Category(name, description, iconUrl));
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ public class Category : BaseEntity, IAggregateRoot
         if (!string.IsNullOrWhiteSpace(name))
         {
             if (name.Length > 100)
-                return Result.Failure("Category name cannot exceed 100 characters");
+                return Result<Category>.Failure("Category name cannot exceed 100 characters");
 
             Name = name.Trim();
         }
@@ -64,7 +64,7 @@ public class Category : BaseEntity, IAggregateRoot
 
         UpdatedAt = DateTime.UtcNow;
 
-        return Result.Success();
+        return Result<Category>.Success();
     }
 
     /// <summary>
@@ -73,13 +73,13 @@ public class Category : BaseEntity, IAggregateRoot
     public Result AddSkill(Guid skillId)
     {
         if (_categorySkills.Any(cs => cs.SkillId == skillId))
-            return Result.Failure("Skill is already in this category");
+            return Result<Category>.Failure("Skill is already in this category");
 
         var categorySkill = new CategorySkill(Id, skillId);
         _categorySkills.Add(categorySkill);
         UpdatedAt = DateTime.UtcNow;
 
-        return Result.Success();
+        return Result<Category>.Success();
     }
 
     /// <summary>
@@ -89,11 +89,11 @@ public class Category : BaseEntity, IAggregateRoot
     {
         var categorySkill = _categorySkills.FirstOrDefault(cs => cs.SkillId == skillId);
         if (categorySkill == null)
-            return Result.Failure("Skill not found in this category");
+            return Result<Category>.Failure("Skill not found in this category");
 
         _categorySkills.Remove(categorySkill);
         UpdatedAt = DateTime.UtcNow;
 
-        return Result.Success();
+        return Result<Category>.Success();
     }
 }

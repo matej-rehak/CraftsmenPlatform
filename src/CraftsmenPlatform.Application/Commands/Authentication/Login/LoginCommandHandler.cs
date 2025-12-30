@@ -74,7 +74,7 @@ public class LoginCommandHandler
             var loginResult = user.RecordSuccessfulLogin(ipAddress);
             if (loginResult.IsFailure)
                 return Result<AuthenticationResponse>.Failure(
-                    loginResult.Error ?? "Login failed");
+                    loginResult.Error);
 
             // 5. Generate tokens
             string accessToken;
@@ -101,7 +101,7 @@ public class LoginCommandHandler
 
             if (refreshTokenResult.IsFailure)
                 return Result<AuthenticationResponse>.Failure(
-                    refreshTokenResult.Error ?? "Failed to create refresh token");
+                    refreshTokenResult.Error);
 
             var refreshToken = refreshTokenResult.Value;
 

@@ -74,9 +74,8 @@ public class Project : SoftDeletableEntity, IAggregateRoot
         Guid customerId,
         string title,
         string description,
-        decimal? budgetMinAmount = null,
-        decimal? budgetMaxAmount = null,
-        string currency = "CZK",
+        Money? budgetMin = null,
+        Money? budgetMax = null,
         DateTime? preferredStartDate = null,
         DateTime? deadline = null)
     {
@@ -86,26 +85,6 @@ public class Project : SoftDeletableEntity, IAggregateRoot
 
         if (string.IsNullOrWhiteSpace(description))
             return Result<Project>.Failure("Project description cannot be empty");
-
-        // Vytvoření Money value objects
-        Money? budgetMin = null;
-        Money? budgetMax = null;
-
-        if (budgetMinAmount.HasValue && budgetMinAmount.Value > 0)
-        {
-            var minResult = Money.Create(budgetMinAmount.Value, currency);
-            if (minResult.IsFailure)
-                return Result<Project>.Failure($"Invalid minimum budget: {minResult.Error}");
-            budgetMin = minResult.Value;
-        }
-
-        if (budgetMaxAmount.HasValue && budgetMaxAmount.Value > 0)
-        {
-            var maxResult = Money.Create(budgetMaxAmount.Value, currency);
-            if (maxResult.IsFailure)
-                return Result<Project>.Failure($"Invalid maximum budget: {maxResult.Error}");
-            budgetMax = maxResult.Value;
-        }
 
         // Business rules validace
         if (budgetMin != null && budgetMax != null && budgetMin.IsGreaterThan(budgetMax))
@@ -310,7 +289,7 @@ public class Project : SoftDeletableEntity, IAggregateRoot
         if (deadline.HasValue)
             Deadline = deadline;
 
-        if (BudgetMin.IsGreaterThan(BudgetMax))
+        if (BudgetMin?.IsGreaterThan(BudgetMax) == true)
             return Result.Failure("Minimum budget cannot be greater than maximum budget");
 
         UpdatedAt = DateTime.UtcNow;

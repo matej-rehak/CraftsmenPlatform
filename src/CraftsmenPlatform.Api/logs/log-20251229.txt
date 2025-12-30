@@ -1,0 +1,1443 @@
+2025-12-29 00:17:05.703 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 00:17:06.589 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:17:06.654 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:17:06.656 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:17:06.658 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:17:06.661 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:17:07.235 +01:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:17:07.274 +01:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:17:07.280 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:17:07.284 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:17:07.309 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-29 00:17:07.331 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-29 00:17:07.354 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-29 00:17:07.489 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-29 00:17:07.491 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-29 00:17:07.492 +01:00 [INF] Hosting environment: Development
+2025-12-29 00:17:07.495 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-29 00:17:13.447 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-29 00:17:13.494 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-29 00:17:13.539 +01:00 [INF] HTTP GET / responded 404 in 43.2526 ms
+2025-12-29 00:17:13.552 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 106.5753ms
+2025-12-29 00:17:13.561 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-29 00:18:07.961 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/ - null null
+2025-12-29 00:18:07.967 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/ - 301 0 null 5.9827ms
+2025-12-29 00:18:07.978 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-29 00:18:08.082 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 103.9391ms
+2025-12-29 00:18:08.293 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-29 00:18:08.452 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 159.2306ms
+2025-12-29 00:21:51.192 +01:00 [INF] Application is shutting down...
+2025-12-29 00:39:55.681 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 00:39:56.478 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:39:56.537 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:39:56.539 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:39:56.542 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:39:56.544 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:39:57.070 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:39:57.096 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:39:57.101 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:39:57.104 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:39:57.120 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-29 00:39:57.137 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-29 00:39:57.415 +01:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-29 00:39:57.431 +01:00 [INF] Database seeded with sample data
+2025-12-29 00:39:57.452 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-29 00:39:57.565 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-29 00:39:57.566 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-29 00:39:57.568 +01:00 [INF] Hosting environment: Development
+2025-12-29 00:39:57.569 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-29 00:40:00.119 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-29 00:40:00.161 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-29 00:40:00.205 +01:00 [INF] HTTP GET / responded 404 in 42.7068 ms
+2025-12-29 00:40:00.213 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 95.9352ms
+2025-12-29 00:40:00.220 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-29 00:40:14.193 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/ - null null
+2025-12-29 00:40:14.198 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/ - 301 0 null 5ms
+2025-12-29 00:40:14.203 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-29 00:40:14.303 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 100.3757ms
+2025-12-29 00:40:14.487 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-29 00:40:14.630 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 143.7834ms
+2025-12-29 00:40:35.271 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - null null
+2025-12-29 00:40:35.279 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:40:35.310 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:40:35.350 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 33.955ms
+2025-12-29 00:40:35.353 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:40:35.356 +01:00 [ERR] HTTP GET /api/Projects responded 500 in 80.5706 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[CraftsmenPlatform.Application.Queries.Projects.GetProjectsQuery,CraftsmenPlatform.Domain.Common.Result`1[CraftsmenPlatform.Domain.Common.PagedResult`1[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse]]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0(CancellationToken t)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects(GetProjectsRequest request) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\ProjectsController.cs:line 70
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-12-29 00:40:35.394 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[CraftsmenPlatform.Application.Queries.Projects.GetProjectsQuery,CraftsmenPlatform.Domain.Common.Result`1[CraftsmenPlatform.Domain.Common.PagedResult`1[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse]]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0(CancellationToken t)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, IServiceProvider serviceProvider, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects(GetProjectsRequest request) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\ProjectsController.cs:line 70
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-29 00:40:35.408 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - 500 null text/plain; charset=utf-8 137.8232ms
+2025-12-29 00:42:51.316 +01:00 [INF] Application is shutting down...
+2025-12-29 00:44:07.832 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 00:44:08.692 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:44:08.753 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:44:08.756 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:44:08.758 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:44:08.759 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:44:09.220 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:44:09.243 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:44:09.248 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:44:09.252 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:44:09.266 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-29 00:44:09.282 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-29 00:44:09.519 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-29 00:44:09.530 +01:00 [INF] Database seeded with sample data
+2025-12-29 00:44:09.550 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-29 00:44:09.642 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-29 00:44:09.644 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-29 00:44:09.645 +01:00 [INF] Hosting environment: Development
+2025-12-29 00:44:09.646 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-29 00:44:15.337 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-29 00:44:15.464 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 127.8122ms
+2025-12-29 00:44:15.637 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-29 00:44:15.780 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 143.5683ms
+2025-12-29 00:44:21.592 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - null null
+2025-12-29 00:44:21.600 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-29 00:44:21.629 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:44:21.661 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:44:21.828 +01:00 [INF] Executed DbCommand (38ms) [Parameters=[@__status_Value_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+2025-12-29 00:44:21.841 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Project.PagedResponseDto`1[[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse, CraftsmenPlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-29 00:44:21.932 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 258.1576ms
+2025-12-29 00:44:21.935 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:44:21.944 +01:00 [INF] HTTP GET /api/Projects responded 200 in 342.5317 ms
+2025-12-29 00:44:21.962 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - 200 null application/json; charset=utf-8 369.4933ms
+2025-12-29 00:44:38.106 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?Status=2 - null null
+2025-12-29 00:44:38.111 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:44:38.113 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:44:38.188 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[@__status_Value_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+2025-12-29 00:44:38.191 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Project.PagedResponseDto`1[[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse, CraftsmenPlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-29 00:44:38.193 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 77.3737ms
+2025-12-29 00:44:38.195 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:44:38.196 +01:00 [INF] HTTP GET /api/Projects responded 200 in 86.1296 ms
+2025-12-29 00:44:38.198 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?Status=2 - 200 null application/json; charset=utf-8 91.9934ms
+2025-12-29 00:45:10.055 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?Status=3 - null null
+2025-12-29 00:45:10.059 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:45:10.061 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:45:10.072 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_Value_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+2025-12-29 00:45:10.075 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Project.PagedResponseDto`1[[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse, CraftsmenPlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-29 00:45:10.077 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 11.5693ms
+2025-12-29 00:45:10.079 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:45:10.081 +01:00 [INF] HTTP GET /api/Projects responded 200 in 23.1233 ms
+2025-12-29 00:45:10.084 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?Status=3 - 200 null application/json; charset=utf-8 28.7833ms
+2025-12-29 00:47:36.616 +01:00 [INF] Application is shutting down...
+2025-12-29 00:47:50.739 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 00:47:51.587 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:47:51.663 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:47:51.666 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:47:51.669 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:47:51.671 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:47:52.292 +01:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:47:55.406 +01:00 [INF] Executed DbCommand (3,061ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [CraftsmenDb] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+END;
+2025-12-29 00:47:55.518 +01:00 [INF] Executed DbCommand (109ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP DATABASE [CraftsmenDb];
+2025-12-29 00:48:04.860 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 00:48:05.648 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:48:05.708 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:05.711 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:05.713 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:05.715 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:06.265 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:48:06.268 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:06.270 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:06.272 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:06.274 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:48:06.610 +01:00 [INF] Executed DbCommand (231ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [CraftsmenDb];
+2025-12-29 00:48:06.675 +01:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [CraftsmenDb] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-12-29 00:48:06.698 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:48:06.765 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2025-12-29 00:48:06.768 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:48:06.784 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:48:06.792 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-29 00:48:06.808 +01:00 [INF] Applying migration '20251226183410_InitialCreate'.
+2025-12-29 00:48:06.944 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Categories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Description] nvarchar(500) NULL,
+    [IconUrl] nvarchar(500) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:06.952 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ChatRooms] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [CraftsmanId] uniqueidentifier NOT NULL,
+    [CustomerId] uniqueidentifier NOT NULL,
+    [LastMessageAt] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChatRooms] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:06.959 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CraftsmanProfiles] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [Bio] nvarchar(2000) NULL,
+    [RegistrationNumber] nvarchar(50) NULL,
+    [TaxNumber] nvarchar(50) NULL,
+    [YearsOfExperience] int NULL,
+    [AverageRating] decimal(3,1) NOT NULL,
+    [TotalReviews] int NOT NULL,
+    [CompletedProjectsCount] int NOT NULL,
+    [IsVerified] bit NOT NULL,
+    [VerifiedAt] datetime2 NULL,
+    [IsAvailable] bit NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CraftsmanProfiles] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:06.968 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CustomerProfiles] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [TotalProjectsCreated] int NOT NULL,
+    [CompletedProjects] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CustomerProfiles] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:06.972 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Projects] (
+    [Id] uniqueidentifier NOT NULL,
+    [CustomerId] uniqueidentifier NOT NULL,
+    [Title] nvarchar(200) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [BudgetMinAmount] decimal(18,2) NULL,
+    [BudgetMinCurrency] nvarchar(3) NULL,
+    [BudgetMaxAmount] decimal(18,2) NULL,
+    [BudgetMaxCurrency] nvarchar(3) NULL,
+    [PreferredStartDate] datetime2 NULL,
+    [Deadline] datetime2 NULL,
+    [Status] nvarchar(20) NOT NULL,
+    [PublishedAt] datetime2 NULL,
+    [CompletedAt] datetime2 NULL,
+    [AcceptedOfferId] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(100) NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:06.980 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Reviews] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [CraftsmanId] uniqueidentifier NOT NULL,
+    [Rating] int NOT NULL,
+    [Comment] nvarchar(2000) NULL,
+    [IsVerified] bit NOT NULL,
+    [VerifiedAt] datetime2 NULL,
+    [IsPublished] bit NOT NULL,
+    [PublishedAt] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    CONSTRAINT [PK_Reviews] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:06.985 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Skills] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Description] nvarchar(500) NULL,
+    [IconUrl] nvarchar(500) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Skills] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:06.994 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] uniqueidentifier NOT NULL,
+    [Email] nvarchar(255) NOT NULL,
+    [PasswordHash] nvarchar(500) NOT NULL,
+    [FirstName] nvarchar(100) NOT NULL,
+    [LastName] nvarchar(100) NOT NULL,
+    [Phone] nvarchar(20) NULL,
+    [AddressStreet] nvarchar(200) NULL,
+    [AddressCity] nvarchar(100) NULL,
+    [AddressState] nvarchar(100) NULL,
+    [AddressZipCode] nvarchar(20) NULL,
+    [AddressCountry] nvarchar(100) NULL,
+    [AvatarUrl] nvarchar(500) NULL,
+    [Role] nvarchar(20) NOT NULL,
+    [IsEmailVerified] bit NOT NULL,
+    [EmailVerifiedAt] datetime2 NULL,
+    [IsActive] bit NOT NULL,
+    [IsDeactivated] bit NOT NULL,
+    [DeactivatedAt] datetime2 NULL,
+    [DeactivatedReason] nvarchar(500) NULL,
+    [LastLoginAt] datetime2 NULL,
+    [LastLoginIp] nvarchar(50) NULL,
+    [FailedLoginAttempts] int NOT NULL DEFAULT 0,
+    [LockedOutUntil] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2025-12-29 00:48:07.002 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Messages] (
+    [Id] uniqueidentifier NOT NULL,
+    [ChatRoomId] uniqueidentifier NOT NULL,
+    [SenderId] uniqueidentifier NOT NULL,
+    [Content] nvarchar(max) NOT NULL,
+    [SentAt] datetime2 NOT NULL,
+    [IsRead] bit NOT NULL,
+    [ReadAt] datetime2 NULL,
+    [ChatRoomId1] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Messages] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Messages_ChatRooms_ChatRoomId] FOREIGN KEY ([ChatRoomId]) REFERENCES [ChatRooms] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Messages_ChatRooms_ChatRoomId1] FOREIGN KEY ([ChatRoomId1]) REFERENCES [ChatRooms] ([Id])
+);
+2025-12-29 00:48:07.008 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CraftsmanSkills] (
+    [Id] uniqueidentifier NOT NULL,
+    [CraftsmanProfileId] uniqueidentifier NOT NULL,
+    [SkillId] uniqueidentifier NOT NULL,
+    [YearsOfExperience] int NULL,
+    [CraftsmanProfileId1] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CraftsmanSkills] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_CraftsmanSkills_CraftsmanProfiles_CraftsmanProfileId] FOREIGN KEY ([CraftsmanProfileId]) REFERENCES [CraftsmanProfiles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_CraftsmanSkills_CraftsmanProfiles_CraftsmanProfileId1] FOREIGN KEY ([CraftsmanProfileId1]) REFERENCES [CraftsmanProfiles] ([Id])
+);
+2025-12-29 00:48:07.012 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Offers] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [CraftsmanId] uniqueidentifier NOT NULL,
+    [PriceAmount] decimal(18,2) NOT NULL,
+    [PriceCurrency] nvarchar(3) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [EstimatedDurationDays] int NULL,
+    [TimelineStartDate] datetime2 NULL,
+    [TimelineEndDate] datetime2 NULL,
+    [Status] nvarchar(20) NOT NULL,
+    [AcceptedAt] datetime2 NULL,
+    [RejectedAt] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(100) NULL,
+    CONSTRAINT [PK_Offers] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Offers_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE CASCADE
+);
+2025-12-29 00:48:07.017 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProjectImages] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [ImageUrl] nvarchar(500) NOT NULL,
+    [DisplayOrder] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_ProjectImages] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_ProjectImages_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE CASCADE
+);
+2025-12-29 00:48:07.022 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CategorySkills] (
+    [Id] uniqueidentifier NOT NULL,
+    [CategoryId] uniqueidentifier NOT NULL,
+    [SkillId] uniqueidentifier NOT NULL,
+    [CategoryId1] uniqueidentifier NULL,
+    [SkillId1] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CategorySkills] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_CategorySkills_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_CategorySkills_Categories_CategoryId1] FOREIGN KEY ([CategoryId1]) REFERENCES [Categories] ([Id]),
+    CONSTRAINT [FK_CategorySkills_Skills_SkillId] FOREIGN KEY ([SkillId]) REFERENCES [Skills] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_CategorySkills_Skills_SkillId1] FOREIGN KEY ([SkillId1]) REFERENCES [Skills] ([Id])
+);
+2025-12-29 00:48:07.028 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RefreshTokens] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [Token] nvarchar(500) NOT NULL,
+    [ExpiresAt] datetime2 NOT NULL,
+    [RevokedAt] datetime2 NULL,
+    [RevokedByIp] nvarchar(50) NULL,
+    [ReplacedByToken] nvarchar(500) NULL,
+    [CreatedByIp] nvarchar(50) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(max) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(max) NULL,
+    [RowVersion] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_RefreshTokens] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RefreshTokens_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2025-12-29 00:48:07.035 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Categories_CreatedAt] ON [Categories] ([CreatedAt]);
+2025-12-29 00:48:07.039 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Categories_Name] ON [Categories] ([Name]);
+2025-12-29 00:48:07.042 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_CategoryId] ON [CategorySkills] ([CategoryId]);
+2025-12-29 00:48:07.047 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CategorySkills_CategoryId_SkillId] ON [CategorySkills] ([CategoryId], [SkillId]);
+2025-12-29 00:48:07.051 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_CategoryId1] ON [CategorySkills] ([CategoryId1]);
+2025-12-29 00:48:07.056 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_SkillId] ON [CategorySkills] ([SkillId]);
+2025-12-29 00:48:07.059 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_SkillId1] ON [CategorySkills] ([SkillId1]);
+2025-12-29 00:48:07.062 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ChatRooms_CraftsmanId_CustomerId] ON [ChatRooms] ([CraftsmanId], [CustomerId]);
+2025-12-29 00:48:07.066 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ChatRooms_ProjectId] ON [ChatRooms] ([ProjectId]);
+2025-12-29 00:48:07.069 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_ChatRooms_ProjectId_CraftsmanId] ON [ChatRooms] ([ProjectId], [CraftsmanId]);
+2025-12-29 00:48:07.074 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_AverageRating] ON [CraftsmanProfiles] ([AverageRating]);
+2025-12-29 00:48:07.077 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_CreatedAt] ON [CraftsmanProfiles] ([CreatedAt]);
+2025-12-29 00:48:07.081 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_IsAvailable] ON [CraftsmanProfiles] ([IsAvailable]);
+2025-12-29 00:48:07.086 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_IsVerified] ON [CraftsmanProfiles] ([IsVerified]);
+2025-12-29 00:48:07.090 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CraftsmanProfiles_UserId] ON [CraftsmanProfiles] ([UserId]);
+2025-12-29 00:48:07.095 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanSkills_CraftsmanProfileId] ON [CraftsmanSkills] ([CraftsmanProfileId]);
+2025-12-29 00:48:07.098 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CraftsmanSkills_CraftsmanProfileId_SkillId] ON [CraftsmanSkills] ([CraftsmanProfileId], [SkillId]);
+2025-12-29 00:48:07.102 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanSkills_CraftsmanProfileId1] ON [CraftsmanSkills] ([CraftsmanProfileId1]);
+2025-12-29 00:48:07.106 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanSkills_SkillId] ON [CraftsmanSkills] ([SkillId]);
+2025-12-29 00:48:07.109 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CustomerProfiles_UserId] ON [CustomerProfiles] ([UserId]);
+2025-12-29 00:48:07.112 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_ChatRoomId] ON [Messages] ([ChatRoomId]);
+2025-12-29 00:48:07.116 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_ChatRoomId_IsRead] ON [Messages] ([ChatRoomId], [IsRead]);
+2025-12-29 00:48:07.121 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_ChatRoomId1] ON [Messages] ([ChatRoomId1]);
+2025-12-29 00:48:07.124 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_CreatedAt] ON [Messages] ([CreatedAt]);
+2025-12-29 00:48:07.129 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_SenderId] ON [Messages] ([SenderId]);
+2025-12-29 00:48:07.132 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_CraftsmanId] ON [Offers] ([CraftsmanId]);
+2025-12-29 00:48:07.135 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_CreatedAt] ON [Offers] ([CreatedAt]);
+2025-12-29 00:48:07.141 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_IsDeleted] ON [Offers] ([IsDeleted]);
+2025-12-29 00:48:07.144 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_ProjectId] ON [Offers] ([ProjectId]);
+2025-12-29 00:48:07.148 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_ProjectId_CraftsmanId] ON [Offers] ([ProjectId], [CraftsmanId]);
+2025-12-29 00:48:07.152 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_Status] ON [Offers] ([Status]);
+2025-12-29 00:48:07.157 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectImages_ProjectId] ON [ProjectImages] ([ProjectId]);
+2025-12-29 00:48:07.160 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectImages_ProjectId_DisplayOrder] ON [ProjectImages] ([ProjectId], [DisplayOrder]);
+2025-12-29 00:48:07.163 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_CreatedAt] ON [Projects] ([CreatedAt]);
+2025-12-29 00:48:07.167 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_CustomerId] ON [Projects] ([CustomerId]);
+2025-12-29 00:48:07.171 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_IsDeleted] ON [Projects] ([IsDeleted]);
+2025-12-29 00:48:07.174 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_PublishedAt] ON [Projects] ([PublishedAt]);
+2025-12-29 00:48:07.179 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_Status] ON [Projects] ([Status]);
+2025-12-29 00:48:07.182 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RefreshTokens_ExpiresAt] ON [RefreshTokens] ([ExpiresAt]);
+2025-12-29 00:48:07.187 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_RefreshTokens_Token] ON [RefreshTokens] ([Token]);
+2025-12-29 00:48:07.190 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RefreshTokens_UserId] ON [RefreshTokens] ([UserId]);
+2025-12-29 00:48:07.193 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_CraftsmanId] ON [Reviews] ([CraftsmanId]);
+2025-12-29 00:48:07.197 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_IsPublished] ON [Reviews] ([IsPublished]);
+2025-12-29 00:48:07.201 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Reviews_ProjectId] ON [Reviews] ([ProjectId]);
+2025-12-29 00:48:07.206 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_PublishedAt] ON [Reviews] ([PublishedAt]);
+2025-12-29 00:48:07.208 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_UserId] ON [Reviews] ([UserId]);
+2025-12-29 00:48:07.211 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Skills_CreatedAt] ON [Skills] ([CreatedAt]);
+2025-12-29 00:48:07.215 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Skills_Name] ON [Skills] ([Name]);
+2025-12-29 00:48:07.218 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_CreatedAt] ON [Users] ([CreatedAt]);
+2025-12-29 00:48:07.222 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Users_Email] ON [Users] ([Email]);
+2025-12-29 00:48:07.225 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_IsActive] ON [Users] ([IsActive]);
+2025-12-29 00:48:07.228 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_Role] ON [Users] ([Role]);
+2025-12-29 00:48:07.236 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20251226183410_InitialCreate', N'8.0.6');
+2025-12-29 00:48:07.482 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-29 00:48:09.969 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:48:09.973 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:48:09.974 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:48:09.975 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:48:09.976 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:48:09.976 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:48:10.091 +01:00 [INF] Executed DbCommand (40ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 100), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 50), @p16='?' (Size = 100), @p17='?' (DbType = DateTime2), @p18='?' (Size = 500), @p19='?' (Size = 20), @p20='?' (DbType = DateTime2), @p21='?' (Size = 100), @p22='?' (Size = 255), @p23='?' (DbType = Guid), @p24='?' (Size = 500), @p25='?' (DbType = DateTime2), @p26='?' (Size = 100), @p27='?' (DbType = DateTime2), @p28='?' (Size = 500), @p29='?' (DbType = DateTime2), @p30='?' (Size = 4000), @p31='?' (DbType = DateTime2), @p32='?' (Size = 100), @p33='?' (DbType = Boolean), @p34='?' (DbType = Boolean), @p35='?' (DbType = Boolean), @p36='?' (DbType = Boolean), @p37='?' (DbType = DateTime2), @p38='?' (Size = 50), @p39='?' (Size = 100), @p40='?' (DbType = DateTime2), @p41='?' (Size = 500), @p42='?' (Size = 20), @p43='?' (DbType = DateTime2), @p44='?' (Size = 100), @p45='?' (Size = 255), @p46='?' (DbType = Guid), @p47='?' (Size = 500), @p48='?' (DbType = DateTime2), @p49='?' (Size = 100), @p50='?' (DbType = DateTime2), @p51='?' (Size = 500), @p52='?' (DbType = DateTime2), @p53='?' (Size = 4000), @p54='?' (DbType = DateTime2), @p55='?' (Size = 100), @p56='?' (DbType = Boolean), @p57='?' (DbType = Boolean), @p58='?' (DbType = Boolean), @p59='?' (DbType = Boolean), @p60='?' (DbType = DateTime2), @p61='?' (Size = 50), @p62='?' (Size = 100), @p63='?' (DbType = DateTime2), @p64='?' (Size = 500), @p65='?' (Size = 20), @p66='?' (DbType = DateTime2), @p67='?' (Size = 100), @p68='?' (Size = 255), @p69='?' (DbType = Guid), @p70='?' (Size = 500), @p71='?' (DbType = DateTime2), @p72='?' (Size = 100), @p73='?' (DbType = DateTime2), @p74='?' (Size = 500), @p75='?' (DbType = DateTime2), @p76='?' (Size = 4000), @p77='?' (DbType = DateTime2), @p78='?' (Size = 100), @p79='?' (DbType = Boolean), @p80='?' (DbType = Boolean), @p81='?' (DbType = Boolean), @p82='?' (DbType = Boolean), @p83='?' (DbType = DateTime2), @p84='?' (Size = 50), @p85='?' (Size = 100), @p86='?' (DbType = DateTime2), @p87='?' (Size = 500), @p88='?' (Size = 20), @p89='?' (DbType = DateTime2), @p90='?' (Size = 100), @p91='?' (Size = 255), @p92='?' (DbType = Guid), @p93='?' (Size = 500), @p94='?' (DbType = DateTime2), @p95='?' (Size = 100), @p96='?' (DbType = DateTime2), @p97='?' (Size = 500), @p98='?' (DbType = DateTime2), @p99='?' (Size = 4000), @p100='?' (DbType = DateTime2), @p101='?' (Size = 100), @p102='?' (DbType = Boolean), @p103='?' (DbType = Boolean), @p104='?' (DbType = Boolean), @p105='?' (DbType = Boolean), @p106='?' (DbType = DateTime2), @p107='?' (Size = 50), @p108='?' (Size = 100), @p109='?' (DbType = DateTime2), @p110='?' (Size = 500), @p111='?' (Size = 20), @p112='?' (DbType = DateTime2), @p113='?' (Size = 100), @p114='?' (Size = 255), @p115='?' (DbType = Guid), @p116='?' (Size = 500), @p117='?' (DbType = DateTime2), @p118='?' (Size = 100), @p119='?' (DbType = DateTime2), @p120='?' (Size = 500), @p121='?' (DbType = DateTime2), @p122='?' (Size = 4000), @p123='?' (DbType = DateTime2), @p124='?' (Size = 100), @p125='?' (DbType = Boolean), @p126='?' (DbType = Boolean), @p127='?' (DbType = Boolean), @p128='?' (DbType = Boolean), @p129='?' (DbType = DateTime2), @p130='?' (Size = 50), @p131='?' (Size = 100), @p132='?' (DbType = DateTime2), @p133='?' (Size = 500), @p134='?' (Size = 20), @p135='?' (DbType = DateTime2), @p136='?' (Size = 100), @p137='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, 0),
+(@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, 1),
+(@p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, @p67, @p68, 2),
+(@p69, @p70, @p71, @p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, @p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87, @p88, @p89, @p90, @p91, 3),
+(@p92, @p93, @p94, @p95, @p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, @p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, @p112, @p113, @p114, 4),
+(@p115, @p116, @p117, @p118, @p119, @p120, @p121, @p122, @p123, @p124, @p125, @p126, @p127, @p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, @p136, @p137, 5)) AS i ([Id], [AvatarUrl], [CreatedAt], [CreatedBy], [DeactivatedAt], [DeactivatedReason], [DeletedAt], [DeletedBy], [EmailVerifiedAt], [FirstName], [IsActive], [IsDeactivated], [IsDeleted], [IsEmailVerified], [LastLoginAt], [LastLoginIp], [LastName], [LockedOutUntil], [PasswordHash], [Role], [UpdatedAt], [UpdatedBy], [Email], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [AvatarUrl], [CreatedAt], [CreatedBy], [DeactivatedAt], [DeactivatedReason], [DeletedAt], [DeletedBy], [EmailVerifiedAt], [FirstName], [IsActive], [IsDeactivated], [IsDeleted], [IsEmailVerified], [LastLoginAt], [LastLoginIp], [LastName], [LockedOutUntil], [PasswordHash], [Role], [UpdatedAt], [UpdatedBy], [Email])
+VALUES (i.[Id], i.[AvatarUrl], i.[CreatedAt], i.[CreatedBy], i.[DeactivatedAt], i.[DeactivatedReason], i.[DeletedAt], i.[DeletedBy], i.[EmailVerifiedAt], i.[FirstName], i.[IsActive], i.[IsDeactivated], i.[IsDeleted], i.[IsEmailVerified], i.[LastLoginAt], i.[LastLoginIp], i.[LastName], i.[LockedOutUntil], i.[PasswordHash], i.[Role], i.[UpdatedAt], i.[UpdatedBy], i.[Email])
+OUTPUT INSERTED.[FailedLoginAttempts], INSERTED.[RowVersion], i._Position;
+2025-12-29 00:48:10.237 +01:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 500), @p4='?' (Size = 500), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (DbType = Guid), @p9='?' (DbType = DateTime2), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Size = 500), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 100), @p16='?' (DbType = Guid), @p17='?' (DbType = DateTime2), @p18='?' (Size = 100), @p19='?' (Size = 500), @p20='?' (Size = 500), @p21='?' (Size = 100), @p22='?' (DbType = DateTime2), @p23='?' (Size = 100), @p24='?' (DbType = Guid), @p25='?' (DbType = DateTime2), @p26='?' (Size = 100), @p27='?' (Size = 500), @p28='?' (Size = 500), @p29='?' (Size = 100), @p30='?' (DbType = DateTime2), @p31='?' (Size = 100), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = DateTime2), @p36='?' (Size = 100), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = DateTime2), @p40='?' (Size = 100), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = DateTime2), @p45='?' (Size = 100), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = DateTime2), @p49='?' (Size = 100), @p50='?' (DbType = Guid), @p51='?' (DbType = Guid), @p52='?' (DbType = Guid), @p53='?' (DbType = DateTime2), @p54='?' (Size = 100), @p55='?' (DbType = Guid), @p56='?' (DbType = Guid), @p57='?' (DbType = DateTime2), @p58='?' (Size = 100), @p59='?' (DbType = Guid), @p60='?' (DbType = Guid), @p61='?' (DbType = Guid), @p62='?' (DbType = DateTime2), @p63='?' (Size = 100), @p64='?' (DbType = Guid), @p65='?' (DbType = Guid), @p66='?' (DbType = DateTime2), @p67='?' (Size = 100), @p68='?' (DbType = Guid), @p69='?' (DbType = Guid), @p70='?' (DbType = Guid), @p71='?' (DbType = DateTime2), @p72='?' (Size = 100), @p73='?' (DbType = Guid), @p74='?' (DbType = Guid), @p75='?' (DbType = DateTime2), @p76='?' (Size = 100), @p77='?' (DbType = Guid), @p78='?' (DbType = Guid), @p79='?' (DbType = Guid), @p80='?' (DbType = DateTime2), @p81='?' (Size = 100), @p82='?' (DbType = Guid), @p83='?' (DbType = Guid), @p84='?' (DbType = DateTime2), @p85='?' (Size = 100), @p86='?' (DbType = Guid), @p87='?' (DbType = Guid), @p88='?' (DbType = Guid), @p89='?' (DbType = DateTime2), @p90='?' (Size = 100), @p91='?' (DbType = Guid), @p92='?' (DbType = Guid), @p93='?' (DbType = DateTime2), @p94='?' (Size = 100), @p95='?' (DbType = Guid), @p96='?' (DbType = Guid), @p97='?' (DbType = Guid), @p98='?' (DbType = DateTime2), @p99='?' (Size = 100), @p100='?' (DbType = Guid), @p101='?' (DbType = Guid), @p102='?' (DbType = DateTime2), @p103='?' (Size = 100), @p104='?' (DbType = Guid), @p105='?' (DbType = Guid), @p106='?' (DbType = Guid), @p107='?' (DbType = DateTime2), @p108='?' (Size = 100), @p109='?' (DbType = Guid), @p110='?' (DbType = Guid), @p111='?' (DbType = DateTime2), @p112='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [Categories] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3)) AS i ([Id], [CreatedAt], [CreatedBy], [Description], [IconUrl], [Name], [UpdatedAt], [UpdatedBy], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [CreatedAt], [CreatedBy], [Description], [IconUrl], [Name], [UpdatedAt], [UpdatedBy])
+VALUES (i.[Id], i.[CreatedAt], i.[CreatedBy], i.[Description], i.[IconUrl], i.[Name], i.[UpdatedAt], i.[UpdatedBy])
+OUTPUT INSERTED.[RowVersion], i._Position;
+MERGE [CategorySkills] USING (
+VALUES (@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, 0),
+(@p41, @p42, @p43, @p44, @p45, @p46, @p47, @p48, @p49, 1),
+(@p50, @p51, @p52, @p53, @p54, @p55, @p56, @p57, @p58, 2),
+(@p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, @p67, 3),
+(@p68, @p69, @p70, @p71, @p72, @p73, @p74, @p75, @p76, 4),
+(@p77, @p78, @p79, @p80, @p81, @p82, @p83, @p84, @p85, 5),
+(@p86, @p87, @p88, @p89, @p90, @p91, @p92, @p93, @p94, 6),
+(@p95, @p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, 7),
+(@p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, @p112, 8)) AS i ([Id], [CategoryId], [CategoryId1], [CreatedAt], [CreatedBy], [SkillId], [SkillId1], [UpdatedAt], [UpdatedBy], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [CategoryId], [CategoryId1], [CreatedAt], [CreatedBy], [SkillId], [SkillId1], [UpdatedAt], [UpdatedBy])
+VALUES (i.[Id], i.[CategoryId], i.[CategoryId1], i.[CreatedAt], i.[CreatedBy], i.[SkillId], i.[SkillId1], i.[UpdatedAt], i.[UpdatedBy])
+OUTPUT INSERTED.[RowVersion], i._Position;
+2025-12-29 00:48:10.267 +01:00 [ERR] An exception occurred in the database while saving changes for context type 'CraftsmenPlatform.Infrastructure.Persistence.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The MERGE statement conflicted with the FOREIGN KEY constraint "FK_CategorySkills_Skills_SkillId". The conflict occurred in database "CraftsmenDb", table "dbo.Skills", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8a41921f-f97f-4812-93fa-3a51faeeb010
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The MERGE statement conflicted with the FOREIGN KEY constraint "FK_CategorySkills_Skills_SkillId". The conflict occurred in database "CraftsmenDb", table "dbo.Skills", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8a41921f-f97f-4812-93fa-3a51faeeb010
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-12-29 00:51:00.318 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 00:51:01.107 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:51:01.162 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:01.165 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:01.168 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:01.170 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:01.616 +01:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:51:04.670 +01:00 [INF] Executed DbCommand (3,009ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [CraftsmenDb] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+END;
+2025-12-29 00:51:04.688 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP DATABASE [CraftsmenDb];
+2025-12-29 00:51:24.983 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 00:51:25.797 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:51:25.857 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:25.860 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:25.861 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:25.864 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:26.415 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 00:51:26.419 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:26.421 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:26.423 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:26.424 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 00:51:26.720 +01:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [CraftsmenDb];
+2025-12-29 00:51:26.774 +01:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [CraftsmenDb] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-12-29 00:51:26.796 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:51:26.855 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2025-12-29 00:51:26.860 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 00:51:26.876 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 00:51:26.882 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-29 00:51:26.901 +01:00 [INF] Applying migration '20251226183410_InitialCreate'.
+2025-12-29 00:51:27.024 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Categories] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Description] nvarchar(500) NULL,
+    [IconUrl] nvarchar(500) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.030 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ChatRooms] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [CraftsmanId] uniqueidentifier NOT NULL,
+    [CustomerId] uniqueidentifier NOT NULL,
+    [LastMessageAt] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChatRooms] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.034 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CraftsmanProfiles] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [Bio] nvarchar(2000) NULL,
+    [RegistrationNumber] nvarchar(50) NULL,
+    [TaxNumber] nvarchar(50) NULL,
+    [YearsOfExperience] int NULL,
+    [AverageRating] decimal(3,1) NOT NULL,
+    [TotalReviews] int NOT NULL,
+    [CompletedProjectsCount] int NOT NULL,
+    [IsVerified] bit NOT NULL,
+    [VerifiedAt] datetime2 NULL,
+    [IsAvailable] bit NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CraftsmanProfiles] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.040 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CustomerProfiles] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [TotalProjectsCreated] int NOT NULL,
+    [CompletedProjects] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CustomerProfiles] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.046 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Projects] (
+    [Id] uniqueidentifier NOT NULL,
+    [CustomerId] uniqueidentifier NOT NULL,
+    [Title] nvarchar(200) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [BudgetMinAmount] decimal(18,2) NULL,
+    [BudgetMinCurrency] nvarchar(3) NULL,
+    [BudgetMaxAmount] decimal(18,2) NULL,
+    [BudgetMaxCurrency] nvarchar(3) NULL,
+    [PreferredStartDate] datetime2 NULL,
+    [Deadline] datetime2 NULL,
+    [Status] nvarchar(20) NOT NULL,
+    [PublishedAt] datetime2 NULL,
+    [CompletedAt] datetime2 NULL,
+    [AcceptedOfferId] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(100) NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.051 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Reviews] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [CraftsmanId] uniqueidentifier NOT NULL,
+    [Rating] int NOT NULL,
+    [Comment] nvarchar(2000) NULL,
+    [IsVerified] bit NOT NULL,
+    [VerifiedAt] datetime2 NULL,
+    [IsPublished] bit NOT NULL,
+    [PublishedAt] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    CONSTRAINT [PK_Reviews] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.057 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Skills] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Description] nvarchar(500) NULL,
+    [IconUrl] nvarchar(500) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Skills] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.063 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] uniqueidentifier NOT NULL,
+    [Email] nvarchar(255) NOT NULL,
+    [PasswordHash] nvarchar(500) NOT NULL,
+    [FirstName] nvarchar(100) NOT NULL,
+    [LastName] nvarchar(100) NOT NULL,
+    [Phone] nvarchar(20) NULL,
+    [AddressStreet] nvarchar(200) NULL,
+    [AddressCity] nvarchar(100) NULL,
+    [AddressState] nvarchar(100) NULL,
+    [AddressZipCode] nvarchar(20) NULL,
+    [AddressCountry] nvarchar(100) NULL,
+    [AvatarUrl] nvarchar(500) NULL,
+    [Role] nvarchar(20) NOT NULL,
+    [IsEmailVerified] bit NOT NULL,
+    [EmailVerifiedAt] datetime2 NULL,
+    [IsActive] bit NOT NULL,
+    [IsDeactivated] bit NOT NULL,
+    [DeactivatedAt] datetime2 NULL,
+    [DeactivatedReason] nvarchar(500) NULL,
+    [LastLoginAt] datetime2 NULL,
+    [LastLoginIp] nvarchar(50) NULL,
+    [FailedLoginAttempts] int NOT NULL DEFAULT 0,
+    [LockedOutUntil] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2025-12-29 00:51:27.068 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Messages] (
+    [Id] uniqueidentifier NOT NULL,
+    [ChatRoomId] uniqueidentifier NOT NULL,
+    [SenderId] uniqueidentifier NOT NULL,
+    [Content] nvarchar(max) NOT NULL,
+    [SentAt] datetime2 NOT NULL,
+    [IsRead] bit NOT NULL,
+    [ReadAt] datetime2 NULL,
+    [ChatRoomId1] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_Messages] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Messages_ChatRooms_ChatRoomId] FOREIGN KEY ([ChatRoomId]) REFERENCES [ChatRooms] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Messages_ChatRooms_ChatRoomId1] FOREIGN KEY ([ChatRoomId1]) REFERENCES [ChatRooms] ([Id])
+);
+2025-12-29 00:51:27.073 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CraftsmanSkills] (
+    [Id] uniqueidentifier NOT NULL,
+    [CraftsmanProfileId] uniqueidentifier NOT NULL,
+    [SkillId] uniqueidentifier NOT NULL,
+    [YearsOfExperience] int NULL,
+    [CraftsmanProfileId1] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CraftsmanSkills] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_CraftsmanSkills_CraftsmanProfiles_CraftsmanProfileId] FOREIGN KEY ([CraftsmanProfileId]) REFERENCES [CraftsmanProfiles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_CraftsmanSkills_CraftsmanProfiles_CraftsmanProfileId1] FOREIGN KEY ([CraftsmanProfileId1]) REFERENCES [CraftsmanProfiles] ([Id])
+);
+2025-12-29 00:51:27.078 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Offers] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [CraftsmanId] uniqueidentifier NOT NULL,
+    [PriceAmount] decimal(18,2) NOT NULL,
+    [PriceCurrency] nvarchar(3) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [EstimatedDurationDays] int NULL,
+    [TimelineStartDate] datetime2 NULL,
+    [TimelineEndDate] datetime2 NULL,
+    [Status] nvarchar(20) NOT NULL,
+    [AcceptedAt] datetime2 NULL,
+    [RejectedAt] datetime2 NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedAt] datetime2 NULL,
+    [DeletedBy] nvarchar(100) NULL,
+    CONSTRAINT [PK_Offers] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Offers_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE CASCADE
+);
+2025-12-29 00:51:27.083 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProjectImages] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [ImageUrl] nvarchar(500) NOT NULL,
+    [DisplayOrder] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_ProjectImages] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_ProjectImages_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE CASCADE
+);
+2025-12-29 00:51:27.087 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CategorySkills] (
+    [Id] uniqueidentifier NOT NULL,
+    [CategoryId] uniqueidentifier NOT NULL,
+    [SkillId] uniqueidentifier NOT NULL,
+    [CategoryId1] uniqueidentifier NULL,
+    [SkillId1] uniqueidentifier NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(100) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(100) NULL,
+    [RowVersion] rowversion NOT NULL,
+    CONSTRAINT [PK_CategorySkills] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_CategorySkills_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_CategorySkills_Categories_CategoryId1] FOREIGN KEY ([CategoryId1]) REFERENCES [Categories] ([Id]),
+    CONSTRAINT [FK_CategorySkills_Skills_SkillId] FOREIGN KEY ([SkillId]) REFERENCES [Skills] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_CategorySkills_Skills_SkillId1] FOREIGN KEY ([SkillId1]) REFERENCES [Skills] ([Id])
+);
+2025-12-29 00:51:27.093 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [RefreshTokens] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserId] uniqueidentifier NOT NULL,
+    [Token] nvarchar(500) NOT NULL,
+    [ExpiresAt] datetime2 NOT NULL,
+    [RevokedAt] datetime2 NULL,
+    [RevokedByIp] nvarchar(50) NULL,
+    [ReplacedByToken] nvarchar(500) NULL,
+    [CreatedByIp] nvarchar(50) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(max) NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [UpdatedBy] nvarchar(max) NULL,
+    [RowVersion] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_RefreshTokens] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RefreshTokens_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2025-12-29 00:51:27.096 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Categories_CreatedAt] ON [Categories] ([CreatedAt]);
+2025-12-29 00:51:27.102 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Categories_Name] ON [Categories] ([Name]);
+2025-12-29 00:51:27.105 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_CategoryId] ON [CategorySkills] ([CategoryId]);
+2025-12-29 00:51:27.107 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CategorySkills_CategoryId_SkillId] ON [CategorySkills] ([CategoryId], [SkillId]);
+2025-12-29 00:51:27.111 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_CategoryId1] ON [CategorySkills] ([CategoryId1]);
+2025-12-29 00:51:27.115 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_SkillId] ON [CategorySkills] ([SkillId]);
+2025-12-29 00:51:27.120 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CategorySkills_SkillId1] ON [CategorySkills] ([SkillId1]);
+2025-12-29 00:51:27.123 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ChatRooms_CraftsmanId_CustomerId] ON [ChatRooms] ([CraftsmanId], [CustomerId]);
+2025-12-29 00:51:27.126 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ChatRooms_ProjectId] ON [ChatRooms] ([ProjectId]);
+2025-12-29 00:51:27.130 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_ChatRooms_ProjectId_CraftsmanId] ON [ChatRooms] ([ProjectId], [CraftsmanId]);
+2025-12-29 00:51:27.133 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_AverageRating] ON [CraftsmanProfiles] ([AverageRating]);
+2025-12-29 00:51:27.136 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_CreatedAt] ON [CraftsmanProfiles] ([CreatedAt]);
+2025-12-29 00:51:27.139 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_IsAvailable] ON [CraftsmanProfiles] ([IsAvailable]);
+2025-12-29 00:51:27.143 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanProfiles_IsVerified] ON [CraftsmanProfiles] ([IsVerified]);
+2025-12-29 00:51:27.148 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CraftsmanProfiles_UserId] ON [CraftsmanProfiles] ([UserId]);
+2025-12-29 00:51:27.152 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanSkills_CraftsmanProfileId] ON [CraftsmanSkills] ([CraftsmanProfileId]);
+2025-12-29 00:51:27.157 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CraftsmanSkills_CraftsmanProfileId_SkillId] ON [CraftsmanSkills] ([CraftsmanProfileId], [SkillId]);
+2025-12-29 00:51:27.160 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanSkills_CraftsmanProfileId1] ON [CraftsmanSkills] ([CraftsmanProfileId1]);
+2025-12-29 00:51:27.165 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_CraftsmanSkills_SkillId] ON [CraftsmanSkills] ([SkillId]);
+2025-12-29 00:51:27.169 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CustomerProfiles_UserId] ON [CustomerProfiles] ([UserId]);
+2025-12-29 00:51:27.172 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_ChatRoomId] ON [Messages] ([ChatRoomId]);
+2025-12-29 00:51:27.178 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_ChatRoomId_IsRead] ON [Messages] ([ChatRoomId], [IsRead]);
+2025-12-29 00:51:27.184 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_ChatRoomId1] ON [Messages] ([ChatRoomId1]);
+2025-12-29 00:51:27.187 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_CreatedAt] ON [Messages] ([CreatedAt]);
+2025-12-29 00:51:27.190 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Messages_SenderId] ON [Messages] ([SenderId]);
+2025-12-29 00:51:27.196 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_CraftsmanId] ON [Offers] ([CraftsmanId]);
+2025-12-29 00:51:27.200 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_CreatedAt] ON [Offers] ([CreatedAt]);
+2025-12-29 00:51:27.203 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_IsDeleted] ON [Offers] ([IsDeleted]);
+2025-12-29 00:51:27.205 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_ProjectId] ON [Offers] ([ProjectId]);
+2025-12-29 00:51:27.209 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_ProjectId_CraftsmanId] ON [Offers] ([ProjectId], [CraftsmanId]);
+2025-12-29 00:51:27.213 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Offers_Status] ON [Offers] ([Status]);
+2025-12-29 00:51:27.215 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectImages_ProjectId] ON [ProjectImages] ([ProjectId]);
+2025-12-29 00:51:27.218 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectImages_ProjectId_DisplayOrder] ON [ProjectImages] ([ProjectId], [DisplayOrder]);
+2025-12-29 00:51:27.222 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_CreatedAt] ON [Projects] ([CreatedAt]);
+2025-12-29 00:51:27.224 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_CustomerId] ON [Projects] ([CustomerId]);
+2025-12-29 00:51:27.228 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_IsDeleted] ON [Projects] ([IsDeleted]);
+2025-12-29 00:51:27.231 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_PublishedAt] ON [Projects] ([PublishedAt]);
+2025-12-29 00:51:27.235 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_Status] ON [Projects] ([Status]);
+2025-12-29 00:51:27.239 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RefreshTokens_ExpiresAt] ON [RefreshTokens] ([ExpiresAt]);
+2025-12-29 00:51:27.242 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_RefreshTokens_Token] ON [RefreshTokens] ([Token]);
+2025-12-29 00:51:27.245 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RefreshTokens_UserId] ON [RefreshTokens] ([UserId]);
+2025-12-29 00:51:27.249 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_CraftsmanId] ON [Reviews] ([CraftsmanId]);
+2025-12-29 00:51:27.253 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_IsPublished] ON [Reviews] ([IsPublished]);
+2025-12-29 00:51:27.257 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Reviews_ProjectId] ON [Reviews] ([ProjectId]);
+2025-12-29 00:51:27.260 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_PublishedAt] ON [Reviews] ([PublishedAt]);
+2025-12-29 00:51:27.263 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reviews_UserId] ON [Reviews] ([UserId]);
+2025-12-29 00:51:27.267 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Skills_CreatedAt] ON [Skills] ([CreatedAt]);
+2025-12-29 00:51:27.269 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Skills_Name] ON [Skills] ([Name]);
+2025-12-29 00:51:27.275 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_CreatedAt] ON [Users] ([CreatedAt]);
+2025-12-29 00:51:27.279 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Users_Email] ON [Users] ([Email]);
+2025-12-29 00:51:27.283 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_IsActive] ON [Users] ([IsActive]);
+2025-12-29 00:51:27.288 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_Role] ON [Users] ([Role]);
+2025-12-29 00:51:27.293 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20251226183410_InitialCreate', N'8.0.6');
+2025-12-29 00:51:27.563 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-29 00:51:29.989 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:51:29.992 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:51:29.993 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:51:29.994 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:51:29.995 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:51:29.996 +01:00 [INF] Publishing domain event: UserRegisteredEvent
+2025-12-29 00:51:30.097 +01:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 100), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 100), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 50), @p16='?' (Size = 100), @p17='?' (DbType = DateTime2), @p18='?' (Size = 500), @p19='?' (Size = 20), @p20='?' (DbType = DateTime2), @p21='?' (Size = 100), @p22='?' (Size = 255), @p23='?' (DbType = Guid), @p24='?' (Size = 500), @p25='?' (DbType = DateTime2), @p26='?' (Size = 100), @p27='?' (DbType = DateTime2), @p28='?' (Size = 500), @p29='?' (DbType = DateTime2), @p30='?' (Size = 4000), @p31='?' (DbType = DateTime2), @p32='?' (Size = 100), @p33='?' (DbType = Boolean), @p34='?' (DbType = Boolean), @p35='?' (DbType = Boolean), @p36='?' (DbType = Boolean), @p37='?' (DbType = DateTime2), @p38='?' (Size = 50), @p39='?' (Size = 100), @p40='?' (DbType = DateTime2), @p41='?' (Size = 500), @p42='?' (Size = 20), @p43='?' (DbType = DateTime2), @p44='?' (Size = 100), @p45='?' (Size = 255), @p46='?' (DbType = Guid), @p47='?' (Size = 500), @p48='?' (DbType = DateTime2), @p49='?' (Size = 100), @p50='?' (DbType = DateTime2), @p51='?' (Size = 500), @p52='?' (DbType = DateTime2), @p53='?' (Size = 4000), @p54='?' (DbType = DateTime2), @p55='?' (Size = 100), @p56='?' (DbType = Boolean), @p57='?' (DbType = Boolean), @p58='?' (DbType = Boolean), @p59='?' (DbType = Boolean), @p60='?' (DbType = DateTime2), @p61='?' (Size = 50), @p62='?' (Size = 100), @p63='?' (DbType = DateTime2), @p64='?' (Size = 500), @p65='?' (Size = 20), @p66='?' (DbType = DateTime2), @p67='?' (Size = 100), @p68='?' (Size = 255), @p69='?' (DbType = Guid), @p70='?' (Size = 500), @p71='?' (DbType = DateTime2), @p72='?' (Size = 100), @p73='?' (DbType = DateTime2), @p74='?' (Size = 500), @p75='?' (DbType = DateTime2), @p76='?' (Size = 4000), @p77='?' (DbType = DateTime2), @p78='?' (Size = 100), @p79='?' (DbType = Boolean), @p80='?' (DbType = Boolean), @p81='?' (DbType = Boolean), @p82='?' (DbType = Boolean), @p83='?' (DbType = DateTime2), @p84='?' (Size = 50), @p85='?' (Size = 100), @p86='?' (DbType = DateTime2), @p87='?' (Size = 500), @p88='?' (Size = 20), @p89='?' (DbType = DateTime2), @p90='?' (Size = 100), @p91='?' (Size = 255), @p92='?' (DbType = Guid), @p93='?' (Size = 500), @p94='?' (DbType = DateTime2), @p95='?' (Size = 100), @p96='?' (DbType = DateTime2), @p97='?' (Size = 500), @p98='?' (DbType = DateTime2), @p99='?' (Size = 4000), @p100='?' (DbType = DateTime2), @p101='?' (Size = 100), @p102='?' (DbType = Boolean), @p103='?' (DbType = Boolean), @p104='?' (DbType = Boolean), @p105='?' (DbType = Boolean), @p106='?' (DbType = DateTime2), @p107='?' (Size = 50), @p108='?' (Size = 100), @p109='?' (DbType = DateTime2), @p110='?' (Size = 500), @p111='?' (Size = 20), @p112='?' (DbType = DateTime2), @p113='?' (Size = 100), @p114='?' (Size = 255), @p115='?' (DbType = Guid), @p116='?' (Size = 500), @p117='?' (DbType = DateTime2), @p118='?' (Size = 100), @p119='?' (DbType = DateTime2), @p120='?' (Size = 500), @p121='?' (DbType = DateTime2), @p122='?' (Size = 4000), @p123='?' (DbType = DateTime2), @p124='?' (Size = 100), @p125='?' (DbType = Boolean), @p126='?' (DbType = Boolean), @p127='?' (DbType = Boolean), @p128='?' (DbType = Boolean), @p129='?' (DbType = DateTime2), @p130='?' (Size = 50), @p131='?' (Size = 100), @p132='?' (DbType = DateTime2), @p133='?' (Size = 500), @p134='?' (Size = 20), @p135='?' (DbType = DateTime2), @p136='?' (Size = 100), @p137='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, 0),
+(@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, 1),
+(@p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, @p67, @p68, 2),
+(@p69, @p70, @p71, @p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, @p80, @p81, @p82, @p83, @p84, @p85, @p86, @p87, @p88, @p89, @p90, @p91, 3),
+(@p92, @p93, @p94, @p95, @p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, @p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, @p112, @p113, @p114, 4),
+(@p115, @p116, @p117, @p118, @p119, @p120, @p121, @p122, @p123, @p124, @p125, @p126, @p127, @p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, @p136, @p137, 5)) AS i ([Id], [AvatarUrl], [CreatedAt], [CreatedBy], [DeactivatedAt], [DeactivatedReason], [DeletedAt], [DeletedBy], [EmailVerifiedAt], [FirstName], [IsActive], [IsDeactivated], [IsDeleted], [IsEmailVerified], [LastLoginAt], [LastLoginIp], [LastName], [LockedOutUntil], [PasswordHash], [Role], [UpdatedAt], [UpdatedBy], [Email], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [AvatarUrl], [CreatedAt], [CreatedBy], [DeactivatedAt], [DeactivatedReason], [DeletedAt], [DeletedBy], [EmailVerifiedAt], [FirstName], [IsActive], [IsDeactivated], [IsDeleted], [IsEmailVerified], [LastLoginAt], [LastLoginIp], [LastName], [LockedOutUntil], [PasswordHash], [Role], [UpdatedAt], [UpdatedBy], [Email])
+VALUES (i.[Id], i.[AvatarUrl], i.[CreatedAt], i.[CreatedBy], i.[DeactivatedAt], i.[DeactivatedReason], i.[DeletedAt], i.[DeletedBy], i.[EmailVerifiedAt], i.[FirstName], i.[IsActive], i.[IsDeactivated], i.[IsDeleted], i.[IsEmailVerified], i.[LastLoginAt], i.[LastLoginIp], i.[LastName], i.[LockedOutUntil], i.[PasswordHash], i.[Role], i.[UpdatedAt], i.[UpdatedBy], i.[Email])
+OUTPUT INSERTED.[FailedLoginAttempts], INSERTED.[RowVersion], i._Position;
+2025-12-29 00:51:30.179 +01:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 500), @p4='?' (Size = 500), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (DbType = Guid), @p9='?' (DbType = DateTime2), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Size = 500), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 100), @p16='?' (DbType = Guid), @p17='?' (DbType = DateTime2), @p18='?' (Size = 100), @p19='?' (Size = 500), @p20='?' (Size = 500), @p21='?' (Size = 100), @p22='?' (DbType = DateTime2), @p23='?' (Size = 100), @p24='?' (DbType = Guid), @p25='?' (DbType = DateTime2), @p26='?' (Size = 100), @p27='?' (Size = 500), @p28='?' (Size = 500), @p29='?' (Size = 100), @p30='?' (DbType = DateTime2), @p31='?' (Size = 100), @p32='?' (DbType = Guid), @p33='?' (DbType = DateTime2), @p34='?' (Size = 100), @p35='?' (Size = 500), @p36='?' (Size = 500), @p37='?' (Size = 100), @p38='?' (DbType = DateTime2), @p39='?' (Size = 100), @p40='?' (DbType = Guid), @p41='?' (DbType = DateTime2), @p42='?' (Size = 100), @p43='?' (Size = 500), @p44='?' (Size = 500), @p45='?' (Size = 100), @p46='?' (DbType = DateTime2), @p47='?' (Size = 100), @p48='?' (DbType = Guid), @p49='?' (DbType = DateTime2), @p50='?' (Size = 100), @p51='?' (Size = 500), @p52='?' (Size = 500), @p53='?' (Size = 100), @p54='?' (DbType = DateTime2), @p55='?' (Size = 100), @p56='?' (DbType = Guid), @p57='?' (DbType = DateTime2), @p58='?' (Size = 100), @p59='?' (Size = 500), @p60='?' (Size = 500), @p61='?' (Size = 100), @p62='?' (DbType = DateTime2), @p63='?' (Size = 100), @p64='?' (DbType = Guid), @p65='?' (DbType = DateTime2), @p66='?' (Size = 100), @p67='?' (Size = 500), @p68='?' (Size = 500), @p69='?' (Size = 100), @p70='?' (DbType = DateTime2), @p71='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Skills] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3),
+(@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, 4),
+(@p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, 5),
+(@p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, 6),
+(@p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, 7),
+(@p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, 8)) AS i ([Id], [CreatedAt], [CreatedBy], [Description], [IconUrl], [Name], [UpdatedAt], [UpdatedBy], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [CreatedAt], [CreatedBy], [Description], [IconUrl], [Name], [UpdatedAt], [UpdatedBy])
+VALUES (i.[Id], i.[CreatedAt], i.[CreatedBy], i.[Description], i.[IconUrl], i.[Name], i.[UpdatedAt], i.[UpdatedBy])
+OUTPUT INSERTED.[RowVersion], i._Position;
+2025-12-29 00:51:30.284 +01:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 500), @p4='?' (Size = 500), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2), @p7='?' (Size = 100), @p8='?' (DbType = Guid), @p9='?' (DbType = DateTime2), @p10='?' (Size = 100), @p11='?' (Size = 500), @p12='?' (Size = 500), @p13='?' (Size = 100), @p14='?' (DbType = DateTime2), @p15='?' (Size = 100), @p16='?' (DbType = Guid), @p17='?' (DbType = DateTime2), @p18='?' (Size = 100), @p19='?' (Size = 500), @p20='?' (Size = 500), @p21='?' (Size = 100), @p22='?' (DbType = DateTime2), @p23='?' (Size = 100), @p24='?' (DbType = Guid), @p25='?' (DbType = DateTime2), @p26='?' (Size = 100), @p27='?' (Size = 500), @p28='?' (Size = 500), @p29='?' (Size = 100), @p30='?' (DbType = DateTime2), @p31='?' (Size = 100), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Guid), @p35='?' (DbType = DateTime2), @p36='?' (Size = 100), @p37='?' (DbType = Guid), @p38='?' (DbType = Guid), @p39='?' (DbType = DateTime2), @p40='?' (Size = 100), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = DateTime2), @p45='?' (Size = 100), @p46='?' (DbType = Guid), @p47='?' (DbType = Guid), @p48='?' (DbType = DateTime2), @p49='?' (Size = 100), @p50='?' (DbType = Guid), @p51='?' (DbType = Guid), @p52='?' (DbType = Guid), @p53='?' (DbType = DateTime2), @p54='?' (Size = 100), @p55='?' (DbType = Guid), @p56='?' (DbType = Guid), @p57='?' (DbType = DateTime2), @p58='?' (Size = 100), @p59='?' (DbType = Guid), @p60='?' (DbType = Guid), @p61='?' (DbType = Guid), @p62='?' (DbType = DateTime2), @p63='?' (Size = 100), @p64='?' (DbType = Guid), @p65='?' (DbType = Guid), @p66='?' (DbType = DateTime2), @p67='?' (Size = 100), @p68='?' (DbType = Guid), @p69='?' (DbType = Guid), @p70='?' (DbType = Guid), @p71='?' (DbType = DateTime2), @p72='?' (Size = 100), @p73='?' (DbType = Guid), @p74='?' (DbType = Guid), @p75='?' (DbType = DateTime2), @p76='?' (Size = 100), @p77='?' (DbType = Guid), @p78='?' (DbType = Guid), @p79='?' (DbType = Guid), @p80='?' (DbType = DateTime2), @p81='?' (Size = 100), @p82='?' (DbType = Guid), @p83='?' (DbType = Guid), @p84='?' (DbType = DateTime2), @p85='?' (Size = 100), @p86='?' (DbType = Guid), @p87='?' (DbType = Guid), @p88='?' (DbType = Guid), @p89='?' (DbType = DateTime2), @p90='?' (Size = 100), @p91='?' (DbType = Guid), @p92='?' (DbType = Guid), @p93='?' (DbType = DateTime2), @p94='?' (Size = 100), @p95='?' (DbType = Guid), @p96='?' (DbType = Guid), @p97='?' (DbType = Guid), @p98='?' (DbType = DateTime2), @p99='?' (Size = 100), @p100='?' (DbType = Guid), @p101='?' (DbType = Guid), @p102='?' (DbType = DateTime2), @p103='?' (Size = 100), @p104='?' (DbType = Guid), @p105='?' (DbType = Guid), @p106='?' (DbType = Guid), @p107='?' (DbType = DateTime2), @p108='?' (Size = 100), @p109='?' (DbType = Guid), @p110='?' (DbType = Guid), @p111='?' (DbType = DateTime2), @p112='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [Categories] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3)) AS i ([Id], [CreatedAt], [CreatedBy], [Description], [IconUrl], [Name], [UpdatedAt], [UpdatedBy], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [CreatedAt], [CreatedBy], [Description], [IconUrl], [Name], [UpdatedAt], [UpdatedBy])
+VALUES (i.[Id], i.[CreatedAt], i.[CreatedBy], i.[Description], i.[IconUrl], i.[Name], i.[UpdatedAt], i.[UpdatedBy])
+OUTPUT INSERTED.[RowVersion], i._Position;
+MERGE [CategorySkills] USING (
+VALUES (@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, 0),
+(@p41, @p42, @p43, @p44, @p45, @p46, @p47, @p48, @p49, 1),
+(@p50, @p51, @p52, @p53, @p54, @p55, @p56, @p57, @p58, 2),
+(@p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, @p67, 3),
+(@p68, @p69, @p70, @p71, @p72, @p73, @p74, @p75, @p76, 4),
+(@p77, @p78, @p79, @p80, @p81, @p82, @p83, @p84, @p85, 5),
+(@p86, @p87, @p88, @p89, @p90, @p91, @p92, @p93, @p94, 6),
+(@p95, @p96, @p97, @p98, @p99, @p100, @p101, @p102, @p103, 7),
+(@p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, @p112, 8)) AS i ([Id], [CategoryId], [CategoryId1], [CreatedAt], [CreatedBy], [SkillId], [SkillId1], [UpdatedAt], [UpdatedBy], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [CategoryId], [CategoryId1], [CreatedAt], [CreatedBy], [SkillId], [SkillId1], [UpdatedAt], [UpdatedBy])
+VALUES (i.[Id], i.[CategoryId], i.[CategoryId1], i.[CreatedAt], i.[CreatedBy], i.[SkillId], i.[SkillId1], i.[UpdatedAt], i.[UpdatedBy])
+OUTPUT INSERTED.[RowVersion], i._Position;
+2025-12-29 00:51:30.369 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = N'jan.novak@email.cz'
+2025-12-29 00:51:30.393 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = N'petra.svobodova@email.cz'
+2025-12-29 00:51:30.481 +01:00 [INF] Publishing domain event: ProjectPublishedEvent
+2025-12-29 00:51:30.481 +01:00 [INF] Publishing domain event: ProjectPublishedEvent
+2025-12-29 00:51:30.482 +01:00 [INF] Publishing domain event: ProjectPublishedEvent
+2025-12-29 00:51:30.502 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (DbType = Guid), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 100), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTime2), @p12='?' (DbType = DateTime2), @p13='?' (Size = 20), @p14='?' (Size = 200), @p15='?' (DbType = DateTime2), @p16='?' (Size = 100), @p17='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p18='?' (Size = 3), @p19='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p20='?' (Size = 3), @p21='?' (DbType = Guid), @p22='?' (DbType = Guid), @p23='?' (DbType = DateTime2), @p24='?' (DbType = DateTime2), @p25='?' (Size = 100), @p26='?' (DbType = Guid), @p27='?' (DbType = DateTime2), @p28='?' (DbType = DateTime2), @p29='?' (Size = 100), @p30='?' (Size = 4000), @p31='?' (DbType = Boolean), @p32='?' (DbType = DateTime2), @p33='?' (DbType = DateTime2), @p34='?' (Size = 20), @p35='?' (Size = 200), @p36='?' (DbType = DateTime2), @p37='?' (Size = 100), @p38='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p39='?' (Size = 3), @p40='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p41='?' (Size = 3), @p42='?' (DbType = Guid), @p43='?' (DbType = Guid), @p44='?' (DbType = DateTime2), @p45='?' (DbType = DateTime2), @p46='?' (Size = 100), @p47='?' (DbType = Guid), @p48='?' (DbType = DateTime2), @p49='?' (DbType = DateTime2), @p50='?' (Size = 100), @p51='?' (Size = 4000), @p52='?' (DbType = Boolean), @p53='?' (DbType = DateTime2), @p54='?' (DbType = DateTime2), @p55='?' (Size = 20), @p56='?' (Size = 200), @p57='?' (DbType = DateTime2), @p58='?' (Size = 100), @p59='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p60='?' (Size = 3), @p61='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p62='?' (Size = 3), @p63='?' (DbType = Guid), @p64='?' (DbType = Guid), @p65='?' (DbType = DateTime2), @p66='?' (DbType = DateTime2), @p67='?' (Size = 100), @p68='?' (DbType = Guid), @p69='?' (DbType = DateTime2), @p70='?' (DbType = DateTime2), @p71='?' (Size = 100), @p72='?' (Size = 4000), @p73='?' (DbType = Boolean), @p74='?' (DbType = DateTime2), @p75='?' (DbType = DateTime2), @p76='?' (Size = 20), @p77='?' (Size = 200), @p78='?' (DbType = DateTime2), @p79='?' (Size = 100), @p80='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p81='?' (Size = 3), @p82='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p83='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Projects] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, 0),
+(@p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, 1),
+(@p42, @p43, @p44, @p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62, 2),
+(@p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71, @p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, @p80, @p81, @p82, @p83, 3)) AS i ([Id], [AcceptedOfferId], [CompletedAt], [CreatedAt], [CreatedBy], [CustomerId], [Deadline], [DeletedAt], [DeletedBy], [Description], [IsDeleted], [PreferredStartDate], [PublishedAt], [Status], [Title], [UpdatedAt], [UpdatedBy], [BudgetMaxAmount], [BudgetMaxCurrency], [BudgetMinAmount], [BudgetMinCurrency], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [AcceptedOfferId], [CompletedAt], [CreatedAt], [CreatedBy], [CustomerId], [Deadline], [DeletedAt], [DeletedBy], [Description], [IsDeleted], [PreferredStartDate], [PublishedAt], [Status], [Title], [UpdatedAt], [UpdatedBy], [BudgetMaxAmount], [BudgetMaxCurrency], [BudgetMinAmount], [BudgetMinCurrency])
+VALUES (i.[Id], i.[AcceptedOfferId], i.[CompletedAt], i.[CreatedAt], i.[CreatedBy], i.[CustomerId], i.[Deadline], i.[DeletedAt], i.[DeletedBy], i.[Description], i.[IsDeleted], i.[PreferredStartDate], i.[PublishedAt], i.[Status], i.[Title], i.[UpdatedAt], i.[UpdatedBy], i.[BudgetMaxAmount], i.[BudgetMaxCurrency], i.[BudgetMinAmount], i.[BudgetMinCurrency])
+OUTPUT INSERTED.[RowVersion], i._Position;
+2025-12-29 00:51:30.511 +01:00 [INF] Database seeded with sample data
+2025-12-29 00:51:30.526 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-29 00:51:30.606 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-29 00:51:30.607 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-29 00:51:30.608 +01:00 [INF] Hosting environment: Development
+2025-12-29 00:51:30.609 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-29 00:51:34.387 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-29 00:51:34.422 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-29 00:51:34.452 +01:00 [INF] HTTP GET / responded 404 in 30.6837 ms
+2025-12-29 00:51:34.458 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 73.4527ms
+2025-12-29 00:51:34.466 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-29 00:51:40.039 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/ - null null
+2025-12-29 00:51:40.043 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/ - 301 0 null 4.4386ms
+2025-12-29 00:51:40.048 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-29 00:51:40.139 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 90.8325ms
+2025-12-29 00:51:40.319 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-29 00:51:40.459 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 139.317ms
+2025-12-29 00:51:57.838 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - null null
+2025-12-29 00:51:57.848 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:51:57.875 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:51:58.009 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[@__status_Value_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+2025-12-29 00:51:58.098 +01:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-12-29 00:51:58.130 +01:00 [INF] Executed DbCommand (19ms) [Parameters=[@__status_Value_0='?' (Size = 20), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AcceptedOfferId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedBy], [t].[CustomerId], [t].[Deadline], [t].[DeletedAt], [t].[DeletedBy], [t].[Description], [t].[IsDeleted], [t].[PreferredStartDate], [t].[PublishedAt], [t].[RowVersion], [t].[Status], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [t].[BudgetMaxAmount], [t].[BudgetMaxCurrency], [t].[BudgetMinAmount], [t].[BudgetMinCurrency], [t0].[Id], [t0].[AcceptedAt], [t0].[CraftsmanId], [t0].[CreatedAt], [t0].[CreatedBy], [t0].[DeletedAt], [t0].[DeletedBy], [t0].[Description], [t0].[EstimatedDurationDays], [t0].[IsDeleted], [t0].[ProjectId], [t0].[RejectedAt], [t0].[RowVersion], [t0].[Status], [t0].[UpdatedAt], [t0].[UpdatedBy], [t0].[PriceAmount], [t0].[PriceCurrency], [t0].[TimelineEndDate], [t0].[TimelineStartDate], [p0].[Id], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[ProjectId], [p0].[RowVersion], [p0].[UpdatedAt], [p0].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[AcceptedOfferId], [p].[CompletedAt], [p].[CreatedAt], [p].[CreatedBy], [p].[CustomerId], [p].[Deadline], [p].[DeletedAt], [p].[DeletedBy], [p].[Description], [p].[IsDeleted], [p].[PreferredStartDate], [p].[PublishedAt], [p].[RowVersion], [p].[Status], [p].[Title], [p].[UpdatedAt], [p].[UpdatedBy], [p].[BudgetMaxAmount], [p].[BudgetMaxCurrency], [p].[BudgetMinAmount], [p].[BudgetMinCurrency]
+    FROM [Projects] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [o].[Id], [o].[AcceptedAt], [o].[CraftsmanId], [o].[CreatedAt], [o].[CreatedBy], [o].[DeletedAt], [o].[DeletedBy], [o].[Description], [o].[EstimatedDurationDays], [o].[IsDeleted], [o].[ProjectId], [o].[RejectedAt], [o].[RowVersion], [o].[Status], [o].[UpdatedAt], [o].[UpdatedBy], [o].[PriceAmount], [o].[PriceCurrency], [o].[TimelineEndDate], [o].[TimelineStartDate]
+    FROM [Offers] AS [o]
+    WHERE [o].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+LEFT JOIN [ProjectImages] AS [p0] ON [t].[Id] = [p0].[ProjectId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id], [t0].[Id]
+2025-12-29 00:51:58.160 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Project.PagedResponseDto`1[[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse, CraftsmenPlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-29 00:51:58.235 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 352.761ms
+2025-12-29 00:51:58.239 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:51:58.242 +01:00 [INF] HTTP GET /api/Projects responded 200 in 396.1006 ms
+2025-12-29 00:51:58.249 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - 200 null application/json; charset=utf-8 410.8644ms
+2025-12-29 00:52:43.317 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?Status=2 - null null
+2025-12-29 00:52:43.324 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:52:43.325 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:52:43.394 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@__status_Value_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+2025-12-29 00:52:43.411 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[@__status_Value_0='?' (Size = 20), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AcceptedOfferId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedBy], [t].[CustomerId], [t].[Deadline], [t].[DeletedAt], [t].[DeletedBy], [t].[Description], [t].[IsDeleted], [t].[PreferredStartDate], [t].[PublishedAt], [t].[RowVersion], [t].[Status], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [t].[BudgetMaxAmount], [t].[BudgetMaxCurrency], [t].[BudgetMinAmount], [t].[BudgetMinCurrency], [t0].[Id], [t0].[AcceptedAt], [t0].[CraftsmanId], [t0].[CreatedAt], [t0].[CreatedBy], [t0].[DeletedAt], [t0].[DeletedBy], [t0].[Description], [t0].[EstimatedDurationDays], [t0].[IsDeleted], [t0].[ProjectId], [t0].[RejectedAt], [t0].[RowVersion], [t0].[Status], [t0].[UpdatedAt], [t0].[UpdatedBy], [t0].[PriceAmount], [t0].[PriceCurrency], [t0].[TimelineEndDate], [t0].[TimelineStartDate], [p0].[Id], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[ProjectId], [p0].[RowVersion], [p0].[UpdatedAt], [p0].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[AcceptedOfferId], [p].[CompletedAt], [p].[CreatedAt], [p].[CreatedBy], [p].[CustomerId], [p].[Deadline], [p].[DeletedAt], [p].[DeletedBy], [p].[Description], [p].[IsDeleted], [p].[PreferredStartDate], [p].[PublishedAt], [p].[RowVersion], [p].[Status], [p].[Title], [p].[UpdatedAt], [p].[UpdatedBy], [p].[BudgetMaxAmount], [p].[BudgetMaxCurrency], [p].[BudgetMinAmount], [p].[BudgetMinCurrency]
+    FROM [Projects] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [o].[Id], [o].[AcceptedAt], [o].[CraftsmanId], [o].[CreatedAt], [o].[CreatedBy], [o].[DeletedAt], [o].[DeletedBy], [o].[Description], [o].[EstimatedDurationDays], [o].[IsDeleted], [o].[ProjectId], [o].[RejectedAt], [o].[RowVersion], [o].[Status], [o].[UpdatedAt], [o].[UpdatedBy], [o].[PriceAmount], [o].[PriceCurrency], [o].[TimelineEndDate], [o].[TimelineStartDate]
+    FROM [Offers] AS [o]
+    WHERE [o].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+LEFT JOIN [ProjectImages] AS [p0] ON [t].[Id] = [p0].[ProjectId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id], [t0].[Id]
+2025-12-29 00:52:43.415 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Project.PagedResponseDto`1[[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse, CraftsmenPlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-29 00:52:43.420 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 92.8942ms
+2025-12-29 00:52:43.421 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:52:43.422 +01:00 [INF] HTTP GET /api/Projects responded 200 in 100.6411 ms
+2025-12-29 00:52:43.425 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?Status=2 - 200 null application/json; charset=utf-8 107.7032ms
+2025-12-29 00:52:51.598 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - null null
+2025-12-29 00:52:51.600 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:52:51.604 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:52:51.612 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_Value_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+2025-12-29 00:52:51.618 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_Value_0='?' (Size = 20), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AcceptedOfferId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedBy], [t].[CustomerId], [t].[Deadline], [t].[DeletedAt], [t].[DeletedBy], [t].[Description], [t].[IsDeleted], [t].[PreferredStartDate], [t].[PublishedAt], [t].[RowVersion], [t].[Status], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [t].[BudgetMaxAmount], [t].[BudgetMaxCurrency], [t].[BudgetMinAmount], [t].[BudgetMinCurrency], [t0].[Id], [t0].[AcceptedAt], [t0].[CraftsmanId], [t0].[CreatedAt], [t0].[CreatedBy], [t0].[DeletedAt], [t0].[DeletedBy], [t0].[Description], [t0].[EstimatedDurationDays], [t0].[IsDeleted], [t0].[ProjectId], [t0].[RejectedAt], [t0].[RowVersion], [t0].[Status], [t0].[UpdatedAt], [t0].[UpdatedBy], [t0].[PriceAmount], [t0].[PriceCurrency], [t0].[TimelineEndDate], [t0].[TimelineStartDate], [p0].[Id], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[ProjectId], [p0].[RowVersion], [p0].[UpdatedAt], [p0].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[AcceptedOfferId], [p].[CompletedAt], [p].[CreatedAt], [p].[CreatedBy], [p].[CustomerId], [p].[Deadline], [p].[DeletedAt], [p].[DeletedBy], [p].[Description], [p].[IsDeleted], [p].[PreferredStartDate], [p].[PublishedAt], [p].[RowVersion], [p].[Status], [p].[Title], [p].[UpdatedAt], [p].[UpdatedBy], [p].[BudgetMaxAmount], [p].[BudgetMaxCurrency], [p].[BudgetMinAmount], [p].[BudgetMinCurrency]
+    FROM [Projects] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Status] = @__status_Value_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [o].[Id], [o].[AcceptedAt], [o].[CraftsmanId], [o].[CreatedAt], [o].[CreatedBy], [o].[DeletedAt], [o].[DeletedBy], [o].[Description], [o].[EstimatedDurationDays], [o].[IsDeleted], [o].[ProjectId], [o].[RejectedAt], [o].[RowVersion], [o].[Status], [o].[UpdatedAt], [o].[UpdatedBy], [o].[PriceAmount], [o].[PriceCurrency], [o].[TimelineEndDate], [o].[TimelineStartDate]
+    FROM [Offers] AS [o]
+    WHERE [o].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+LEFT JOIN [ProjectImages] AS [p0] ON [t].[Id] = [p0].[ProjectId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id], [t0].[Id]
+2025-12-29 00:52:51.621 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Project.PagedResponseDto`1[[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse, CraftsmenPlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-29 00:52:51.626 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 20.7768ms
+2025-12-29 00:52:51.628 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:52:51.629 +01:00 [INF] HTTP GET /api/Projects responded 200 in 28.8365 ms
+2025-12-29 00:52:51.661 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?Status=1 - 200 null application/json; charset=utf-8 63.163ms
+2025-12-29 00:53:11.546 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/api/Projects?City=Praha - null null
+2025-12-29 00:53:11.550 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:53:11.551 +01:00 [INF] Route matched with {action = "GetProjects", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjects(CraftsmenPlatform.Application.DTOs.Project.GetProjectsRequest) on controller CraftsmenPlatform.Api.Controllers.ProjectsController (CraftsmenPlatform.Api).
+2025-12-29 00:53:11.562 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2025-12-29 00:53:11.648 +01:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-12-29 00:53:11.668 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AcceptedOfferId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedBy], [t].[CustomerId], [t].[Deadline], [t].[DeletedAt], [t].[DeletedBy], [t].[Description], [t].[IsDeleted], [t].[PreferredStartDate], [t].[PublishedAt], [t].[RowVersion], [t].[Status], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [t].[BudgetMaxAmount], [t].[BudgetMaxCurrency], [t].[BudgetMinAmount], [t].[BudgetMinCurrency], [t0].[Id], [t0].[AcceptedAt], [t0].[CraftsmanId], [t0].[CreatedAt], [t0].[CreatedBy], [t0].[DeletedAt], [t0].[DeletedBy], [t0].[Description], [t0].[EstimatedDurationDays], [t0].[IsDeleted], [t0].[ProjectId], [t0].[RejectedAt], [t0].[RowVersion], [t0].[Status], [t0].[UpdatedAt], [t0].[UpdatedBy], [t0].[PriceAmount], [t0].[PriceCurrency], [t0].[TimelineEndDate], [t0].[TimelineStartDate], [p0].[Id], [p0].[CreatedAt], [p0].[CreatedBy], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[ProjectId], [p0].[RowVersion], [p0].[UpdatedAt], [p0].[UpdatedBy]
+FROM (
+    SELECT [p].[Id], [p].[AcceptedOfferId], [p].[CompletedAt], [p].[CreatedAt], [p].[CreatedBy], [p].[CustomerId], [p].[Deadline], [p].[DeletedAt], [p].[DeletedBy], [p].[Description], [p].[IsDeleted], [p].[PreferredStartDate], [p].[PublishedAt], [p].[RowVersion], [p].[Status], [p].[Title], [p].[UpdatedAt], [p].[UpdatedBy], [p].[BudgetMaxAmount], [p].[BudgetMaxCurrency], [p].[BudgetMinAmount], [p].[BudgetMinCurrency]
+    FROM [Projects] AS [p]
+    WHERE [p].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [o].[Id], [o].[AcceptedAt], [o].[CraftsmanId], [o].[CreatedAt], [o].[CreatedBy], [o].[DeletedAt], [o].[DeletedBy], [o].[Description], [o].[EstimatedDurationDays], [o].[IsDeleted], [o].[ProjectId], [o].[RejectedAt], [o].[RowVersion], [o].[Status], [o].[UpdatedAt], [o].[UpdatedBy], [o].[PriceAmount], [o].[PriceCurrency], [o].[TimelineEndDate], [o].[TimelineStartDate]
+    FROM [Offers] AS [o]
+    WHERE [o].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+LEFT JOIN [ProjectImages] AS [p0] ON [t].[Id] = [p0].[ProjectId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id], [t0].[Id]
+2025-12-29 00:53:11.671 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Project.PagedResponseDto`1[[CraftsmenPlatform.Application.DTOs.Project.ProjectResponse, CraftsmenPlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-29 00:53:11.673 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api) in 119.5808ms
+2025-12-29 00:53:11.674 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.ProjectsController.GetProjects (CraftsmenPlatform.Api)'
+2025-12-29 00:53:11.675 +01:00 [INF] HTTP GET /api/Projects responded 200 in 125.0600 ms
+2025-12-29 00:53:11.678 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/api/Projects?City=Praha - 200 null application/json; charset=utf-8 131.5057ms
+2025-12-29 14:52:26.238 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 14:52:26.985 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 14:52:27.030 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 14:52:27.032 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 14:52:27.034 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 14:52:27.036 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 14:52:28.411 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 14:52:28.431 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 14:52:28.435 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-29 14:52:28.438 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-29 14:52:28.451 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-29 14:52:28.464 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-29 14:52:28.652 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-29 14:52:28.663 +01:00 [INF] Database seeded with sample data
+2025-12-29 14:52:28.683 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-29 14:52:28.871 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-29 14:52:28.872 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-29 14:52:28.873 +01:00 [INF] Hosting environment: Development
+2025-12-29 14:52:28.875 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-29 14:52:32.963 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-29 14:52:33.005 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-29 14:52:33.039 +01:00 [INF] HTTP GET / responded 404 in 32.9840 ms
+2025-12-29 14:52:33.046 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 86.1173ms
+2025-12-29 14:52:33.052 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-29 14:52:37.190 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-29 14:52:37.276 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 85.2742ms
+2025-12-29 14:52:39.112 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-29 14:52:39.242 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 129.4754ms
+2025-12-29 21:57:42.605 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-29 21:57:43.183 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-29 21:57:43.227 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 21:57:43.229 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 21:57:43.230 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-29 21:57:43.231 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.

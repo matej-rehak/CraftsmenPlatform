@@ -20,6 +20,9 @@ using CraftsmenPlatform.Application.Common.Interfaces;
 using CraftsmenPlatform.Application.Common.Settings;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
+using CraftsmenPlatform.Infrastructure.Services;
+using CraftsmenPlatform.Domain.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -72,6 +75,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Add repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
 // Add UnitOfWork
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -90,6 +94,7 @@ builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSet
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
+builder.Services.AddScoped<IEmailService, MailjetEmailService>();
 
 // Rate Limiting
 builder.Services.AddRateLimiter(options =>
@@ -268,6 +273,16 @@ using (var scope = app.Services.CreateScope())
     // česky - vytvori tabulky v DB
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     db.Database.Migrate();
+    
+    // Seed database with sample data (development only)
+    if (app.Environment.IsDevelopment())
+    {
+        var passwordHasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
+        var seeder = new DatabaseSeeder(db, passwordHasher);
+        await seeder.SeedAsync();
+        
+        Log.Information("Database seeded with sample data");
+    }
 }
 
 app.Run();

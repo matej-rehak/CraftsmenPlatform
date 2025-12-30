@@ -23,24 +23,24 @@ public class Skill : BaseEntity, IAggregateRoot
     private Skill(string name, string? description = null, string? iconUrl = null)
     {
         Id = Guid.NewGuid();
-        Name = name?.Trim() ?? throw new ArgumentNullException(nameof(name));
+        Name = name.Trim();
         Description = description?.Trim();
         IconUrl = iconUrl?.Trim();
         CreatedAt = DateTime.UtcNow;
-
-        if (string.IsNullOrWhiteSpace(name))
-            throw new BusinessRuleValidationException(nameof(Name), "Skill name cannot be empty");
-
-        if (name.Length > 100)
-            throw new BusinessRuleValidationException(nameof(Name), "Skill name cannot exceed 100 characters");
     }
 
     /// <summary>
     /// Factory metoda pro vytvoření nového skill
     /// </summary>
-    public static Skill Create(string name, string? description = null, string? iconUrl = null)
+    public static Result<Skill> Create(string name, string? description = null, string? iconUrl = null)
     {
-        return new Skill(name, description, iconUrl);
+        if (string.IsNullOrEmpty(name))
+            return Result<Skill>.Failure("Skill name cannot be empty");
+
+        if (name.Length > 100)
+            return Result<Skill>.Failure("Skill name cannot exceed 100 characters");
+
+        return Result<Skill>.Success(new Skill(name, description, iconUrl));
     }
 
     /// <summary>
@@ -48,10 +48,10 @@ public class Skill : BaseEntity, IAggregateRoot
     /// </summary>
     public Result Update(string? name = null, string? description = null, string? iconUrl = null)
     {
-        if (!string.IsNullOrWhiteSpace(name))
+        if (name != null)
         {
             if (name.Length > 100)
-                return Result.Failure("Skill name cannot exceed 100 characters");
+                return Result<Skill>.Failure("Skill name cannot exceed 100 characters");
 
             Name = name.Trim();
         }
@@ -64,6 +64,6 @@ public class Skill : BaseEntity, IAggregateRoot
 
         UpdatedAt = DateTime.UtcNow;
 
-        return Result.Success();
+        return Result<Skill>.Success();
     }
 }

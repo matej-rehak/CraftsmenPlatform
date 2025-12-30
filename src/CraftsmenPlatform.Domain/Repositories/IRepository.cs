@@ -76,4 +76,25 @@ public interface IRepository<T> where T : BaseEntity, IAggregateRoot
     /// Smaže více entit najednou
     /// </summary>
     void RemoveRange(IEnumerable<T> entities);
+
+    /// <summary>
+    /// Vrací stránku entit podle specifikace
+    /// </summary>
+    Task<PagedResult<T>> GetPagedAsync(
+        Specification<T> specification,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Vrací stránku entit podle základního paginace (bez filtrace)
+    /// </summary>
+    Task<PagedResult<T>> GetPagedAsync(
+        PaginationParams pagination,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Počítá entity podle specifikace
+    /// </summary>
+    Task<int> CountAsync(
+        Specification<T> specification,
+        CancellationToken cancellationToken = default);
 }

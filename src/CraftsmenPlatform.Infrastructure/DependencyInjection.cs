@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using CraftsmenPlatform.Application.Common.Interfaces;
 using CraftsmenPlatform.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
+using CraftsmenPlatform.Domain.Services;
+using CraftsmenPlatform.Application.Common.Settings;
+using Microsoft.Extensions.Options;
 
 namespace CraftsmenPlatform.Infrastructure;
 
@@ -42,6 +45,11 @@ public static class DependencyInjection
         // Services
         services.AddHttpContextAccessor();
         services.AddScoped<IRequestContext, HttpRequestContext>();
+
+        services.Configure<MailjetSettings>(
+            configuration.GetSection(MailjetSettings.SectionName));
+
+        services.AddScoped<IEmailService, MailjetEmailService>();
 
         return services;
     }
