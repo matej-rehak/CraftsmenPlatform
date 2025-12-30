@@ -4,19 +4,23 @@ using CraftsmenPlatform.Domain.Common;
 using CraftsmenPlatform.Domain.Common.Interfaces;
 using CraftsmenPlatform.Infrastructure.Events;
 using System.Linq.Expressions;
+using CraftsmenPlatform.Application.Common.Interfaces;
 
 namespace CraftsmenPlatform.Infrastructure.Persistence;
 
 public class ApplicationDbContext : DbContext
 {
     private readonly IDomainEventDispatcher _domainEventDispatcher;
+    private readonly ICurrentUserService _currentUserService;
 
     public ApplicationDbContext(
         DbContextOptions<ApplicationDbContext> options,
-        IDomainEventDispatcher domainEventDispatcher) 
+        IDomainEventDispatcher domainEventDispatcher,
+        ICurrentUserService currentUserService) 
         : base(options)
     {
         _domainEventDispatcher = domainEventDispatcher;
+        _currentUserService = currentUserService;
     }
 
     // DbSets - Aggregate Roots only
@@ -50,6 +54,49 @@ public class ApplicationDbContext : DbContext
                 entityType.SetQueryFilter(lambda);
             }
         }
+
+        // -----------------------------
+        // Explicit relationship configurations (no shadow FK)
+        // -----------------------------
+
+        // RefreshToken -> User (optional nav)
+        modelBuilder.Entity<RefreshToken>()
+            .HasOne<User>()
+            .WithMany(u => u.RefreshTokens)
+            .HasForeignKey(rt => rt.UserId)
+            .IsRequired(false);
+
+        // CategorySkill - many-to-many between Category and Skill
+        modelBuilder.Entity<CategorySkill>(entity =>
+        {
+            entity.HasKey(cs => new { cs.CategoryId, cs.SkillId });
+
+            // Only Category navigation (private list in Category)
+            entity.HasOne<Category>()
+                  .WithMany(c => c.CategorySkills)
+                  .HasForeignKey(cs => cs.CategoryId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            // SkillId is FK-only
+            entity.Property(cs => cs.SkillId).IsRequired();
+        });
+
+        // CraftsmanSkill - many-to-many between CraftsmanProfile and Skill
+        modelBuilder.Entity<CraftsmanSkill>(entity =>
+        {
+            entity.HasKey(cs => new { cs.CraftsmanProfileId, cs.SkillId });
+
+            entity.Property(cs => cs.CraftsmanProfileId).IsRequired();
+            entity.Property(cs => cs.SkillId).IsRequired();
+        });
+
+        // Message -> ChatRoom (FK-only)
+        modelBuilder.Entity<Message>()
+            .HasKey(m => m.Id);
+
+        modelBuilder.Entity<Message>()
+            .Property(m => m.ChatRoomId)
+            .IsRequired();
     }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -72,7 +119,7 @@ public class ApplicationDbContext : DbContext
 
         foreach (var entry in entries)
         {
-            var currentUser = GetCurrentUser();
+            var currentUser = _currentUserService.UserId;
 
             switch (entry.State)
             {
@@ -115,11 +162,5 @@ public class ApplicationDbContext : DbContext
         {
             await _domainEventDispatcher.DispatchAsync(domainEvent, cancellationToken);
         }
-    }
-
-    private string GetCurrentUser()
-    {
-        // TODO: Get from IHttpContextAccessor or ICurrentUserService
-        return "System"; // Default for now
     }
 }

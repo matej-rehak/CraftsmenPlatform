@@ -6,4 +6,7 @@ namespace CraftsmenPlatform.Application.Commands.Authentication.Login;
 
 public record LoginCommand(
     string Email,
-    string Password) : IRequest<Result<AuthenticationResponse>>;
+    string Password) : IRequest<Result<AuthenticationResponse>>
+    {
+        
+    }

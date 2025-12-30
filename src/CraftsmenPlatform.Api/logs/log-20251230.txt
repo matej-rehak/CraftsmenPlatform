@@ -279,3 +279,219 @@ VALUES (@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, 
 2025-12-30 17:40:17.890 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
 2025-12-30 17:40:17.892 +01:00 [INF] HTTP POST /api/Authentication/register responded 201 in 1147.2293 ms
 2025-12-30 17:40:17.895 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 201 null application/json; charset=utf-8 1154.8245ms
+2025-12-30 19:18:14.883 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-30 19:18:15.445 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-30 19:18:15.484 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:18:15.487 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:18:15.488 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:18:15.489 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:18:15.795 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:18:15.812 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:18:15.816 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:18:15.819 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:18:15.828 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-30 19:18:15.839 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-30 19:18:15.989 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-30 19:18:15.998 +01:00 [INF] Database seeded with sample data
+2025-12-30 19:18:16.011 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-30 19:18:16.063 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-30 19:18:16.064 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-30 19:18:16.066 +01:00 [INF] Hosting environment: Development
+2025-12-30 19:18:16.067 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-30 19:18:18.016 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-30 19:18:18.048 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-30 19:18:18.070 +01:00 [INF] HTTP GET / responded 404 in 21.5244 ms
+2025-12-30 19:18:18.075 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 60.3588ms
+2025-12-30 19:18:18.080 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-30 19:18:24.124 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-30 19:18:24.192 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 67.7882ms
+2025-12-30 19:18:27.672 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-30 19:18:27.779 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 106.9966ms
+2025-12-30 19:18:41.060 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/login - application/json 55
+2025-12-30 19:18:41.065 +01:00 [INF] CORS policy execution successful.
+2025-12-30 19:18:41.071 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-30 19:18:41.087 +01:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CraftsmenPlatform.Application.DTOs.Authentication.LoginRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2025-12-30 19:18:41.116 +01:00 [INF] Login attempt for email: anpuls@post.cz
+2025-12-30 19:18:41.255 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2025-12-30 19:18:42.046 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 50), @p4='?' (DbType = DateTime2), @p5='?' (Size = 500), @p6='?' (DbType = DateTime2), @p7='?' (Size = 50), @p8='?' (Size = 8000) (DbType = Binary), @p9='?' (Size = 500), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p15='?' (DbType = Guid), @p13='?' (DbType = DateTime2), @p16='?' (Size = 8) (DbType = Binary), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [CreatedBy], [CreatedByIp], [ExpiresAt], [ReplacedByToken], [RevokedAt], [RevokedByIp], [RowVersion], [Token], [UpdatedAt], [UpdatedBy], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Users] SET [LastLoginAt] = @p13, [UpdatedAt] = @p14
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p15 AND [RowVersion] = @p16;
+2025-12-30 19:18:42.076 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+UPDATE Users SET LastLoginAt = @p0 WHERE Id = @p1
+2025-12-30 19:18:42.079 +01:00 [INF] User logged in successfully: "d17607fc-561e-420e-b8b8-45b3e5e757ff"
+2025-12-30 19:18:42.083 +01:00 [INF] Executing OkObjectResult, writing value of type 'CraftsmenPlatform.Application.DTOs.Authentication.AuthenticationResponse'.
+2025-12-30 19:18:42.098 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api) in 1007.2785ms
+2025-12-30 19:18:42.099 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Login (CraftsmenPlatform.Api)'
+2025-12-30 19:18:42.101 +01:00 [INF] HTTP POST /api/Authentication/login responded 200 in 1036.9014 ms
+2025-12-30 19:18:42.104 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/login - 200 null application/json; charset=utf-8 1043.6203ms
+2025-12-30 19:28:59.481 +01:00 [INF] Application is shutting down...
+2025-12-30 19:29:07.762 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-30 19:29:08.351 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-30 19:29:08.391 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:29:08.392 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:29:08.393 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:29:08.394 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:29:08.757 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:29:08.776 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:29:08.780 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:29:08.782 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:29:08.793 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-30 19:29:08.806 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-30 19:29:08.969 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-30 19:29:08.977 +01:00 [INF] Database seeded with sample data
+2025-12-30 19:29:08.990 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-30 19:29:09.051 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-30 19:29:09.052 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-30 19:29:09.053 +01:00 [INF] Hosting environment: Development
+2025-12-30 19:29:09.054 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-30 19:30:09.808 +01:00 [INF] Application is shutting down...
+2025-12-30 19:30:13.395 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-30 19:30:13.970 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-30 19:30:14.013 +01:00 [WRN] The foreign key property 'CategorySkill.CategoryId1' was created in shadow state because a conflicting property with the simple name 'CategoryId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:30:14.015 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:30:14.017 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:30:14.018 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:30:14.330 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:30:14.348 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:30:14.352 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:30:14.355 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:30:14.366 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-30 19:30:14.379 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-30 19:30:14.554 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-30 19:30:14.563 +01:00 [INF] Database seeded with sample data
+2025-12-30 19:30:14.578 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-30 19:30:14.632 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-30 19:30:14.633 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-30 19:30:14.634 +01:00 [INF] Hosting environment: Development
+2025-12-30 19:30:14.635 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-30 19:33:37.353 +01:00 [INF] Application is shutting down...
+2025-12-30 19:36:20.431 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-30 19:36:21.003 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-30 19:36:21.044 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:36:21.045 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:36:21.047 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:36:21.048 +01:00 [WRN] The foreign key property 'RefreshToken.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:36:21.350 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:36:21.368 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:36:21.371 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:36:21.374 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:36:21.384 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-30 19:36:21.394 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-30 19:36:21.548 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-30 19:36:21.557 +01:00 [INF] Database seeded with sample data
+2025-12-30 19:36:21.570 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-30 19:36:21.625 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-30 19:36:21.626 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-30 19:36:21.627 +01:00 [INF] Hosting environment: Development
+2025-12-30 19:36:21.628 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-30 19:46:53.160 +01:00 [INF] Application is shutting down...
+2025-12-30 19:49:02.830 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-12-30 19:49:03.437 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-12-30 19:49:03.477 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:49:03.479 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:49:03.480 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:49:03.481 +01:00 [WRN] The foreign key property 'RefreshToken.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-12-30 19:49:03.785 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:49:03.802 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:49:03.806 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-30 19:49:03.808 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-30 19:49:03.817 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-30 19:49:03.829 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-30 19:49:03.982 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-30 19:49:03.991 +01:00 [INF] Database seeded with sample data
+2025-12-30 19:49:04.003 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-30 19:49:04.055 +01:00 [INF] Now listening on: http://localhost:5180
+2025-12-30 19:49:04.057 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-30 19:49:04.058 +01:00 [INF] Hosting environment: Development
+2025-12-30 19:49:04.059 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2025-12-30 19:49:09.491 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2025-12-30 19:49:09.517 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-30 19:49:09.544 +01:00 [INF] HTTP GET / responded 404 in 26.4279 ms
+2025-12-30 19:49:09.551 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 60.7307ms
+2025-12-30 19:49:09.556 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2025-12-30 19:49:15.534 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2025-12-30 19:49:15.605 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 70.9066ms
+2025-12-30 19:49:19.034 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2025-12-30 19:49:19.167 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 132.4178ms

@@ -83,6 +83,9 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // Add RequestContext
 builder.Services.AddScoped<IRequestContext, HttpRequestContext>();
 
+// Add CurrentUserService
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+
 // Registrace MediatR a FluentValidation
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(LoginCommand).Assembly));
