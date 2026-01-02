@@ -49,8 +49,13 @@ public class RegisterCommandHandler
             return Result<AuthenticationResponse>.Failure(
                 "User with this email already exists");
 
+        // Check password strength via ValueObject
+        var passwordResult = Password.Create(request.Password);
+        if (passwordResult.IsFailure)
+            return Result<AuthenticationResponse>.Failure(passwordResult.Error);
+
         // 2. Hash password
-        var passwordHash = _passwordHasher.HashPassword(request.Password);
+        var passwordHash = _passwordHasher.HashPassword(passwordResult.Value.Value);
 
         // 3. Parse role
         if (!Enum.TryParse<UserRole>(request.Role, out var role))

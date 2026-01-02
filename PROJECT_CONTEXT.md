@@ -163,24 +163,27 @@ CraftsmenPlatform/
 │   │   ├── ValueObjects/                      # Domain Value Objects
 │   │   ├── Enums/                             # Enumerations
 │   │   ├── Events/                            # Domain Events (UserRegistered, etc.)
+│   │   ├── Exceptions/                        # Domain Exceptions
+│   │   ├── Services/                          # Domain Services Interfaces
 │   │   └── Repositories/                      # Repository Interfaces (IRepository, IUserRepository)
 │   │
 │   ├── CraftsmenPlatform.Application/         # Application Layer - Use Cases
 │   │   ├── Commands/                          # CQRS Write Operations
 │   │   ├── Queries/                           # CQRS Read Operations
 │   │   ├── DTOs/                              # Data Transfer Objects
+│   │   ├── Events/                            # Application Events
+│   │   ├── Specifications/                    # Query Specifications
 │   │   └── Common/                            # Behaviors, Interfaces
 │   │
 │   ├── CraftsmenPlatform.Infrastructure/      # Infrastructure Layer - External concerns
-│   │   ├── Persistence/                       # EF Core DbContext, Configurations, Migrations
+│   │   ├── Persistence/                       # EF Core DbContext, Configurations
+│   │   ├── Migrations/                        # Database Migrations
 │   │   ├── Repositories/                      # Repository Implementations
 │   │   ├── Events/                            # Domain Event Dispatchers
 │   │   └── Services/                          # External Services Impl (Email, FileStorage)
 │   │
 │   └── CraftsmenPlatform.Api/                 # API Layer - Entry Point
-│       ├── Controllers/                       # REST API Controllers
-│       ├── Middleware/                        # Exception Handling, Logging
-│       └── Extensions/                        # Service Registration Extensions
+│       └── Controllers/                       # REST API Controllers
 ```
 
 ### Vrstvy
@@ -934,6 +937,9 @@ public interface IUnitOfWork : IDisposable
 
 ## 🚀 Další Kroky
 
+### TODO
+- [ ] Audit table
+
 ### TODO - Infrastructure
 - [x] EF Core DbContext konfigurace pro všechny entity
 - [x] Value Objects jako Owned Types
@@ -981,4 +987,6 @@ public interface IUnitOfWork : IDisposable
 **DDD Refactoring**: ✅ Kompletní
 **Result Pattern**: ✅ Implementováno ve všech agregátech
 **Rate Limiting**: ✅ Implementováno (4 policies)
+**Authentication**: ✅ Implementováno
+**Authorization**: ✅ Implementováno
 **Status projektu**: Domain a Infrastructure vrstvy hotové. Application a API vrstvy rozpracovány (Authentication + Rate Limiting).
