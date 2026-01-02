@@ -1,0 +1,350 @@
+2026-01-02 22:21:10.960 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-02 22:21:11.661 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-01-02 22:21:11.707 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:21:11.708 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:21:11.709 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:21:11.711 +01:00 [WRN] The foreign key property 'RefreshToken.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:21:13.105 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-02 22:21:13.125 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-01-02 22:21:13.129 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-02 22:21:13.132 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-01-02 22:21:13.143 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-01-02 22:21:13.155 +01:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-02 22:21:13.329 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-01-02 22:21:13.342 +01:00 [INF] Database seeded with sample data
+2026-01-02 22:21:13.368 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-02 22:21:13.534 +01:00 [INF] Now listening on: http://localhost:5180
+2026-01-02 22:21:13.535 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-02 22:21:13.536 +01:00 [INF] Hosting environment: Development
+2026-01-02 22:21:13.537 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2026-01-02 22:23:09.997 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2026-01-02 22:23:10.033 +01:00 [WRN] Failed to determine the https port for redirect.
+2026-01-02 22:23:10.067 +01:00 [INF] HTTP GET / responded 404 in 33.3477 ms
+2026-01-02 22:23:10.074 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 78.5067ms
+2026-01-02 22:23:10.079 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2026-01-02 22:23:16.828 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger - null null
+2026-01-02 22:23:16.833 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger - 301 0 null 5.0026ms
+2026-01-02 22:23:16.836 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2026-01-02 22:23:16.910 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 73.5169ms
+2026-01-02 22:23:16.954 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui.css - null null
+2026-01-02 22:23:16.960 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui-bundle.js - null null
+2026-01-02 22:23:16.961 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui-standalone-preset.js - null null
+2026-01-02 22:23:16.974 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-01-02 22:23:16.974 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-01-02 22:23:16.976 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui.css - 200 152034 text/css 21.6614ms
+2026-01-02 22:23:16.976 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 15.0838ms
+2026-01-02 22:23:16.997 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-01-02 22:23:16.998 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 37.6736ms
+2026-01-02 22:23:18.588 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2026-01-02 22:23:18.695 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 106.8204ms
+2026-01-02 22:27:12.464 +01:00 [INF] Application is shutting down...
+2026-01-02 22:43:03.075 +01:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-02 22:43:03.652 +01:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-01-02 22:43:03.698 +01:00 [WRN] The foreign key property 'CategorySkill.SkillId1' was created in shadow state because a conflicting property with the simple name 'SkillId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:43:03.700 +01:00 [WRN] The foreign key property 'CraftsmanSkill.CraftsmanProfileId1' was created in shadow state because a conflicting property with the simple name 'CraftsmanProfileId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:43:03.701 +01:00 [WRN] The foreign key property 'Message.ChatRoomId1' was created in shadow state because a conflicting property with the simple name 'ChatRoomId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:43:03.704 +01:00 [WRN] The foreign key property 'RefreshToken.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-01-02 22:43:04.013 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-02 22:43:04.032 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-01-02 22:43:04.035 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-01-02 22:43:04.037 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-01-02 22:43:04.047 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-01-02 22:43:04.058 +01:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-02 22:43:04.210 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsDeleted] = CAST(0 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-01-02 22:43:04.218 +01:00 [INF] Database seeded with sample data
+2026-01-02 22:43:04.230 +01:00 [INF] User profile is available. Using 'C:\Users\Matej\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-02 22:43:04.283 +01:00 [INF] Now listening on: http://localhost:5180
+2026-01-02 22:43:04.284 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-02 22:43:04.285 +01:00 [INF] Hosting environment: Development
+2026-01-02 22:43:04.286 +01:00 [INF] Content root path: C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api
+2026-01-02 22:43:06.752 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/ - null null
+2026-01-02 22:43:06.797 +01:00 [WRN] Failed to determine the https port for redirect.
+2026-01-02 22:43:06.823 +01:00 [INF] HTTP GET / responded 404 in 26.1813 ms
+2026-01-02 22:43:06.830 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/ - 404 0 null 79.8218ms
+2026-01-02 22:43:06.837 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5180/, Response status code: 404
+2026-01-02 22:43:09.598 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/index.html - null null
+2026-01-02 22:43:09.666 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/index.html - 200 null text/html;charset=utf-8 68.2775ms
+2026-01-02 22:43:11.430 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - null null
+2026-01-02 22:43:11.536 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5180/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 105.2056ms
+2026-01-02 22:43:16.137 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 116
+2026-01-02 22:43:16.142 +01:00 [INF] CORS policy execution successful.
+2026-01-02 22:43:16.148 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2026-01-02 22:43:16.168 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2026-01-02 22:43:16.201 +01:00 [INF] Registration attempt for email: string
+2026-01-02 22:43:16.226 +01:00 [WRN] Registration failed for string: Invalid email format
+2026-01-02 22:43:16.230 +01:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-02 22:43:16.246 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 74.5344ms
+2026-01-02 22:43:16.248 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2026-01-02 22:43:16.249 +01:00 [INF] HTTP POST /api/Authentication/register responded 400 in 107.9395 ms
+2026-01-02 22:43:16.254 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 400 null application/json; charset=utf-8 116.6228ms
+2026-01-02 22:43:28.942 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 126
+2026-01-02 22:43:28.947 +01:00 [INF] CORS policy execution successful.
+2026-01-02 22:43:28.950 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2026-01-02 22:43:28.952 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2026-01-02 22:43:28.954 +01:00 [INF] Registration attempt for email: string@seznam.cz
+2026-01-02 22:43:29.123 +01:00 [ERR] Failed executing DbCommand (12ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId], [r].[UserId1]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2026-01-02 22:43:29.138 +01:00 [ERR] An exception occurred while iterating over the results of a query for context type 'CraftsmenPlatform.Infrastructure.Persistence.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+2026-01-02 22:43:29.146 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 192.3359ms
+2026-01-02 22:43:29.148 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2026-01-02 22:43:29.150 +01:00 [ERR] HTTP POST /api/Authentication/register responded 500 in 204.1920 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Infrastructure.Repositories.UserRepository.GetByEmailAsync(EmailAddress email, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Infrastructure\Repositories\UserRepository.cs:line 40
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Application\Commands\Authentication\Register\RegisterCommandHandler.cs:line 46
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+2026-01-02 22:43:29.193 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Infrastructure.Repositories.UserRepository.GetByEmailAsync(EmailAddress email, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Infrastructure\Repositories\UserRepository.cs:line 40
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Application\Commands\Authentication\Register\RegisterCommandHandler.cs:line 46
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+2026-01-02 22:43:29.208 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 500 null text/plain; charset=utf-8 266.1406ms
+2026-01-02 22:45:39.758 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5180/api/Authentication/register - application/json 126
+2026-01-02 22:45:39.760 +01:00 [INF] CORS policy execution successful.
+2026-01-02 22:45:39.763 +01:00 [INF] Executing endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2026-01-02 22:45:39.766 +01:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CraftsmenPlatform.Application.DTOs.Authentication.RegisterRequest, System.Threading.CancellationToken) on controller CraftsmenPlatform.Api.Controllers.AuthenticationController (CraftsmenPlatform.Api).
+2026-01-02 22:45:39.770 +01:00 [INF] Registration attempt for email: string@seznam.cz
+2026-01-02 22:45:39.786 +01:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@__email_Value_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AvatarUrl], [t].[CreatedAt], [t].[CreatedBy], [t].[DeactivatedAt], [t].[DeactivatedReason], [t].[DeletedAt], [t].[DeletedBy], [t].[EmailVerifiedAt], [t].[FailedLoginAttempts], [t].[FirstName], [t].[IsActive], [t].[IsDeactivated], [t].[IsDeleted], [t].[IsEmailVerified], [t].[LastLoginAt], [t].[LastLoginIp], [t].[LastName], [t].[LockedOutUntil], [t].[PasswordHash], [t].[Role], [t].[RowVersion], [t].[UpdatedAt], [t].[UpdatedBy], [t].[AddressCity], [t].[AddressCountry], [t].[AddressState], [t].[AddressStreet], [t].[AddressZipCode], [t].[Email], [t].[Phone], [r].[Id], [r].[CreatedAt], [r].[CreatedBy], [r].[CreatedByIp], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[RevokedByIp], [r].[RowVersion], [r].[Token], [r].[UpdatedAt], [r].[UpdatedBy], [r].[UserId], [r].[UserId1]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[CreatedBy], [u].[DeactivatedAt], [u].[DeactivatedReason], [u].[DeletedAt], [u].[DeletedBy], [u].[EmailVerifiedAt], [u].[FailedLoginAttempts], [u].[FirstName], [u].[IsActive], [u].[IsDeactivated], [u].[IsDeleted], [u].[IsEmailVerified], [u].[LastLoginAt], [u].[LastLoginIp], [u].[LastName], [u].[LockedOutUntil], [u].[PasswordHash], [u].[Role], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedBy], [u].[AddressCity], [u].[AddressCountry], [u].[AddressState], [u].[AddressStreet], [u].[AddressZipCode], [u].[Email], [u].[Phone]
+    FROM [Users] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Email] = @__email_Value_0
+) AS [t]
+LEFT JOIN [RefreshTokens] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id]
+2026-01-02 22:45:39.790 +01:00 [ERR] An exception occurred while iterating over the results of a query for context type 'CraftsmenPlatform.Infrastructure.Persistence.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+2026-01-02 22:45:39.797 +01:00 [INF] Executed action CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api) in 28.4298ms
+2026-01-02 22:45:39.798 +01:00 [INF] Executed endpoint 'CraftsmenPlatform.Api.Controllers.AuthenticationController.Register (CraftsmenPlatform.Api)'
+2026-01-02 22:45:39.799 +01:00 [ERR] HTTP POST /api/Authentication/register responded 500 in 39.3867 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Infrastructure.Repositories.UserRepository.GetByEmailAsync(EmailAddress email, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Infrastructure\Repositories\UserRepository.cs:line 40
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Application\Commands\Authentication\Register\RegisterCommandHandler.cs:line 46
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+2026-01-02 22:45:39.810 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId1'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at CraftsmenPlatform.Infrastructure.Repositories.UserRepository.GetByEmailAsync(EmailAddress email, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Infrastructure\Repositories\UserRepository.cs:line 40
+   at CraftsmenPlatform.Application.Commands.Authentication.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Application\Commands\Authentication\Register\RegisterCommandHandler.cs:line 46
+   at CraftsmenPlatform.Api.Controllers.AuthenticationController.Register(RegisterRequest request, CancellationToken cancellationToken) in C:\Users\Matej\Documents\GitHub\CraftsmenPlatform\src\CraftsmenPlatform.Api\Controllers\AuthenticationController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:c04082e3-51a5-4202-8b85-e82a72f873f8
+Error Number:207,State:1,Class:16
+2026-01-02 22:45:39.820 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5180/api/Authentication/register - 500 null text/plain; charset=utf-8 62.7464ms
+2026-01-02 22:45:53.859 +01:00 [INF] Application is shutting down...
